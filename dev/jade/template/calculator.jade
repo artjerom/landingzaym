@@ -1,0 +1,45 @@
+header
+    .logo
+        img(src='img/logo.png', alt='zaymigo')
+        a(href='tel: 88007007286') 8 800 700-72-86
+    .info-title
+        h2
+            | Займ на
+            = ' '
+            a.ab_link(href='#') вашу карту
+            |  за 10 минут
+        span Быстро, просто и без поручителей
+    main
+        form(action='#')
+            label(for='sum')
+                .calc-title
+                    span Сумма займа
+                    input.range_field.range_field--sum(type='text', name='sum')
+                input#sum.slider.js-slider.js-slider--sum(type='range', min='1500', max='50000')
+            label(for='time')
+                .calc-title
+                    span На срок до
+                    input.range_field.range_field--time(type='text', name='time')
+                input#time.slider.js-slider.js-slider--time(type='range', min='1500', max='50000')
+            .info-zaym
+                // Информация о займе
+                .info-sum
+                    span Занимаете
+                    h4 6100 ₽
+                .info-back
+                    span Возращаете
+                    h4 6600 ₽
+            .ab_center
+                a.ab_button Получить деньги
+    .info.info--header
+        ul
+            li
+                i.sp_info-time
+                | Выдаем займы круглые сутки
+            li
+                i.sp_info-anywhere
+                | Работаем по всей россии
+            li
+                i.sp_info-online
+                | Достаточно онлайн заявки
+hr.separator

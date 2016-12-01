@@ -2,6 +2,7 @@
   color: $main-color;
   text-decoration: none;
   border-bottom: 1px dashed $main-color;
+  font-weight: bold;
 }
 
 .ab_button {
@@ -29,10 +30,13 @@
   margin: 0 auto;
 }
 
+// Разделить
 .separator {
-  margin: 5vh 0;
+  margin: 2.5vh 0;
+  border-top: 2px dashed $text-gray;
 }
 
+// Ползунок выбора
 .js-slider {
   outline: none !important;
   outline: none;

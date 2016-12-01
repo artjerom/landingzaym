@@ -9,15 +9,21 @@
   max-width: 640px;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+  color: #18181a;
 }
 
 input[type='text'] {
   background: #fff;
-  color: #222;
+  color: #18181a;
   border: solid 1px #b0bac5;
   border-radius: 3px;
   padding: 5px 0;
   font-size: 1em;
+}
+
+header {
+  padding-bottom: 30px;
+  border-width: 60px;
 }
 
 header .logo {
@@ -38,16 +44,16 @@ header .logo a {
   color: #222;
 }
 
-header .info {
+header .info-title {
   margin-top: 5vh;
   margin-bottom: 2vh;
 }
 
-header .info h2 {
+header .info-title h2 {
   margin-bottom: 3vh;
 }
 
-header .info h2 a::after {
+header .info-title h2 a::after {
   padding-left: 10px;
   transform: rotate(20deg);
 }
@@ -122,10 +128,95 @@ header main .ab_button {
   margin: 15px auto;
 }
 
+header .info {
+  margin-top: 10vh;
+}
+
+header .info ul {
+  list-style: none;
+}
+
+header .info ul li {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+header .info ul li i {
+  background: url(../img/sprites/header-info.png) no-repeat;
+  display: block;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+
+header .info ul li i.sp_info-time {
+  width: 65px;
+  height: 60px;
+  background-position: -5px -5px;
+}
+
+header .info ul li i.sp_info-anywhere {
+  width: 65px;
+  height: 60px;
+  background-position: -75px -5px;
+}
+
+header .info ul li i.sp_info-online {
+  width: 65px;
+  height: 57px;
+  background-position: -5px -75px;
+}
+
+.how-to-money .block-slider {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.how-to-money .block-slider .content-slider figure .back-img {
+  height: 50vh;
+  max-height: 160px;
+  background: url(../img/how-slide-1.png) no-repeat center;
+  background-size: contain;
+}
+
+.how-to-money .block-slider .content-slider figure .ab_link {
+  line-height: 5vh;
+}
+
+.how-to-money .block-slider .content-slider .count-slide {
+  margin-bottom: 2vh;
+}
+
+.how-to-money .block-slider .content-slider .count-slide i.ico-slide {
+  display: inline-block;
+  font-size: .7em;
+  border-radius: 50%;
+  background-color: #e3e6e8;
+  color: #fff;
+  width: 10px;
+  height: 10px;
+  margin: 2px 10px;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.how-to-money .block-slider .content-slider .count-slide i.ico-slide--active {
+  content: attr(data-count);
+  background-color: #18a4d2;
+  padding: 5px 10px;
+  font-size: 1em;
+  width: auto;
+  height: auto;
+}
+
 .ab_link {
   color: #18a4d2;
   text-decoration: none;
   border-bottom: 1px dashed #18a4d2;
+  font-weight: bold;
 }
 
 .ab_button {
@@ -154,7 +245,8 @@ header main .ab_button {
 }
 
 .separator {
-  margin: 5vh 0;
+  margin: 2.5vh 0;
+  border-top: 2px dashed #b8bdc3;
 }
 
 .js-slider {

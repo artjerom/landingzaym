@@ -11,11 +11,12 @@
   max-width: 640px;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+  color: $main-text;
 }
 
 input[type='text'] {
   background: #fff;
-  color: #222;
+  color: $main-text;
   border: solid 1px #b0bac5;
   border-radius: 3px;
   padding: 5px 0;
@@ -23,6 +24,11 @@ input[type='text'] {
 }
 
 header {
+  // @TODO: Запилить рамку
+  padding-bottom: 30px;
+  //border-image: url(../img/wave_border.png) 20 10 20 10;
+  border-width: 60px;
+  //border-bottom: 16px solid;
   .logo {
     img {
       max-width: 115px;
@@ -35,7 +41,7 @@ header {
       color: #222;
     }
   }
-  .info {
+  .info-title {
     margin-top: 5vh;
     margin-bottom: 2vh;
     h2 {
@@ -104,6 +110,86 @@ header {
     }
     .ab_button {
       margin: 15px auto;
+    }
+  }
+
+
+  .info {
+    margin-top: 10vh;
+    ul {
+      list-style: none;
+      li {
+        display: flex;
+        align-items: center;
+        i {
+          background: url(../img/sprites/header-info.png) no-repeat;
+          display: block;
+          margin-right: 15px;
+          margin-bottom: 20px;
+          &.sp_info-time {
+            width: 65px;
+            height: 60px;
+            background-position: -5px -5px;
+          }
+          &.sp_info-anywhere {
+            width: 65px;
+            height: 60px;
+            background-position: -75px -5px;
+          }
+          &.sp_info-online {
+            width: 65px;
+            height: 57px;
+            background-position: -5px -75px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Как получить деньги
+.how-to-money {
+  .block-slider {
+    display: flex;
+    align-items: center;
+    .arrow--left {
+      // code ...
+    }
+    .content-slider {
+      figure {
+        .back-img {
+          height: 50vh;
+          max-height: 160px;
+          background: url(../img/how-slide-1.png) no-repeat center;
+          background-size: contain;
+        }
+        .ab_link {
+          line-height: 5vh;
+        }
+      }
+      .count-slide {
+        margin-bottom: 2vh;
+        i.ico-slide {
+          display: inline-block;
+          font-size: .7em;
+          border-radius: 50%;
+          background-color: $gray;
+          color: #fff;
+          width: 10px;
+          height: 10px;
+          margin: 2px 10px;
+          font-style: normal;
+          cursor: pointer;
+          &--active {
+            content: attr(data-count);
+            background-color: $main-color;
+            padding: 5px 10px;
+            font-size: 1em;
+            width: auto;
+            height: auto;
+          }
+        }
+      }
     }
   }
 }
