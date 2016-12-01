@@ -168,29 +168,29 @@ header .info ul li i.sp_info-online {
   background-position: -5px -75px;
 }
 
-.how-to-money .block-slider {
+section.how-to-money .block-slider {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center;
 }
 
-.how-to-money .block-slider .content-slider figure .back-img {
+section.how-to-money .block-slider .content-slider figure .back-img {
   height: 50vh;
   max-height: 160px;
   background: url(../img/how-slide-1.png) no-repeat center;
   background-size: contain;
 }
 
-.how-to-money .block-slider .content-slider figure .ab_link {
+section.how-to-money .block-slider .content-slider figure .ab_link {
   line-height: 5vh;
 }
 
-.how-to-money .block-slider .content-slider .count-slide {
+section.how-to-money .block-slider .content-slider .count-slide {
   margin-bottom: 2vh;
 }
 
-.how-to-money .block-slider .content-slider .count-slide i.ico-slide {
+section.how-to-money .block-slider .content-slider .count-slide i.ico-slide {
   display: inline-block;
   font-size: .7em;
   border-radius: 50%;
@@ -203,13 +203,40 @@ header .info ul li i.sp_info-online {
   cursor: pointer;
 }
 
-.how-to-money .block-slider .content-slider .count-slide i.ico-slide--active {
+section.how-to-money .block-slider .content-slider .count-slide i.ico-slide--active {
   content: attr(data-count);
   background-color: #18a4d2;
   padding: 5px 10px;
   font-size: 1em;
   width: auto;
   height: auto;
+}
+
+section.about nav {
+  max-width: 320px;
+  margin-top: 2vh;
+}
+
+section.about nav a.btn-about {
+  cursor: pointer;
+  background-color: #fff;
+  padding: 5px 10px;
+  border: 2px solid #18a4d2;
+}
+
+section.about nav a.btn-about--active {
+  color: #fff;
+  background-color: #18a4d2;
+}
+
+section.about nav a.btn-about:first-child {
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+section.about nav a.btn-about:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .ab_link {
