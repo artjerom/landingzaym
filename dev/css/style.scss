@@ -1,0 +1,109 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#all {
+  padding: 10px 20px;
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+}
+
+input[type='text'] {
+  background: #fff;
+  color: #222;
+  border: solid 1px #b0bac5;
+  border-radius: 3px;
+  padding: 5px 0;
+  font-size: 1em;
+}
+
+header {
+  .logo {
+    img {
+      max-width: 115px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+  }
+  .info {
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    h2 {
+      margin-bottom: 3vh;
+      a {
+        &::after {
+           //@TODO: Добавить галочку вниз
+          padding-left: 10px;
+          -webkit-transform: rotate(20deg);
+          -ms-transform: rotate(20deg);
+          transform: rotate(20deg);
+        }
+      }
+    }
+  }
+
+  // Калькулятор
+  main {
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0 0 64px 0 #c3c8cd;
+    border-radius: 5px;
+    border: 2px solid #c3c8cd;
+    .calc-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        width: 40%;
+        white-space: nowrap;
+      }
+      .range_field {
+        max-width: 125px;
+        width: 40%;
+        text-align: right;
+        padding-right: 5px;
+      }
+    }
+    .js-slider {
+      width: 100%;
+      &--sum {
+        margin-bottom: 25px;
+      }
+    }
+    .info-zaym {
+      display: flex;
+      margin-top: 25px;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-top: 2px dashed $gray;
+      border-bottom: 2px dashed $gray;
+      h4 {
+        color: $accent-color;
+        font-size: 2em;
+        font-weight: normal;
+      }
+      .info-sum {
+        text-align: left;
+      }
+      .info-back {
+        text-align: right;
+        h4 {
+          color: $text-gray;
+        }
+      }
+    }
+    .ab_button {
+      margin: 15px auto;
+    }
+  }
+}
