@@ -7,11 +7,12 @@
   white-space: nowrap;
 }
 
+// Переделать в миксин ?
 .ab_button {
   background: #42b28f;
   border: 0;
   border-bottom: 1px solid #1f7a5d;
-  text-shadow: 0 -1px #196647;
+  text-shadow: 0 -1px #3879a2;
   padding: 20px 25px;
   font-size: 14px;
   display: inline-block;
@@ -19,7 +20,6 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 -1px #3879a2;
   color: #ffffff;
   cursor: pointer;
   border-radius: 3px;

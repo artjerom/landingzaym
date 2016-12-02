@@ -5,7 +5,7 @@
 }
 
 #all {
-  padding: 10px 0;
+  padding-top: 15px;
   max-width: 640px;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
@@ -129,7 +129,7 @@ header main .ab_button {
 }
 
 header .info {
-  margin-top: 10vh;
+  margin-top: 35px;
 }
 
 header .info ul {
@@ -195,7 +195,7 @@ section.about {
 
 section.about nav {
   max-width: 320px;
-  margin: 3vh auto;
+  margin: 40px auto;
 }
 
 section.about nav a.btn-about {
@@ -203,7 +203,7 @@ section.about nav a.btn-about {
   background-color: #fff;
   color: #18a4d2;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border: 1px solid #18a4d2;
 }
 
@@ -213,13 +213,13 @@ section.about nav a.btn-about--active {
 }
 
 section.about nav a.btn-about:first-child {
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 section.about nav a.btn-about:last-child {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 section.about .js-change-content {
@@ -288,6 +288,164 @@ section.is-working figure .back-img {
   border-radius: 50%;
 }
 
+section.zaym {
+  background: #3bb38e url(../img/zaym-bg.png);
+  padding: 15px 5px 25px 5px;
+  color: #fff;
+  line-height: 7vh;
+}
+
+section.zaym h2 {
+  margin-bottom: -2vh;
+}
+
+section.zaym .ab_button {
+  color: #3bb38e;
+  background-color: #fff;
+  text-shadow: none;
+  border-bottom: 3px solid #e3e6e8;
+}
+
+footer {
+  margin-top: 25px;
+}
+
+footer h2 {
+  margin: 5px 0;
+}
+
+footer .info {
+  color: #43474a;
+}
+
+footer .info b {
+  white-space: nowrap;
+  font-size: .9em;
+  border-bottom: 2px dashed #43474a;
+}
+
+footer .info p {
+  margin-top: 20px;
+}
+
+footer .info ul {
+  margin: 20px 0;
+  list-style: none;
+}
+
+footer .info ul li {
+  margin: 15px 0;
+}
+
+footer .info ul li .ab_link {
+  white-space: normal;
+}
+
+footer section.block-feedback {
+  padding: 10px 5px;
+  background-color: #f7fafc;
+}
+
+footer section.block-feedback h3 {
+  white-space: nowrap;
+  font-size: 1.4em;
+  margin-bottom: 25px;
+}
+
+footer section.block-feedback h3::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  margin-right: 15px;
+  background: url(../img/ico-feeback.png) no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 30px;
+}
+
+footer section.block-feedback main {
+  color: #43474a;
+}
+
+footer section.block-feedback main p {
+  text-align: justify;
+}
+
+footer section.block-feedback main .feedback {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin-top: 25px;
+}
+
+footer section.block-feedback main .feedback a.btn_feedbadk {
+  font-size: .8em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  max-width: 140px;
+  max-height: 40px;
+  color: #63676a;
+  padding: 10px 15px;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: #e3e6e8;
+  border-radius: 4px;
+  border-bottom: 4px solid #c7cdd1;
+  cursor: pointer;
+}
+
+footer section.block-feedback main .feedback a.btn_feedbadk img {
+  width: 24px;
+  height: 18px;
+  margin-right: 2px;
+}
+
+footer section.block-feedback main .feedback .call {
+  margin-left: 10px;
+}
+
+footer section.block-feedback main .feedback .call a.tel {
+  color: #18a4d2;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+footer section.main-footer {
+  padding: 15px 10px;
+  color: #51657b;
+  background-color: #2d3a4a;
+}
+
+footer section.main-footer .head-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer section.main-footer .head-footer img {
+  float: left;
+  width: 20vw;
+  height: 2vh;
+  max-width: 190px;
+  min-width: 160px;
+}
+
+footer section.main-footer .head-footer a.full-version {
+  float: right;
+  white-space: nowrap;
+  font-size: .8em;
+  color: #51657b;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .ab_link {
   color: #18a4d2;
   text-decoration: none;
@@ -301,7 +459,7 @@ section.is-working figure .back-img {
   background: #42b28f;
   border: 0;
   border-bottom: 1px solid #1f7a5d;
-  text-shadow: 0 -1px #196647;
+  text-shadow: 0 -1px #3879a2;
   padding: 20px 25px;
   font-size: 14px;
   display: inline-block;
@@ -309,7 +467,6 @@ section.is-working figure .back-img {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 -1px #3879a2;
   color: #ffffff;
   cursor: pointer;
   border-radius: 3px;
