@@ -5,7 +5,7 @@
 }
 
 #all {
-  padding: 10px 20px;
+  padding: 10px 0;
   max-width: 640px;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
@@ -168,16 +168,7 @@ header .info ul li i.sp_info-online {
   background-position: -5px -75px;
 }
 
-section.how-to-money .block-slider {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-}
-
 section.how-to-money .block-slider .content-slider figure .back-img {
-  height: 50vh;
-  max-height: 160px;
   background: url(../img/how-slide-1.png) no-repeat center;
   background-size: contain;
 }
@@ -190,38 +181,30 @@ section.how-to-money .block-slider .content-slider .count-slide {
   margin-bottom: 2vh;
 }
 
-section.how-to-money .block-slider .content-slider .count-slide i.ico-slide {
-  display: inline-block;
-  font-size: .7em;
-  border-radius: 50%;
-  background-color: #e3e6e8;
-  color: #fff;
-  width: 10px;
-  height: 10px;
-  margin: 2px 10px;
-  font-style: normal;
-  cursor: pointer;
-}
-
 section.how-to-money .block-slider .content-slider .count-slide i.ico-slide--active {
   content: attr(data-count);
-  background-color: #18a4d2;
   padding: 5px 10px;
   font-size: 1em;
   width: auto;
   height: auto;
 }
 
+section.about {
+  margin-bottom: 5vh;
+}
+
 section.about nav {
   max-width: 320px;
-  margin-top: 2vh;
+  margin: 3vh auto;
 }
 
 section.about nav a.btn-about {
   cursor: pointer;
   background-color: #fff;
+  color: #18a4d2;
+  font-weight: bold;
   padding: 5px 10px;
-  border: 2px solid #18a4d2;
+  border: 1px solid #18a4d2;
 }
 
 section.about nav a.btn-about--active {
@@ -239,11 +222,79 @@ section.about nav a.btn-about:last-child {
   border-bottom-right-radius: 15px;
 }
 
+section.about .js-change-content {
+  display: none;
+}
+
+section.about .js-change-content--active {
+  display: block;
+}
+
+section.about .js-change-content p {
+  margin-bottom: 2vh;
+}
+
+section.about .js-change-content ul {
+  list-style: none;
+}
+
+section.about .js-change-content ul li {
+  margin: 2vh 0;
+  line-height: 20px;
+}
+
+section.about .js-change-content ul li::before {
+  float: left;
+  content: '';
+  position: relative;
+  top: 4px;
+  display: block;
+  margin-right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #18a4d2;
+  border-radius: 50%;
+}
+
+section.is-working {
+  background-color: #f7fafc;
+  padding: 20px 10px;
+}
+
+section.is-working .info {
+  margin-bottom: 4vh;
+}
+
+section.is-working .info p {
+  margin-top: 2vh;
+}
+
+section.is-working .info p span {
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 15px 5px 0;
+  background: url(../img/marker-text.png) no-repeat;
+  white-space: nowrap;
+  background-size: cover;
+}
+
+section.is-working figure .back-img {
+  height: 50vh;
+  max-height: 140px !important;
+  margin: 0px auto;
+  width: 93%;
+  background-size: contain;
+  background: url(../img/avatar.png) no-repeat;
+  border-radius: 50%;
+}
+
 .ab_link {
   color: #18a4d2;
   text-decoration: none;
   border-bottom: 1px dashed #18a4d2;
   font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .ab_button {
@@ -271,14 +322,18 @@ section.about nav a.btn-about:last-child {
   margin: 0 auto;
 }
 
+.ab_indent {
+  padding: 0px 20px;
+}
+
 .separator {
-  margin: 2.5vh 0;
-  border-top: 2px dashed #b8bdc3;
+  margin: 2.5vh auto;
+  max-width: 90vw;
+  border-top: 1.5px dashed #b8bdc3;
 }
 
 .js-slider {
   outline: none !important;
-  outline: none;
   padding: 0;
   width: 50%;
   height: 6px;
@@ -290,4 +345,49 @@ section.about nav a.btn-about:last-child {
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: 25px;
+}
+
+.block-slider {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.block-slider .arrow {
+  cursor: pointer;
+}
+
+.block-slider .arrow--right {
+  transform: rotateY(180deg);
+}
+
+.block-slider .content-slider figure .back-img {
+  height: 50vh;
+  max-height: 160px;
+}
+
+.block-slider .content-slider figure .ab_link {
+  line-height: 5vh;
+}
+
+.block-slider .content-slider .count-slide {
+  margin: 2vh auto;
+}
+
+.block-slider .content-slider .count-slide i.ico-slide {
+  display: inline-block;
+  font-size: .7em;
+  border-radius: 50%;
+  background-color: #e3e6e8;
+  color: #fff;
+  width: 10px;
+  height: 10px;
+  margin: 2px 10px;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.block-slider .content-slider .count-slide i.ico-slide--active {
+  background-color: #18a4d2;
 }

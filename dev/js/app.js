@@ -1,7 +1,5 @@
 /*ФАЙЛ ДЛЯ ОТОБРАЖЕНИЯ ВЕРСТКИ*/
 
-var sliderSum = $('.js-slider--sum');
-
 $('input[type=range]').on('input', function(e){
     var min = e.target.min,
         max = e.target.max,

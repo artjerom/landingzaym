@@ -7,7 +7,7 @@
 }
 
 #all {
-  padding: 10px 20px;
+  padding: 10px 0;
   max-width: 640px;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
@@ -150,16 +150,9 @@ header {
 // Как получить деньги
 section.how-to-money {
   .block-slider {
-    display: flex;
-    align-items: center;
-    .arrow--left {
-      // code ...
-    }
     .content-slider {
       figure {
         .back-img {
-          height: 50vh;
-          max-height: 160px;
           background: url(../img/how-slide-1.png) no-repeat center;
           background-size: contain;
         }
@@ -169,25 +162,12 @@ section.how-to-money {
       }
       .count-slide {
         margin-bottom: 2vh;
-        i.ico-slide {
-          display: inline-block;
-          font-size: .7em;
-          border-radius: 50%;
-          background-color: $gray;
-          color: #fff;
-          width: 10px;
-          height: 10px;
-          margin: 2px 10px;
-          font-style: normal;
-          cursor: pointer;
-          &--active {
-            content: attr(data-count);
-            background-color: $main-color;
-            padding: 5px 10px;
-            font-size: 1em;
-            width: auto;
-            height: auto;
-          }
+        i.ico-slide--active {
+          content: attr(data-count);
+          padding: 5px 10px;
+          font-size: 1em;
+          width: auto;
+          height: auto;
         }
       }
     }
@@ -196,14 +176,17 @@ section.how-to-money {
 
 // Почему мы
 section.about {
+  margin-bottom: 5vh;
   nav {
     max-width: 320px;
-    margin-top: 2vh;
+    margin: 3vh auto;
     a.btn-about {
       cursor: pointer;
       background-color: #fff;
+      color: $main-color;
+      font-weight: bold;
       padding: 5px 10px;
-      border: 2px solid $main-color;
+      border: 1px solid $main-color;
       &--active {
         color: #fff;
         background-color: $main-color;
@@ -216,6 +199,65 @@ section.about {
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
       }
+    }
+  }
+  .js-change-content {
+    display: none;
+    &--active {
+      display: block;
+    }
+    p {
+      margin-bottom: 2vh;
+    }
+    ul {
+      list-style: none;
+      li {
+        margin: 2vh 0;
+        line-height: 20px;
+        &::before {
+          float: left;
+          content: '';
+          position: relative;
+          top: 4px;
+          display: block;
+          margin-right: 10px;
+          width: 10px;
+          height: 10px;
+          background-color: $main-color;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+// Zaymigo работает
+section.is-working {
+  background-color: $gray + 20%;
+  padding: 20px 10px;
+  .info {
+    margin-bottom: 4vh;
+    p {
+      margin-top: 2vh;
+      span {
+        color: #fff;
+        font-weight: bold;
+        padding: 5px 15px 5px 0;
+        background: url(../img/marker-text.png) no-repeat;
+        white-space: nowrap;
+        background-size: cover;
+      }
+    }
+  }
+  figure {
+    .back-img {
+      height: 50vh;
+      max-height: 140px !important;
+      margin: 0px auto;
+      width: 93%;
+      background-size: contain;
+      background: url(../img/avatar.png) no-repeat;
+      border-radius: 50%;
     }
   }
 }
