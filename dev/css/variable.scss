@@ -1,6 +1,16 @@
 @charset "utf-8";
 
 $main-color: #18a4d2;
+$main-text: #18181a;
 $gray: #e3e6e8;
 $text-gray: #b8bdc3;
 $accent-color: #3bb38e;
+$text-footer: #43474a;
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

@@ -9,10 +9,12 @@
   </head>
   <body>
     <div id="all">
-      <header>
+      <!-- Калькулятор и шапка-->
+      <header class="ab_indent">
         <div class="logo"><img src="img/logo.png" alt="zaymigo"><a href="tel: 88007007286">8 800 700-72-86</a></div>
-        <div class="info">
-          <h2>Займ на<a href="#" class="ab_link">вашу карту</a> за 10 минут</h2><span>Быстро, просто и без поручителей</span>
+        <div class="info-title">
+          <h2>Займ на <a class="ab_link">вашу карту</a> за 10 минут
+          </h2><span>Быстро, просто и без поручителей</span>
         </div>
         <main>
           <form action="#">
@@ -40,22 +42,77 @@
             <div class="ab_center"><a class="ab_button">Получить деньги</a></div>
           </form>
         </main>
+        <div class="info info--header">
+          <ul>
+            <li><i class="sp_info-time"></i>Выдаем займы круглые сутки</li>
+            <li><i class="sp_info-anywhere"></i>Работаем по всей россии</li>
+            <li><i class="sp_info-online"></i>Достаточно онлайн заявки</li>
+          </ul>
+        </div>
       </header>
       <hr class="separator">
-      <!--
-      <section class="how-to-money">
-      &lt;!&ndash;Блок: Как получить деньги&ndash;&gt;
-      <h2>Как получить деньги</h2>
-      <main></main>
+      <!-- Как получить деньги-->
+      <!-- @TODO: Нет классов для js-->
+      <section class="how-to-money ab_indent">
+        <h2 class="ab_center">Как получить деньги</h2>
+        <div class="block-slider">
+          <div class="arrow arrow--left"><img src="img/arrow-back.png">
+            <!-- Стрелка влево-->
+          </div>
+          <div class="content-slider ab_center">
+            <figure>
+              <div class="back-img ab_center"></div>
+              <div class="count-slide"><i data-count="1" class="ico-slide ico-slide--active ico-slide--1">1</i><i data-count="2" class="ico-slide ico-slide--2"></i><i data-count="3" class="ico-slide ico-slide--3"></i></div><span>Заполняете небольшую онлайн-заявку.</span><br><a class="ab_link">Заполнить заявку</a>
+            </figure>
+          </div>
+          <div class="arrow arrow--right"><img src="img/arrow-back.png"></div>
+        </div>
       </section>
       <hr class="separator">
-      <section class="about">
-      &lt;!&ndash;Блок: Почему мы?&ndash;&gt;
+      <section class="about ab_indent">
+        <h2 class="ab_center">Почему мы?</h2>
+        <main>
+          <nav class="ab_center"><a class="btn-about btn-about--active">Безопасно</a><a class="btn-about">Выгодно</a><a class="btn-about">Удобно</a></nav>
+          <div class="js-change-content js-change-content--active">
+            <p><b>Zaymigo</b>- лицензированная организация. Вы защищены законом «О потребительском кредитовании»</p>
+            <ul>
+              <li>Белая компания. Состоит в государственном&nbsp;<a class="ab_link">реестре МФО</a></li>
+              <li>Ваши персональные данные защищены и не попадут в руки третьих лиц.</li>
+              <li>Вы не передаете на свою платежную информацию.</li>
+            </ul>
+          </div>
+        </main>
       </section>
-      <hr class="separator">
+      <!-- @TODO: Переделать слайдер-->
       <section class="is-working">
-      &lt;!&ndash;Блок: Займиго работает&ndash;&gt;
+        <div class="ab_center">
+          <div class="info">
+            <h2>Zaymigo работает</h2>
+            <p>За сутки мы вадали займы<span> 2300 заемщикам.</span>&nbsp;Вот что пишут некоторые из них:</p>
+          </div>
+          <div class="block-slider ab_indent">
+            <div class="arrow arrow--left"><img src="img/arrow-back.png">
+              <!-- Стрелка влево-->
+            </div>
+            <div class="content-slider ab_center">
+              <figure>
+                <div class="back-img ab_center"></div>
+                <!--.ab_center.comment-->
+                <!--        b Евгений Титов-->
+                <!--        br-->
+                <!--        span Очень удобно, занял с первого раза быстро и без проблем. Огромное спасибо-->
+                <div class="count-slide"><i class="ico-slide ico-slide--active ico-slide--1"></i><i class="ico-slide ico-slide--2"></i><i class="ico-slide ico-slide--3"></i><i class="ico-slide ico-slide--4"></i><i class="ico-slide ico-slide--5"></i></div>
+              </figure>
+            </div>
+            <div class="arrow arrow--right"><img src="img/arrow-back.png"></div>
+          </div>
+        </div>
       </section>
+      <section class="zaym ab_center">
+        <h2>Дадим в долг</h2><span>Удобным способом в течение 10 минут</span>
+        <div class="ab_center"><a class="ab_button">Получить деньги</a></div>
+      </section>
+      <!--
       <section class="zaym">
       &lt;!&ndash;Блок: Дадим в долг&ndash;&gt;
       </section>
@@ -65,15 +122,46 @@
       <section class="feedback">
       &lt;!&ndash;Блок: Обратная связь&ndash;&gt;
       </section>
-      &lt;!&ndash;@TODO: Все после блока 'zaym' в футер&ndash;&gt;
-      <footer>
-      </footer>
+      &lt;!&ndash;
       -->
+      <footer>
+        <div class="ab_indent">
+          <h2>Вопросы и ответы</h2>
+          <section class="questions">
+            <div class="info"><b>Как повысить шансы получения займа?</b><br>
+              <p>
+                Вы сможете поделиться информацией о Zaymigo в социальных сетях. Это увеличит вероятность выдачи займа
+                10%.
+              </p><br>
+              <p>Мы не рассылаем рекламу, и не кому не передаем информацию о вашем профиле.</p>
+              <!-- Ссылки-->
+              <ul>
+                <li><a href="#" target="_blank" class="ab_link">Как изменить даты погашения и задолжности?</a></li>
+                <li><a href="#" target="_blank" class="ab_link">На каких условиях я могу получить деньги?</a></li>
+                <li><a href="#" target="_blank" class="ab_link">Что делать, если у меня плохая кредитная история?</a></li>
+                <li><a href="#" target="_blank" class="ab_link">Почему мне отказали?</a></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <section class="block-feedback">
+          <h3 class="title"><i class="ico-feedback"></i>Остались вопросы?</h3>
+          <main class="ab_indent">
+            <p>Не нашли ответа? Мы готовы ответить на ваши вопросы по телефону с 9:00 до 18:00 ежедневно, кроме выходных</p>
+            <div class="feedback"><a class="btn_feedbadk"><img src="img/ico-mail.png">Напишите нам</a>
+              <div class="call"><span>Или позвоните</span><br><a href="tel: 88003434343" class="tel">8 (800) 343-43-43</a></div>
+            </div>
+          </main>
+        </section>
+        <section class="main-footer">
+          <div class="head-footer"><img src="/img/logo-footer.png" class="logo-footer"><a href="#" class="full-version">Полная версия</a><br></div>
+          <div class="content"><span>Контент</span></div>
+        </section>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+      <script src="js/test.js"></script>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
-    <script src="js/test.js"></script>
   </body>
 </html>

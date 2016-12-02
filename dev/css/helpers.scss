@@ -2,13 +2,17 @@
   color: $main-color;
   text-decoration: none;
   border-bottom: 1px dashed $main-color;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
+// Переделать в миксин ?
 .ab_button {
   background: #42b28f;
   border: 0;
   border-bottom: 1px solid #1f7a5d;
-  text-shadow: 0 -1px #196647;
+  text-shadow: 0 -1px #3879a2;
   padding: 20px 25px;
   font-size: 14px;
   display: inline-block;
@@ -16,7 +20,6 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 -1px #3879a2;
   color: #ffffff;
   cursor: pointer;
   border-radius: 3px;
@@ -29,13 +32,21 @@
   margin: 0 auto;
 }
 
-.separator {
-  margin: 5vh 0;
+// Блок с отступами
+.ab_indent {
+  padding: 0px 20px;
 }
 
+// Разделитель
+.separator {
+  margin: 2.5vh auto;
+  max-width: 90vw;
+  border-top: 1.5px dashed $text-gray;
+}
+
+// Ползунок выбора
 .js-slider {
   outline: none !important;
-  outline: none;
   padding: 0;
   width: 50%;
   height: 6px;
@@ -47,4 +58,46 @@
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: 25px;
+}
+
+// Слайдер
+.block-slider {
+  display: flex;
+  align-items: center;
+  .arrow {
+    cursor: pointer;
+    &--right {
+      transform: rotateY(180deg);
+    }
+  }
+  .content-slider {
+    figure {
+      .back-img {
+        height: 50vh;
+        max-height: 160px;
+      }
+      .ab_link {
+        line-height: 5vh;
+      }
+    }
+    // -- Кнопки слайдера
+    .count-slide {
+      margin: 2vh auto;
+      i.ico-slide {
+        display: inline-block;
+        font-size: .7em;
+        border-radius: 50%;
+        background-color: $gray;
+        color: #fff;
+        width: 10px;
+        height: 10px;
+        margin: 2px 10px;
+        font-style: normal;
+        cursor: pointer;
+        &--active {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
 }
