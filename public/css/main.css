@@ -435,12 +435,14 @@ footer section.main-footer .head-footer img {
   height: 2vh;
   max-width: 190px;
   min-width: 160px;
+  min-height: 20px;
 }
 
 footer section.main-footer .head-footer a.full-version {
   float: right;
   white-space: nowrap;
   font-size: .8em;
+  margin-right: 15px;
   color: #51657b;
   font-weight: bold;
   text-decoration: underline;
