@@ -58,6 +58,35 @@
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: 25px;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-thumb {
+    position: relative;
+    top: 4px;
+    box-shadow: 0px 2px 4px $gray;
+    border: .5px solid $gray;
+    height: 24px;
+    width: 24px;
+    border-radius: 49px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+  }
+  &::-moz-range-thumb {
+    position: relative;
+    top: 4px;
+    box-shadow: 0px 2px 4px $gray;
+    border: .5px solid $gray;
+    height: 24px;
+    width: 24px;
+    border-radius: 49px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+  }
 }
 
 // Слайдер
@@ -96,6 +125,64 @@
         cursor: pointer;
         &--active {
           background-color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+// Попапы
+.overlay {
+  // code ...
+}
+
+.popup {
+  margin: 10vh auto;
+  position: fixed;
+  height: 40%;
+  min-height: 470px;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 85%;
+  box-shadow: 0 0 24px 0 rgba(0,0,0,0.7), 0 0 0 999em rgba(0,0,0,0.5);
+  max-width: 460px;
+  padding: 15px 20px;
+  background-color: #fff;
+  .content {
+    main {
+      form {
+        display: flex;
+        flex-direction: column;
+        // Дропдаун
+        select {
+          //-webkit-appearance: none;
+          border: 1px solid #b0bac5;
+          z-index: 9999;
+          padding: 10px;
+          margin: 25px 0;
+          background-color: #fff;
+          color: #ababab;
+          border-radius: 3px;
+          font-size: 1em;
+        }
+        // Текстовые поля
+        .js-phone, .js-message {
+          margin-bottom: 25px;
+          //height: 40px;
+          font-size: 1.1em;
+          padding: 7px;
+        }
+        .js-message {
+          resize: none;
+          min-height: 120px;
+          background: #fff;
+          color: $main-text;
+          border: solid 1px #b0bac5;
+          border-radius: 3px;
+          font-size: 1em;
         }
       }
     }

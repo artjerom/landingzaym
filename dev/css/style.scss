@@ -4,13 +4,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
 }
 
 #all {
   padding-top: 15px;
   max-width: 640px;
   margin: 0 auto;
-  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
   color: $main-text;
 }
 
@@ -24,11 +24,7 @@ input[type='text'] {
 }
 
 header {
-  // @TODO: Запилить рамку
   padding-bottom: 30px;
-  //border-image: url(../img/wave_border.png) 20 10 20 10;
-  border-width: 60px;
-  //border-bottom: 16px solid;
   .logo {
     img {
       max-width: 115px;
@@ -62,7 +58,7 @@ header {
   main {
     padding: 15px 20px;
     background-color: #fff;
-    box-shadow: 0 0 64px 0 #c3c8cd;
+    box-shadow: 0 0 64px 0 #eaeaea, 0 25px 32px 0 #f4f4f4;
     border-radius: 5px;
     border: 2px solid #c3c8cd;
     .calc-title {
@@ -115,7 +111,11 @@ header {
 
 
   .info {
-    margin-top: 35px;
+    border-image: url(../img/wave_border.png) 20 10 20 10;
+    border-width: 60px;
+    border-top: 12px solid;
+    margin-top: 27px;
+    padding-top: 25px;
     ul {
       list-style: none;
       li {
@@ -253,10 +253,7 @@ section.is-working {
     .back-img {
       height: 50vh;
       max-height: 140px !important;
-      margin: 0px auto;
-      width: 93%;
-      background-size: contain;
-      background: url(../img/avatar.png) no-repeat;
+      margin: 15px auto;
       border-radius: 50%;
     }
   }
@@ -267,7 +264,7 @@ section.zaym {
   background: $accent-color url(../img/zaym-bg.png);
   padding: 15px 5px 25px 5px;
   color: #fff;
-  line-height: 7vh;
+  line-height: 50px;
   h2 {
     margin-bottom: -2vh;
   }
@@ -328,12 +325,13 @@ footer {
     main {
       color: $text-footer;
       p {
-        text-align: justify;
+        word-spacing: 12px;
       }
       .feedback {
         display: flex;
         justify-content: space-between;
         margin-top: 25px;
+        // Кнопка обратной связи
         a.btn_feedbadk {
           font-size: .8em;
           display: flex;
@@ -379,14 +377,22 @@ footer {
         height: 2vh;
         max-width: 190px;
         min-width: 160px;
+        min-height: 20px;
       }
       a.full-version {
         float: right;
         white-space: nowrap;
         font-size: .8em;
+        margin-right: 15px;
         color: #51657b;
         font-weight: bold;
         text-decoration: underline;
+      }
+    }
+    .content {
+      h3 {
+        font-weight: normal;
+        margin: 15px 0;
       }
     }
   }
