@@ -1,0 +1,15 @@
+.popup.popup--feedback
+    .content
+        h2.ab_center Обратная связь
+        i.ico-close
+        main
+            form(action='#')
+                select
+                    option(selected disabled) Тема обращения
+                    option() Проблема 1
+                    option() Проблемы 2
+                    option() Проблема 3
+                    option() Проблема 4
+                input.js-phone(type='text' required placeholder='Ваш телефон *')
+                textarea.js-message(required placeholder='Текст сообщения *')
+                a.ab_button Отправить
