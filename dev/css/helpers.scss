@@ -58,6 +58,35 @@
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: 25px;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-thumb {
+    position: relative;
+    top: 4px;
+    box-shadow: 0px 2px 4px $gray;
+    border: .5px solid $gray;
+    height: 24px;
+    width: 24px;
+    border-radius: 49px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+  }
+  &::-moz-range-thumb {
+    position: relative;
+    top: 4px;
+    box-shadow: 0px 2px 4px $gray;
+    border: .5px solid $gray;
+    height: 24px;
+    width: 24px;
+    border-radius: 49px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+  }
 }
 
 // Слайдер

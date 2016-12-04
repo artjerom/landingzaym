@@ -23,7 +23,6 @@ input[type='text'] {
 
 header {
   padding-bottom: 30px;
-  border-width: 60px;
 }
 
 header .logo {
@@ -61,7 +60,7 @@ header .info-title h2 a::after {
 header main {
   padding: 15px 20px;
   background-color: #fff;
-  box-shadow: 0 0 64px 0 #c3c8cd;
+  box-shadow: 0 0 64px 0 #eaeaea, 0 25px 32px 0 #f4f4f4;
   border-radius: 5px;
   border: 2px solid #c3c8cd;
 }
@@ -129,7 +128,11 @@ header main .ab_button {
 }
 
 header .info {
-  margin-top: 35px;
+  border-image: url(../img/wave_border.png) 20 10 20 10;
+  border-width: 60px;
+  border-top: 12px solid;
+  margin-top: 27px;
+  padding-top: 25px;
 }
 
 header .info ul {
@@ -281,10 +284,7 @@ section.is-working .info p span {
 section.is-working figure .back-img {
   height: 50vh;
   max-height: 140px !important;
-  margin: 0px auto;
-  width: 93%;
-  background-size: contain;
-  background: url(../img/avatar.png) no-repeat;
+  margin: 15px auto;
   border-radius: 50%;
 }
 
@@ -292,7 +292,7 @@ section.zaym {
   background: #3bb38e url(../img/zaym-bg.png);
   padding: 15px 5px 25px 5px;
   color: #fff;
-  line-height: 7vh;
+  line-height: 50px;
 }
 
 section.zaym h2 {
@@ -369,7 +369,7 @@ footer section.block-feedback main {
 }
 
 footer section.block-feedback main p {
-  text-align: justify;
+  word-spacing: 12px;
 }
 
 footer section.block-feedback main .feedback {
@@ -448,6 +448,11 @@ footer section.main-footer .head-footer a.full-version {
   text-decoration: underline;
 }
 
+footer section.main-footer .content h3 {
+  font-weight: normal;
+  margin: 15px 0;
+}
+
 .ab_link {
   color: #18a4d2;
   text-decoration: none;
@@ -504,6 +509,38 @@ footer section.main-footer .head-footer a.full-version {
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: 25px;
+}
+
+.js-slider:focus {
+  outline: none;
+}
+
+.js-slider::-webkit-slider-thumb {
+  position: relative;
+  top: 4px;
+  box-shadow: 0px 2px 4px #e3e6e8;
+  border: 0.5px solid #e3e6e8;
+  height: 24px;
+  width: 24px;
+  border-radius: 49px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+
+.js-slider::-moz-range-thumb {
+  position: relative;
+  top: 4px;
+  box-shadow: 0px 2px 4px #e3e6e8;
+  border: 0.5px solid #e3e6e8;
+  height: 24px;
+  width: 24px;
+  border-radius: 49px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
 }
 
 .block-slider {
