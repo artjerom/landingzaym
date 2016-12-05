@@ -498,25 +498,35 @@ footer section.main-footer .content h3 {
 }
 
 .js-slider {
+  -webkit-appearance: none;
+  background-color: #e3e6e8;
+  background-image: linear-gradient(#3bb38e, #3bb38e);
+  background-repeat: no-repeat;
   outline: none !important;
   padding: 0;
   width: 50%;
   height: 6px;
-  background-color: #e3e6e8;
-  background-image: linear-gradient(#3bb38e, #3bb38e);
-  background-size: 50% 100%;
-  background-repeat: no-repeat;
   border-radius: 10px;
   cursor: pointer;
-  -webkit-appearance: none;
   margin-top: 25px;
+  box-shadow: none;
+}
+
+.js-slider::-moz-range-track {
+  background: transparent;
+}
+
+.js-slider::-moz-focus-outer {
+  border: none;
 }
 
 .js-slider:focus {
-  outline: none;
+  outline: none !important;
+  border: none;
 }
 
 .js-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
   position: relative;
   top: 4px;
   box-shadow: 0px 2px 4px #e3e6e8;
@@ -526,7 +536,6 @@ footer section.main-footer .content h3 {
   border-radius: 49px;
   background: #ffffff;
   cursor: pointer;
-  -webkit-appearance: none;
   margin-top: -8px;
 }
 
@@ -540,7 +549,6 @@ footer section.main-footer .content h3 {
   border-radius: 49px;
   background: #ffffff;
   cursor: pointer;
-  -webkit-appearance: none;
   margin-top: -8px;
 }
 
