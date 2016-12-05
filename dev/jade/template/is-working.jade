@@ -1,4 +1,3 @@
-// @TODO: Переделать слайдер
 section.is-working
     .ab_center
         .info
@@ -6,22 +5,22 @@ section.is-working
             p За сутки мы вадали займы
                 span  2300 заемщикам.
                 | &nbsp;Вот что пишут некоторые из них:
-        .block-slider.ab_indent
+        .ab_slider
             .arrow.arrow--left
                 img(src='img/arrow-back.png')
-                // Стрелка влево
-            .content-slider.ab_center
+            .content-slider
                 figure
-                    img.back-img.ab_center(src='img/avatar.png')
-                    .ab_center.comment
-                            b Евгений Титов
-                            br
-                            span Очень удобно, занял с первого раза быстро и без проблем. Огромное спасибо
-                    .count-slide
-                        i.ico-slide.ico-slide--active.ico-slide--1()
-                        i.ico-slide.ico-slide--2()
-                        i.ico-slide.ico-slide--3()
-                        i.ico-slide.ico-slide--4()
-                        i.ico-slide.ico-slide--5()
+                    .rev-img
+                        img(src='img/avatar.png')
+                    .rev-commnet
+                        b Евгений Титов
+                        br
+                        span Очень удобно, занял с первого раза быстро и без проблем. Огромное спасибо
+                .count-slide
+                    i.ico-slide.ico-slide--active
+                    i.ico-slide
+                    i.ico-slide
+                    i.ico-slide
+                    i.ico-slide
             .arrow.arrow--right
                 img(src='img/arrow-back.png')
