@@ -83,6 +83,9 @@
       transform: rotateY(180deg);
     }
   }
+  .ab_slide:not(.ab_slide--active) {
+    display: none;
+  }
   .count-slide {
     margin: 2vh auto;
     i.ico-slide {

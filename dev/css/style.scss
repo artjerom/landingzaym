@@ -113,9 +113,6 @@ header {
 
 
   .info {
-    //border-image: url(../img/wave_border.png) 20 10 20 10;
-    //border-width: 60px;
-    //border-top: 12px solid;
     margin-top: 27px;
     padding-top: 25px;
     ul {
@@ -259,6 +256,8 @@ section.is-working {
     figure {
       .rev-img {
         img {
+          width: 120px;
+          height: 120px;
           border-radius: 50%;
         }
       }

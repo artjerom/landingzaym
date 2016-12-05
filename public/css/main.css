@@ -294,6 +294,8 @@ section.is-working .ab_slider .arrow {
 }
 
 section.is-working .ab_slider figure .rev-img img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
 }
 
@@ -588,6 +590,10 @@ footer section.main-footer .content h3 {
 
 .ab_slider .arrow--right {
   transform: rotateY(180deg);
+}
+
+.ab_slider .ab_slide:not(.ab_slide--active) {
+  display: none;
 }
 
 .ab_slider .count-slide {
