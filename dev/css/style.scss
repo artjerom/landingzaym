@@ -23,6 +23,7 @@ input[type='text'] {
   font-size: 1em;
 }
 
+// Шапка
 header {
   padding-bottom: 30px;
   .logo {
@@ -42,19 +43,20 @@ header {
     margin-bottom: 2vh;
     h2 {
       margin-bottom: 3vh;
-      a {
-        &::after {
-           //@TODO: Добавить галочку вниз
-          padding-left: 10px;
-          -webkit-transform: rotate(20deg);
-          -ms-transform: rotate(20deg);
-          transform: rotate(20deg);
-        }
+      .ico-dropdown {
+        position: relative;
+        top: 10px;
+        left: 5px;
+        background: url(../img/ic_dropdown.png) no-repeat;
+        background-size: 60%;
+        width: 2px;
+        height: 2px;
+        padding: 0 12px;
       }
     }
   }
 
-  // Калькулятор
+  // -- Калькулятор
   main {
     padding: 15px 20px;
     background-color: #fff;
@@ -111,9 +113,9 @@ header {
 
 
   .info {
-    border-image: url(../img/wave_border.png) 20 10 20 10;
-    border-width: 60px;
-    border-top: 12px solid;
+    //border-image: url(../img/wave_border.png) 20 10 20 10;
+    //border-width: 60px;
+    //border-top: 12px solid;
     margin-top: 27px;
     padding-top: 25px;
     ul {
@@ -149,16 +151,13 @@ header {
 
 // Как получить деньги
 section.how-to-money {
-  .block-slider {
-    .content-slider {
-      figure {
-        .back-img {
-          background: url(../img/how-slide-1.png) no-repeat center;
-          background-size: contain;
-        }
-        .ab_link {
-          line-height: 5vh;
-        }
+  .ab_slider {
+    figure {
+      .rev-img img {
+        width: 160px;
+      }
+      .ab_link {
+        margin: 20px auto;
       }
       .count-slide {
         margin-bottom: 2vh;
@@ -178,10 +177,13 @@ section.how-to-money {
 section.about {
   margin-bottom: 5vh;
   nav {
-    max-width: 320px;
+    max-width: 720px;
+    display: flex;
+    justify-content: center;
     margin: 40px auto;
     a.btn-about {
       cursor: pointer;
+      min-width: 90px;
       background-color: #fff;
       color: $main-color;
       font-weight: bold;
@@ -249,12 +251,20 @@ section.is-working {
       }
     }
   }
-  figure {
-    .back-img {
-      height: 50vh;
-      max-height: 140px !important;
-      margin: 15px auto;
-      border-radius: 50%;
+  .ab_slider {
+    .arrow {
+      position: relative;
+      bottom: 70px;
+    }
+    figure {
+      .rev-img {
+        img {
+          border-radius: 50%;
+        }
+      }
+      .rev-commnet {
+        margin-top: 20px;
+      }
     }
   }
 }
@@ -273,6 +283,9 @@ section.zaym {
     background-color: #fff;
     text-shadow: none;
     border-bottom: 3px solid $gray;
+    &:hover {
+      background-color: darken(#fff, 10%);
+    }
   }
 }
 
@@ -325,7 +338,7 @@ footer {
     main {
       color: $text-footer;
       p {
-        word-spacing: 12px;
+        word-spacing: 6px;
       }
       .feedback {
         display: flex;
@@ -378,7 +391,7 @@ footer {
         height: 2vh;
         max-width: 190px;
         min-width: 160px;
-        min-height: 20px;
+        min-height: 17px;
       }
       a.full-version {
         float: right;

@@ -8,7 +8,7 @@
 }
 
 .ab_button {
-  background: #42b28f;
+  background: $accent-color;
   border: 0;
   border-bottom: 1px solid #1f7a5d;
   text-shadow: 0 -1px #3879a2;
@@ -24,6 +24,9 @@
   border-radius: 3px;
   line-height: 11px;
   white-space: nowrap;
+  &:hover {
+    background: lighten($accent-color, 10%);
+  }
 }
 
 .ab_center {
@@ -70,8 +73,9 @@
 }
 
 // Слайдер
-.block-slider {
+.ab_slider {
   display: flex;
+  flex-direction: row;
   align-items: center;
   .arrow {
     cursor: pointer;
@@ -79,48 +83,32 @@
       transform: rotateY(180deg);
     }
   }
-  .content-slider {
-    figure {
-      .back-img {
-        height: 50vh;
-        max-height: 160px;
-      }
-      .ab_link {
-        line-height: 5vh;
-      }
-    }
-    // -- Кнопки слайдера
-    .count-slide {
-      margin: 2vh auto;
-      i.ico-slide {
-        display: inline-block;
-        font-size: .7em;
-        border-radius: 50%;
-        background-color: $gray;
-        color: #fff;
-        width: 10px;
-        height: 10px;
-        margin: 2px 10px;
-        font-style: normal;
-        cursor: pointer;
-        &--active {
-          background-color: $main-color;
-        }
+  .count-slide {
+    margin: 2vh auto;
+    i.ico-slide {
+      display: inline-block;
+      font-size: .7em;
+      border-radius: 50%;
+      background-color: $gray;
+      color: #fff;
+      width: 10px;
+      height: 10px;
+      margin: 2px 10px;
+      font-style: normal;
+      cursor: pointer;
+      &--active {
+        background-color: $main-color;
       }
     }
   }
 }
 
 // Попапы
-.overlay {
-  // code ...
-}
-
 .popup {
   margin: 10vh auto;
+  height: 30%;
+  min-height: 160px;
   position: fixed;
-  height: 40%;
-  min-height: 470px;
   text-align: center;
   top: 0;
   bottom: 0;
@@ -129,9 +117,12 @@
   width: 85%;
   box-shadow: 0 0 24px 0 rgba(0,0,0,0.7), 0 0 0 999em rgba(0,0,0,0.5);
   max-width: 460px;
-  padding: 15px 20px;
   background-color: #fff;
-  .content {
+  &--feedback {
+    height: 40%;
+    padding: 15px 20px;
+    min-height: 420px;
+    // Обратная связь
     main {
       form {
         display: flex;
@@ -163,6 +154,54 @@
           border: solid 1px #b0bac5;
           border-radius: 3px;
           font-size: 1em;
+        }
+        .ab_button {
+          background-color: $main-color;
+          max-width: 160px;
+        }
+      }
+    }
+  }
+  .content {
+    i.ico-close {
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      width: 10%;
+      height: 11%;
+      background: url(../img/btn_close.png) no-repeat;
+      display: block;
+      background-size: 45%;
+    }
+    h2 {
+      font-size: 1em;
+    }
+  }
+  // Выбор способа получения
+  &--method {
+    padding: 15px 5px;
+    main {
+      display: flex;
+      margin-top: 25px;
+      .method {
+        cursor: pointer;
+        width: 100%;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 2px dotted $gray;
+        color: $text-gray;
+        img {
+          margin-bottom: 10px;
+          width: 90%;
+        }
+        h3 {
+          font-size: .9em;
+        }
+        &--active {
+          color: $main-text;
+          border: 2px solid $main-color;
         }
       }
     }

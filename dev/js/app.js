@@ -1,5 +1,3 @@
-/*ФАЙЛ ДЛЯ ОТОБРАЖЕНИЯ ВЕРСТКИ*/
-
 $('input[type=range]').on('input', function(e){
     var min = e.target.min,
         max = e.target.max,

@@ -1,3 +1,4 @@
+// Обратная связь
 .popup.popup--feedback(style='display: none;')
     .content
         h2.ab_center Обратная связь
@@ -12,4 +13,18 @@
                     option() Проблема 4
                 input.js-phone(type='text' required placeholder='Ваш телефон или email *')
                 textarea.js-message(required placeholder='Текст сообщения *')
-                a.ab_button Отправить
+                .ab_center
+                    a.ab_button Отправить
+
+// Выбор способа получения
+.popup.popup--method(style='display: none;')
+    .content
+        h2.ab_center Способ получения
+        i.ico-close
+        main.ab_center
+         .method.method--card.method--active
+            img(src='img/visa.png')
+            h3 на карту
+         .method.method--contact
+            img(src='img/cash.png')
+            h3 наличными

@@ -52,9 +52,15 @@ header .info-title h2 {
   margin-bottom: 3vh;
 }
 
-header .info-title h2 a::after {
-  padding-left: 10px;
-  transform: rotate(20deg);
+header .info-title h2 .ico-dropdown {
+  position: relative;
+  top: 10px;
+  left: 5px;
+  background: url(../img/ic_dropdown.png) no-repeat;
+  background-size: 60%;
+  width: 2px;
+  height: 2px;
+  padding: 0 12px;
 }
 
 header main {
@@ -128,9 +134,6 @@ header main .ab_button {
 }
 
 header .info {
-  border-image: url(../img/wave_border.png) 20 10 20 10;
-  border-width: 60px;
-  border-top: 12px solid;
   margin-top: 27px;
   padding-top: 25px;
 }
@@ -171,20 +174,19 @@ header .info ul li i.sp_info-online {
   background-position: -5px -75px;
 }
 
-section.how-to-money .block-slider .content-slider figure .back-img {
-  background: url(../img/how-slide-1.png) no-repeat center;
-  background-size: contain;
+section.how-to-money .ab_slider figure .rev-img img {
+  width: 160px;
 }
 
-section.how-to-money .block-slider .content-slider figure .ab_link {
-  line-height: 5vh;
+section.how-to-money .ab_slider figure .ab_link {
+  margin: 20px auto;
 }
 
-section.how-to-money .block-slider .content-slider .count-slide {
+section.how-to-money .ab_slider figure .count-slide {
   margin-bottom: 2vh;
 }
 
-section.how-to-money .block-slider .content-slider .count-slide i.ico-slide--active {
+section.how-to-money .ab_slider figure .count-slide i.ico-slide--active {
   content: attr(data-count);
   padding: 5px 10px;
   font-size: 1em;
@@ -197,12 +199,17 @@ section.about {
 }
 
 section.about nav {
-  max-width: 320px;
+  max-width: 720px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
   margin: 40px auto;
 }
 
 section.about nav a.btn-about {
   cursor: pointer;
+  min-width: 90px;
   background-color: #fff;
   color: #18a4d2;
   font-weight: bold;
@@ -281,11 +288,17 @@ section.is-working .info p span {
   background-size: cover;
 }
 
-section.is-working figure .back-img {
-  height: 50vh;
-  max-height: 140px !important;
-  margin: 15px auto;
+section.is-working .ab_slider .arrow {
+  position: relative;
+  bottom: 70px;
+}
+
+section.is-working .ab_slider figure .rev-img img {
   border-radius: 50%;
+}
+
+section.is-working .ab_slider figure .rev-commnet {
+  margin-top: 20px;
 }
 
 section.zaym {
@@ -304,6 +317,10 @@ section.zaym .ab_button {
   background-color: #fff;
   text-shadow: none;
   border-bottom: 3px solid #e3e6e8;
+}
+
+section.zaym .ab_button:hover {
+  background-color: #e6e6e6;
 }
 
 footer {
@@ -369,7 +386,7 @@ footer section.block-feedback main {
 }
 
 footer section.block-feedback main p {
-  word-spacing: 12px;
+  word-spacing: 6px;
 }
 
 footer section.block-feedback main .feedback {
@@ -436,7 +453,7 @@ footer section.main-footer .head-footer img {
   height: 2vh;
   max-width: 190px;
   min-width: 160px;
-  min-height: 20px;
+  min-height: 17px;
 }
 
 footer section.main-footer .head-footer a.full-version {
@@ -464,7 +481,7 @@ footer section.main-footer .content h3 {
 }
 
 .ab_button {
-  background: #42b28f;
+  background: #3bb38e;
   border: 0;
   border-bottom: 1px solid #1f7a5d;
   text-shadow: 0 -1px #3879a2;
@@ -480,6 +497,10 @@ footer section.main-footer .content h3 {
   border-radius: 3px;
   line-height: 11px;
   white-space: nowrap;
+}
+
+.ab_button:hover {
+  background: #59c8a6;
 }
 
 .ab_center {
@@ -552,35 +573,28 @@ footer section.main-footer .content h3 {
   margin-top: -8px;
 }
 
-.block-slider {
+.ab_slider {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-align: center;
       align-items: center;
 }
 
-.block-slider .arrow {
+.ab_slider .arrow {
   cursor: pointer;
 }
 
-.block-slider .arrow--right {
+.ab_slider .arrow--right {
   transform: rotateY(180deg);
 }
 
-.block-slider .content-slider figure .back-img {
-  height: 50vh;
-  max-height: 160px;
-}
-
-.block-slider .content-slider figure .ab_link {
-  line-height: 5vh;
-}
-
-.block-slider .content-slider .count-slide {
+.ab_slider .count-slide {
   margin: 2vh auto;
 }
 
-.block-slider .content-slider .count-slide i.ico-slide {
+.ab_slider .count-slide i.ico-slide {
   display: inline-block;
   font-size: .7em;
   border-radius: 50%;
@@ -593,15 +607,15 @@ footer section.main-footer .content h3 {
   cursor: pointer;
 }
 
-.block-slider .content-slider .count-slide i.ico-slide--active {
+.ab_slider .count-slide i.ico-slide--active {
   background-color: #18a4d2;
 }
 
 .popup {
   margin: 10vh auto;
+  height: 30%;
+  min-height: 160px;
   position: fixed;
-  height: 40%;
-  min-height: 470px;
   text-align: center;
   top: 0;
   bottom: 0;
@@ -610,18 +624,23 @@ footer section.main-footer .content h3 {
   width: 85%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.7), 0 0 0 999em rgba(0, 0, 0, 0.5);
   max-width: 460px;
-  padding: 15px 20px;
   background-color: #fff;
 }
 
-.popup .content main form {
+.popup--feedback {
+  height: 40%;
+  padding: 15px 20px;
+  min-height: 420px;
+}
+
+.popup--feedback main form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
 }
 
-.popup .content main form select {
+.popup--feedback main form select {
   border: 1px solid #b0bac5;
   z-index: 9999;
   padding: 10px;
@@ -632,13 +651,13 @@ footer section.main-footer .content h3 {
   font-size: 1em;
 }
 
-.popup .content main form .js-phone, .popup .content main form .js-message {
+.popup--feedback main form .js-phone, .popup--feedback main form .js-message {
   margin-bottom: 25px;
   font-size: 1.1em;
   padding: 7px;
 }
 
-.popup .content main form .js-message {
+.popup--feedback main form .js-message {
   resize: none;
   min-height: 120px;
   background: #fff;
@@ -646,4 +665,59 @@ footer section.main-footer .content h3 {
   border: solid 1px #b0bac5;
   border-radius: 3px;
   font-size: 1em;
+}
+
+.popup--feedback main form .ab_button {
+  background-color: #18a4d2;
+  max-width: 160px;
+}
+
+.popup .content i.ico-close {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 10%;
+  height: 11%;
+  background: url(../img/btn_close.png) no-repeat;
+  display: block;
+  background-size: 45%;
+}
+
+.popup .content h2 {
+  font-size: 1em;
+}
+
+.popup--method {
+  padding: 15px 5px;
+}
+
+.popup--method main {
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+}
+
+.popup--method main .method {
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px dotted #e3e6e8;
+  color: #b8bdc3;
+}
+
+.popup--method main .method img {
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.popup--method main .method h3 {
+  font-size: .9em;
+}
+
+.popup--method main .method--active {
+  color: #18181a;
+  border: 2px solid #18a4d2;
 }
