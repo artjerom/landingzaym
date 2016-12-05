@@ -401,9 +401,10 @@ footer section.block-feedback main .feedback a.btn_feedbadk {
 }
 
 footer section.block-feedback main .feedback a.btn_feedbadk img {
-  width: 24px;
-  height: 18px;
-  margin-right: 2px;
+  min-width: 20px;
+  min-height: 8px;
+  height: 17px;
+  margin-right: 7px;
 }
 
 footer section.block-feedback main .feedback .call {
