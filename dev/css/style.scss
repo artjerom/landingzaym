@@ -21,6 +21,11 @@ input[type='text'] {
   border-radius: 3px;
   padding: 5px 0;
   font-size: 1em;
+  &:focus {
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px solid $main-color;
+  }
 }
 
 // Шапка

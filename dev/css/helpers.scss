@@ -121,6 +121,13 @@
   box-shadow: 0 0 24px 0 rgba(0,0,0,0.7), 0 0 0 999em rgba(0,0,0,0.5);
   max-width: 460px;
   background-color: #fff;
+  input, select {
+    &:focus {
+      -webkit-appearance: none;
+      outline: none;
+      border: 1px solid $main-color;
+    }
+  }
   &--feedback {
     height: 40%;
     padding: 15px 20px;
