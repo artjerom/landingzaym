@@ -1,1 +1,30 @@
-include template/main.jade
+doctype html
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        link(rel='stylesheet', href='css/main.css')
+        title Заявка на займ
+    body
+        #all
+            // Калькулятор и шапка
+            include template/calculator
+            // Как получить деньги
+            include template/how-money
+            include template/about
+            include template/is-working
+            include template/block-zaym
+            //
+              <section class="zaym">
+              &lt;!&ndash;Блок: Дадим в долг&ndash;&gt;
+              </section>
+              <section class="questions">
+              &lt;!&ndash;Блок: Вопросы и ответы&ndash;&gt;
+              </section>
+              <section class="feedback">
+              &lt;!&ndash;Блок: Обратная связь&ndash;&gt;
+              </section>
+              &lt;!&ndash;
+            include template/footer
+        include template/popus
