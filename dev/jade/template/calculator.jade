@@ -15,13 +15,13 @@ header.ab_indent
             label(for='sum')
                 .calc-title
                     span Сумма займа
-                    input.range_field.range_field--sum(type='text', name='sum')
-                input#sum.slider.js-slider.js-slider--sum(type='range', min='1500', max='50000')
+                    input.range_field.range_field--sum.js-sum(type='tel', name='sum')
+                input#sum.slider.js-slider.js-slider--sum(type='range', value='10000' min='1500', max='50000')
             label(for='time')
                 .calc-title
                     span На срок до
-                    input.range_field.range_field--time(type='text', name='time')
-                input#time.slider.js-slider.js-slider--time(type='range', min='1500', max='50000')
+                    input.range_field.range_field--time.js-period(type='tel', name='period')
+                input#time.slider.js-slider.js-slider--time(type='range', value='7' min='8', max='30')
             .info-zaym
                 // Информация о займе
                 .info-sum

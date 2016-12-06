@@ -1,15 +1,70 @@
-$('input[type=range]').on('input', function(e){
-    var min = e.target.min,
+import Caculator from './app/Calculator'
+
+console.log(Caculator.sum());
+// console.log(Caculator.period());
+// console.log(Caculator.moneyBack());
+
+/*
+let AppModelCalculator = {
+    sum: 0,
+    period: 0,
+    moneyBack: function () {
+        return this.sum - this.period;
+    }
+};
+
+AppModelCalculator.sum = function () {
+    let res = 0;
+
+    return res;
+};
+
+// Код для ползунка (Выбор суммы)
+$('input[type=range].js-slider--sum').on('input', function(e){
+    let min = e.target.min,
         max = e.target.max,
         val = e.target.value;
 
-    var field = $('input[name=sum]');
+    let fieldSum = $('input[name=sum]');
+
+    AppModelCalculator.sum = val;
+
+    $(e.target).css({
+        'backgroundSize': (val - min) * 100 / (max - min) + '% 100%',
+        'backgroundImage': 'linear-gradient(#3bb38e, #3bb38e)'
+    });
+
+    if (val > 10000) {
+        $(e.target).css({
+            'background-image': 'linear-gradient(rgb(254, 150, 39), rgb(254, 150, 39))'
+        });
+    }
+
+    $(fieldSum).val(e.target.value + ' ₽');
+}).trigger('input');
+
+// Код для ползунка (Срок займа)
+$('input[type=range].js-slider--time').on('input', function(e){
+    let min = e.target.min,
+        max = e.target.max,
+        val = e.target.value;
+
+    let fieldPeriod = $('input[name=period]');
+
+    AppModelCalculator.period = val;
 
     $(e.target).css({
         'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'
     });
 
-    $(field).val(e.target.value + ' ₽');
+    $(fieldPeriod).val(e.target.value + ' дней');
 }).trigger('input');
 
+// Вывод значений для калькулятора
+$('input[type=range].js-slider').on('input', function (e) {
 
+});
+
+
+
+*/

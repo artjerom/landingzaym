@@ -14,7 +14,7 @@
   color: $main-text;
 }
 
-input[type='text'] {
+input[type='text'], input[type='tel'] {
   background: #fff;
   color: $main-text;
   border: solid 1px #b0bac5;
