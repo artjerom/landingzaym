@@ -6,7 +6,7 @@ header.ab_indent
         h2
             | Займ на
             = ' '
-            a.ab_link() вашу карту
+            a.ab_link.js-pay_method() вашу карту
             i.ico-dropdown
             |  за 10 минут
         span Быстро, просто и без поручителей
@@ -15,21 +15,23 @@ header.ab_indent
             label(for='sum')
                 .calc-title
                     span Сумма займа
-                    input.range_field.range_field--sum.js-sum(type='tel', name='sum')
-                input#sum.slider.js-slider.js-slider--sum(type='range', value='10000' min='1500', max='50000')
-            label(for='time')
+                    // @TODO: Добавить к value ' ₽'
+                    input.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000')
+                input#sum.slider.js-slider.js-slider--sum(type='range', value='6000' min='1500', max='50000')
+            label(for='period')
                 .calc-title
                     span На срок до
-                    input.range_field.range_field--time.js-period(type='tel', name='period')
-                input#time.slider.js-slider.js-slider--time(type='range', value='7' min='8', max='30')
+                    // @TODO: Добавить к value ' дней'
+                    input.range_field.range_field--time.js-period(type='tel', value='6' name='period')
+                input#period.slider.js-slider.js-slider--period(type='range', value='12' min='4', max='30')
             .info-zaym
                 // Информация о займе
                 .info-sum
                     span Занимаете
-                    h4 6100 ₽
+                    h4.js-out-sum 6000 ₽
                 .info-back
                     span Возращаете
-                    h4 6600 ₽
+                    h4.js-out-sum_back 6600 ₽
             .ab_center
                 a.ab_button Получить деньги
     .info.info--header

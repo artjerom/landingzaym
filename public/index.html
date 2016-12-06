@@ -13,30 +13,32 @@
       <header class="ab_indent">
         <div class="logo"><img src="img/logo.png" alt="zaymigo"><a href="tel: 88007007286">8 800 700-72-86</a></div>
         <div class="info-title">
-          <h2>Займ на <a class="ab_link">вашу карту</a><i class="ico-dropdown"></i> за 10 минут
+          <h2>Займ на <a class="ab_link js-pay_method">вашу карту</a><i class="ico-dropdown"></i> за 10 минут
           </h2><span>Быстро, просто и без поручителей</span>
         </div>
         <main>
           <form id="loanCalculator" action="#">
             <label for="sum">
               <div class="calc-title"><span>Сумма займа</span>
-                <input type="tel" name="sum" class="range_field range_field--sum js-sum">
+                <!-- @TODO: Добавить к value ' ₽'-->
+                <input type="tel" name="sum" value="6000" class="range_field range_field--sum js-sum">
               </div>
-              <input id="sum" type="range" value="10000" min="1500" max="50000" class="slider js-slider js-slider--sum">
+              <input id="sum" type="range" value="6000" min="1500" max="50000" class="slider js-slider js-slider--sum">
             </label>
-            <label for="time">
+            <label for="period">
               <div class="calc-title"><span>На срок до</span>
-                <input type="tel" name="period" class="range_field range_field--time js-period">
+                <!-- @TODO: Добавить к value ' дней'-->
+                <input type="tel" value="6" name="period" class="range_field range_field--time js-period">
               </div>
-              <input id="time" type="range" value="7" min="8" max="30" class="slider js-slider js-slider--time">
+              <input id="period" type="range" value="12" min="4" max="30" class="slider js-slider js-slider--period">
             </label>
             <div class="info-zaym">
               <!-- Информация о займе-->
               <div class="info-sum"><span>Занимаете</span>
-                <h4>6100 ₽</h4>
+                <h4 class="js-out-sum">6000 ₽</h4>
               </div>
               <div class="info-back"><span>Возращаете</span>
-                <h4>6600 ₽</h4>
+                <h4 class="js-out-sum_back">6600 ₽</h4>
               </div>
             </div>
             <div class="ab_center"><a class="ab_button">Получить деньги</a></div>
@@ -168,7 +170,7 @@
     <!-- Обратная связь-->
     <div style="display: none;" class="popup popup--feedback">
       <div class="content">
-        <h2 class="ab_center">Обратная связь</h2><i class="ico-close"></i>
+        <h2 class="ab_center">Обратная связь</h2><i class="ico-close js-close_popup"></i>
         <main>
           <form action="#">
             <select>
@@ -188,7 +190,7 @@
     <!-- Выбор способа получения-->
     <div style="display: none;" class="popup popup--method">
       <div class="content">
-        <h2 class="ab_center">Способ получения</h2><i class="ico-close"></i>
+        <h2 class="ab_center">Способ получения</h2><i class="ico-close js-close_popup"></i>
         <main class="ab_center">
           <div class="method method--card method--active"><img src="img/visa.png">
             <h3>на карту</h3>

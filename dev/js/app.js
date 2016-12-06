@@ -14,75 +14,51 @@ $(function () {
         el: '#loanCalculator'
     });
 
-});
-
-// import Caculator from './app/Calculator'
-
-// console.log('Сумма: ' + Caculator.sum());
-// console.log(Caculator.period());
-// console.log(Caculator.moneyBack());
-
-/*
-let AppModelCalculator = {
-    sum: 0,
-    period: 0,
-    moneyBack: function () {
-        return this.sum - this.period;
-    }
-};
-
-AppModelCalculator.sum = function () {
-    let res = 0;
-
-    return res;
-};
-
-// Код для ползунка (Выбор суммы)
-$('input[type=range].js-slider--sum').on('input', function(e){
-    let min = e.target.min,
-        max = e.target.max,
-        val = e.target.value;
-
-    let fieldSum = $('input[name=sum]');
-
-    AppModelCalculator.sum = val;
-
-    $(e.target).css({
-        'backgroundSize': (val - min) * 100 / (max - min) + '% 100%',
-        'backgroundImage': 'linear-gradient(#3bb38e, #3bb38e)'
+    let AppModel = Backbone.Model.extend({
+        defaults: {}
     });
 
-    if (val > 10000) {
-        $(e.target).css({
-            'background-image': 'linear-gradient(rgb(254, 150, 39), rgb(254, 150, 39))'
-        });
-    }
+    app.model = new AppModel();
 
-    $(fieldSum).val(e.target.value + ' ₽');
-}).trigger('input');
+    var AppView = Backbone.View.extend({
+        el: 'body',
 
-// Код для ползунка (Срок займа)
-$('input[type=range].js-slider--time').on('input', function(e){
-    let min = e.target.min,
-        max = e.target.max,
-        val = e.target.value;
+        events: {
+            // Для попапов
+            'click .js-pay_method': 'showPayMethod',
+            'click .btn_feedbadk': 'showFeedback',
+            'change .popup': 'changePopus',
+            'click .js-close_popup': 'closePopup',
 
-    let fieldPeriod = $('input[name=period]');
+            'click .method': 'changeMethod'
+        },
 
-    AppModelCalculator.period = val;
+        // Попап с выбором способа получения
+        showPayMethod: function () {
+            $('.popup--method').fadeIn(250);
+            $('#all').addClass('overlay');
+        },
 
-    $(e.target).css({
-        'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'
+        // Попап с обратной связью
+        showFeedback: function () {
+            $('.popup--feedback').fadeIn(250);
+            $('#all').addClass('overlay');
+        },
+
+        // Закрыть попап
+        closePopup: function () {
+            $('.popup').fadeOut(250);
+            $('#all').removeClass('overlay');
+        },
+
+        // Выбор способа получения
+        changeMethod: function (e) {
+            $('.method').on('click', function () {
+                console.log(this);
+            })
+        }
     });
 
-    $(fieldPeriod).val(e.target.value + ' дней');
-}).trigger('input');
-
-// Вывод значений для калькулятора
-$('input[type=range].js-slider').on('input', function (e) {
+    app.view = new AppView();
 
 });
-
-
-
-*/

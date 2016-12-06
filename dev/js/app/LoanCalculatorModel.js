@@ -8,7 +8,7 @@ var LoanCalculatorModel = Backbone.Model.extend({
     defaults: {
         sum: 6000,
         period: 12,
-        type: 'once' // "once" или "two_weeks"
+        type: 'once' // "once" or "two_weeks"
     },
 
     // Подсчет общей суммы займа (ОД + Проценты + Комиссии)
@@ -18,7 +18,9 @@ var LoanCalculatorModel = Backbone.Model.extend({
         sum = parseInt(sum);
         period = parseInt(period);
 
-        if (sum <= AppConstants.tariffs[0].max_sum) {
+        total = Math.ceil((sum + sum * AppConstants.feeIssue) * (AppConstants.tariffs[0].percent * period + 1));
+
+/*        if (sum <= AppConstants.tariffs[0].max_sum) {
             // Считаем по первому тарифу
             total = Math.ceil((sum + sum * AppConstants.feeIssue) * (AppConstants.tariffs[0].percent * period + 1));
         } else {
@@ -27,7 +29,7 @@ var LoanCalculatorModel = Backbone.Model.extend({
             var n_weeks = period;
             var annuity = (percent * Math.pow((1 + percent), n_weeks)) / (Math.pow((1 + percent), n_weeks) - 1);
             total = Math.ceil((sum + sum * AppConstants.feeIssue * AppConstants.feeIssue) * annuity * n_weeks);
-        }
+        }*/
 
         return total;
     }
