@@ -12,13 +12,23 @@
   color: #18181a;
 }
 
-input[type='text'] {
+.overlay {
+  pointer-events: none;
+}
+
+input[type='text'], input[type='tel'] {
   background: #fff;
   color: #18181a;
   border: solid 1px #b0bac5;
   border-radius: 3px;
   padding: 5px 0;
   font-size: 1em;
+}
+
+input[type='text']:focus, input[type='tel']:focus {
+  -webkit-appearance: none;
+  outline: none;
+  border: 1px solid #18a4d2;
 }
 
 header {
@@ -82,6 +92,7 @@ header main .calc-title {
 
 header main .calc-title span {
   width: 40%;
+  font-weight: bold;
   white-space: nowrap;
 }
 
@@ -535,6 +546,14 @@ footer section.main-footer .content h3 {
   box-shadow: none;
 }
 
+.js-slider--sum {
+  background-size: 10% 100%;
+}
+
+.js-slider--period {
+  background-size: 30% 100%;
+}
+
 .js-slider::-moz-range-track {
   background: transparent;
 }
@@ -620,7 +639,7 @@ footer section.main-footer .content h3 {
 .popup {
   margin: 10vh auto;
   height: 30%;
-  min-height: 160px;
+  min-height: 180px;
   position: fixed;
   text-align: center;
   top: 0;
@@ -631,6 +650,16 @@ footer section.main-footer .content h3 {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.7), 0 0 0 999em rgba(0, 0, 0, 0.5);
   max-width: 460px;
   background-color: #fff;
+}
+
+.popup input:focus, .popup select:focus {
+  -webkit-appearance: none;
+  outline: none;
+  border: 1px solid #18a4d2;
+}
+
+.popup--method {
+  max-height: 180px;
 }
 
 .popup--feedback {

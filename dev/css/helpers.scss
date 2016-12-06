@@ -53,6 +53,12 @@
   background-image: linear-gradient($accent-color, $accent-color);
   background-repeat: no-repeat;
   @include range-track;
+  &--sum {
+    background-size: 10% 100%;
+  }
+  &--period {
+    background-size: 30% 100%;
+  }
   &::-moz-range-track {
     background: transparent;
   }
@@ -110,7 +116,7 @@
 .popup {
   margin: 10vh auto;
   height: 30%;
-  min-height: 160px;
+  min-height: 180px;
   position: fixed;
   text-align: center;
   top: 0;
@@ -121,6 +127,16 @@
   box-shadow: 0 0 24px 0 rgba(0,0,0,0.7), 0 0 0 999em rgba(0,0,0,0.5);
   max-width: 460px;
   background-color: #fff;
+  input, select {
+    &:focus {
+      -webkit-appearance: none;
+      outline: none;
+      border: 1px solid $main-color;
+    }
+  }
+  &--method {
+    max-height: 180px;
+  }
   &--feedback {
     height: 40%;
     padding: 15px 20px;
@@ -132,7 +148,6 @@
         flex-direction: column;
         // Дропдаун
         select {
-          //-webkit-appearance: none;
           border: 1px solid #b0bac5;
           z-index: 9999;
           padding: 10px;

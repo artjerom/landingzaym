@@ -13,14 +13,22 @@
   margin: 0 auto;
   color: $main-text;
 }
+.overlay {
+  pointer-events: none;
+}
 
-input[type='text'] {
+input[type='text'], input[type='tel'] {
   background: #fff;
   color: $main-text;
   border: solid 1px #b0bac5;
   border-radius: 3px;
   padding: 5px 0;
   font-size: 1em;
+  &:focus {
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px solid $main-color;
+  }
 }
 
 // Шапка
@@ -69,6 +77,7 @@ header {
       align-items: center;
       span {
         width: 40%;
+        font-weight: bold;
         white-space: nowrap;
       }
       .range_field {

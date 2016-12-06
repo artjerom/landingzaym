@@ -1,15 +1,64 @@
-$('input[type=range]').on('input', function(e){
-    var min = e.target.min,
-        max = e.target.max,
-        val = e.target.value;
+import AppConstants from './constants.js';
+import LoanCalculatorModel from './app/LoanCalculatorModel';
+import LoanCalculatorView from './app/LoanCalculatorView';
 
-    var field = $('input[name=sum]');
+$(function () {
+    window.app = {};
 
-    $(e.target).css({
-        'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'
+    // Калькулятор
+    app.loanCalculator = new LoanCalculatorModel({
+
+    });
+    app.loanCalculatorView = new LoanCalculatorView({
+        model: app.loanCalculator,
+        el: '#loanCalculator'
     });
 
-    $(field).val(e.target.value + ' ₽');
-}).trigger('input');
+    let AppModel = Backbone.Model.extend({
+        defaults: {}
+    });
 
+    app.model = new AppModel();
 
+    var AppView = Backbone.View.extend({
+        el: 'body',
+
+        events: {
+            // Для попапов
+            'click .js-pay_method': 'showPayMethod',
+            'click .btn_feedbadk': 'showFeedback',
+            'change .popup': 'changePopus',
+            'click .js-close_popup': 'closePopup',
+
+            'click .method': 'changeMethod'
+        },
+
+        // Попап с выбором способа получения
+        showPayMethod: function () {
+            $('.popup--method').fadeIn(250);
+            $('#all').addClass('overlay');
+        },
+
+        // Попап с обратной связью
+        showFeedback: function () {
+            $('.popup--feedback').fadeIn(250);
+            $('#all').addClass('overlay');
+        },
+
+        // Закрыть попап
+        closePopup: function () {
+            $('.popup').fadeOut(250);
+            $('#all').removeClass('overlay');
+        },
+
+        // Выбор способа получения
+        changeMethod: function (e) {
+            $('.method').on('click', function () {
+                console.log(this);
+            })
+        }
+    });
+
+    app.view = new AppView();
+
+});
