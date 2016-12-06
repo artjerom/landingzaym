@@ -1,6 +1,24 @@
-import Caculator from './app/Calculator'
+import AppConstants from './constants.js';
+import LoanCalculatorModel from './app/LoanCalculatorModel';
+import LoanCalculatorView from './app/LoanCalculatorView';
 
-console.log(Caculator.sum());
+$(function () {
+    window.app = {};
+
+    // Калькулятор
+    app.loanCalculator = new LoanCalculatorModel({
+
+    });
+    app.loanCalculatorView = new LoanCalculatorView({
+        model: app.loanCalculator,
+        el: '#loanCalculator'
+    });
+
+});
+
+// import Caculator from './app/Calculator'
+
+// console.log('Сумма: ' + Caculator.sum());
 // console.log(Caculator.period());
 // console.log(Caculator.moneyBack());
 
