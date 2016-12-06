@@ -52,10 +52,8 @@ $(function () {
         },
 
         // Выбор способа получения
-        changeMethod: function (e) {
-            $('.method').on('click', function () {
-                console.log(this);
-            })
+        changeMethod: function () {
+            $('.method').toggleClass('method--active');
         }
     });
 
