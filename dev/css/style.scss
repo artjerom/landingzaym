@@ -259,9 +259,9 @@ section.is-working {
     }
   }
   .ab_slider {
+    align-items: stretch;
     .arrow {
-      position: relative;
-      bottom: 70px;
+      margin-top: 25px;
     }
     figure {
       .rev-img {
@@ -273,6 +273,9 @@ section.is-working {
       }
       .rev-commnet {
         margin-top: 20px;
+        span {
+          white-space: pre-wrap;
+        }
       }
     }
   }

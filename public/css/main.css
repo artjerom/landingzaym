@@ -300,9 +300,13 @@ section.is-working .info p span {
   background-size: cover;
 }
 
+section.is-working .ab_slider {
+  -ms-flex-align: stretch;
+      align-items: stretch;
+}
+
 section.is-working .ab_slider .arrow {
-  position: relative;
-  bottom: 70px;
+  margin-top: 25px;
 }
 
 section.is-working .ab_slider figure .rev-img img {
@@ -313,6 +317,10 @@ section.is-working .ab_slider figure .rev-img img {
 
 section.is-working .ab_slider figure .rev-commnet {
   margin-top: 20px;
+}
+
+section.is-working .ab_slider figure .rev-commnet span {
+  white-space: pre-wrap;
 }
 
 section.zaym {
