@@ -18,9 +18,7 @@ var LoanCalculatorModel = Backbone.Model.extend({
         sum = parseInt(sum);
         period = parseInt(period);
 
-        // total = Math.ceil((sum + sum * AppConstants.feeIssue) * (AppConstants.tariffs[0].percent * period + 1));
-
-        if (sum <= AppConstants.tariffs[0].max_sum) {
+        if (sum <= AppConstants.tarrifs[0].max_sum) {
             // Считаем по первому тарифу
             total = Math.ceil((sum + sum * AppConstants.feeIssue) * (AppConstants.tariffs[0].percent * period + 1));
         } else {

@@ -2,15 +2,19 @@ section.about.ab_indent
     h2.ab_center Почему мы?
     main
         nav.ab_center
-            a.btn-about.btn-about--active() Безопасно
-            a.btn-about() Выгодно
-            a.btn-about() Удобно
-        .js-change-content.js-change-content--active
-            p
-                b Zaymigo
-                | - лицензированная организация. Вы защищены законом «О потребительском кредитовании»
-            ul
-                li Белая компания. Состоит в государственном&nbsp;
-                    a().ab_link реестре МФО
-                li Ваши персональные данные защищены и не попадут в руки третьих лиц.
-                li Вы не передаете на свою платежную информацию.
+            a.btn-about.btn-about--active(data-tab='1') Безопасно
+            a.btn-about(data-tab='2') Выгодно
+            a.btn-about(data-tab='3') Удобно
+        .js-change-content.js-change-content--active#aboutTab-1
+                p
+                    b Zaymigo
+                    | - лицензированная организация. Вы защищены законом «О потребительском кредитовании»
+                ul
+                    li Белая компания. Состоит в государственном&nbsp;
+                        a().ab_link реестре МФО
+                    li Ваши персональные данные защищены и не попадут в руки третьих лиц.
+                    li Вы не передаете на свою платежную информацию.
+        .js-change-content#aboutTab-2
+            h2 Здесь контент для 2 таба
+        .js-change-content#aboutTab-3
+            h2 Здесь контент для 3 таба

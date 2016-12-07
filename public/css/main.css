@@ -16,7 +16,7 @@
   pointer-events: none;
 }
 
-input[type='text'], input[type='tel'] {
+input[type='text'], input[type='tel'], input[type='password'] {
   background: #fff;
   color: #18181a;
   border: solid 1px #b0bac5;
@@ -25,7 +25,7 @@ input[type='text'], input[type='tel'] {
   font-size: 1em;
 }
 
-input[type='text']:focus, input[type='tel']:focus {
+input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus {
   -webkit-appearance: none;
   outline: none;
   border: 1px solid #18a4d2;
@@ -220,7 +220,7 @@ section.about nav {
 
 section.about nav a.btn-about {
   cursor: pointer;
-  min-width: 90px;
+  min-width: 104px;
   background-color: #fff;
   color: #18a4d2;
   font-weight: bold;
@@ -231,6 +231,7 @@ section.about nav a.btn-about {
 section.about nav a.btn-about--active {
   color: #fff;
   background-color: #18a4d2;
+  pointer-events: none;
 }
 
 section.about nav a.btn-about:first-child {
@@ -410,7 +411,7 @@ footer section.block-feedback main .feedback {
   margin-top: 25px;
 }
 
-footer section.block-feedback main .feedback a.btn_feedbadk {
+footer section.block-feedback main .feedback a.btn_feedback {
   font-size: .8em;
   display: -ms-flexbox;
   display: flex;
@@ -430,7 +431,7 @@ footer section.block-feedback main .feedback a.btn_feedbadk {
   cursor: pointer;
 }
 
-footer section.block-feedback main .feedback a.btn_feedbadk img {
+footer section.block-feedback main .feedback a.btn_feedback img {
   min-width: 20px;
   min-height: 8px;
   height: 17px;
@@ -601,18 +602,33 @@ footer section.main-footer .content h3 {
       flex-direction: row;
   -ms-flex-align: center;
       align-items: center;
+  width: 280px;
+  overflow: hidden;
 }
 
 .ab_slider .arrow {
   cursor: pointer;
+  position: absolute;
 }
 
 .ab_slider .arrow--right {
+  left: 245px;
+  right: 0;
   transform: rotateY(180deg);
 }
 
-.ab_slider .ab_slide:not(.ab_slide--active) {
-  display: none;
+.ab_slider .content-slider {
+  white-space: nowrap;
+  width: 100%;
+}
+
+.ab_slider .content-slider figure {
+  width: 100%;
+  display: inline-block;
+}
+
+.ab_slider .content-slider figure img {
+  height: 150px;
 }
 
 .ab_slider .count-slide {
@@ -638,7 +654,6 @@ footer section.main-footer .content h3 {
 
 .popup {
   margin: 20vh auto;
-  height: 30%;
   min-height: 180px;
   position: fixed;
   text-align: center;
@@ -656,6 +671,37 @@ footer section.main-footer .content h3 {
   -webkit-appearance: none;
   outline: none;
   border: 1px solid #18a4d2;
+}
+
+.popup--register {
+  min-height: 400px;
+  max-height: 320px;
+  padding: 15px 20px;
+}
+
+.popup--register form {
+  margin: 25px auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.popup--register form label {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.popup--register form input[type='tel'], .popup--register form input[type='password'] {
+  padding: 10px;
+}
+
+.popup--register form .ab_button {
+  background-color: #18a4d2;
+}
+
+.popup--register form .ab_button:hover {
+  background-color: #1eb4e5;
 }
 
 .popup--method {
@@ -705,6 +751,10 @@ footer section.main-footer .content h3 {
 .popup--feedback main form .ab_button {
   background-color: #18a4d2;
   max-width: 160px;
+}
+
+.popup--feedback main form .ab_button:hover {
+  background-color: #1eb4e5;
 }
 
 .popup .content i.ico-close {

@@ -16,13 +16,13 @@ header.ab_indent
                 .calc-title
                     span Сумма займа
                     // @TODO: Добавить к value ' ₽'
-                    input.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000')
+                    input.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000 ₽' required)
                 input#sum.slider.js-slider.js-slider--sum(type='range', value='6000' min='1500', max='50000')
             label(for='period')
                 .calc-title
                     span На срок до
                     // @TODO: Добавить к value ' дней'
-                    input.range_field.range_field--time.js-period(type='tel', value='6' name='period')
+                    input.range_field.range_field--time.js-period(type='tel', value='6' name='period' required)
                 input#period.slider.js-slider.js-slider--period(type='range', value='12' min='4', max='30')
             .info-zaym
                 // Информация о займе
@@ -33,7 +33,7 @@ header.ab_indent
                     span Возращаете
                     h4.js-out-sum_back 6600 ₽
             .ab_center
-                a.ab_button Получить деньги
+                a.ab_button.js-btn_register Получить деньги
     .info.info--header
         ul
             li

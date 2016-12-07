@@ -24,13 +24,46 @@ $(function () {
         el: 'body',
 
         events: {
+            // Способ выдачи
+            'click .method': 'changeMethod',
+
+            // Табы 'почему мы'
+            'click .btn-about': 'changeAboutTab',
+
+            // Слайдер
+
             // Для попапов
+            'click .js-btn_register': 'showRegister',
             'click .js-pay_method': 'showPayMethod',
-            'click .btn_feedbadk': 'showFeedback',
+            'click .btn_feedback': 'showFeedback',
             'change .popup': 'changePopus',
             'click .js-close_popup': 'closePopup',
+        },
 
-            'click .method': 'changeMethod'
+        // Выбор способа получения
+        changeMethod: function () {
+            $('.method').toggleClass('method--active');
+
+            // -- Подставляем текст
+            $('.js-pay_method').html($('.method--active').find('.js-text_method').html());
+        },
+
+        // Переключение табов (должно работать и на десктопе)
+        changeAboutTab: function (e) {
+            $('.btn-about--active').add(e.target).toggleClass('btn-about--active');
+
+            let tabId = $(e.target).attr('data-tab');
+
+            $('.js-change-content').removeClass('js-change-content--active');
+
+            $('#aboutTab-' + tabId).addClass('js-change-content--active');
+
+        },
+
+        // Попап регистрации
+        showRegister: function () {
+            $('.popup--register').fadeIn(250);
+            $('#all').addClass('overlay');
         },
 
         // Попап с выбором способа получения
@@ -49,15 +82,8 @@ $(function () {
         closePopup: function () {
             $('.popup').fadeOut(250);
             $('#all').removeClass('overlay');
-        },
-
-        // Выбор способа получения
-        changeMethod: function () {
-            $('.method').toggleClass('method--active');
-
-            // -- Подставляем текст
-            $('.js-pay_method').html($('.method--active').find('.js-text_method').html());
         }
+
     });
 
     app.view = new AppView();

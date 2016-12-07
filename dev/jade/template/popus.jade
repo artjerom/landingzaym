@@ -28,3 +28,21 @@
          .method.method--contact
             img(src='img/cash.png')
             h3.js-text_method наличными
+
+// Регистрация
+.popup.popup--register(style='display: none')
+    .content
+        h2.ab_center Регистрация
+        i.ico-close.js-close_popup
+        form.ab_center(action='#')
+            label(for='userPhone') Моб. телефон
+            input#userPhone(type='tel' placeholder='Номер телефона' required)
+            br
+            label(for='userPass') Пароль
+            input#userPass(type='password' placeholder='Пароль')
+            br
+            label(for='userRepeatPass') Повторите пароль
+            input#userRepeatPass(type='password' placeholder='Повторите пароль')
+            br
+            .ab_center
+                a.ab_button() Зарегистрироваться

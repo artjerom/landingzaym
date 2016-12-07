@@ -44,7 +44,7 @@ var LoanCalculatorView = Backbone.View.extend({
         $(fieldSum).val(e.target.value + ' ₽');
 
         // Подставляем значение
-        $('.js-out-sum').html(e.target.value + ' ₽');
+        $('.js-out-sum').html(e.target.value + '  ₽');
 
     },
 
@@ -73,14 +73,14 @@ var LoanCalculatorView = Backbone.View.extend({
         $('.js-sum').val(e.target.value);
         // @TODO: Пока без рубля
         // Подставляем символ рубля
-/*        if (~$('.js-sum').val().indexOf('₽')) {
+        if (~$('.js-sum').val().indexOf('₽')) {
             $('.js-sum').val(e.target.value);
         } else {
             $('.js-sum').val(e.target.value + ' ₽');
-        }*/
+        }
 
         // Подставляем значение
-        $('.js-out-sum').html(e.target.value + ' ₽');
+        $('.js-out-sum').html(e.target.value);
     },
 
     // Выбор срока при помощи ползунка

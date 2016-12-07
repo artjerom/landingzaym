@@ -83,14 +83,27 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 280px;
+  overflow: hidden;
   .arrow {
     cursor: pointer;
+    position: absolute;
     &--right {
+      left: 245px;
+      right: 0;
       transform: rotateY(180deg);
     }
   }
-  .ab_slide:not(.ab_slide--active) {
-    display: none;
+  .content-slider {
+    white-space: nowrap;
+    width: 100%;
+    figure {
+      width: 100%;
+      display: inline-block;
+      img {
+        height: 150px;
+      }
+    }
   }
   .count-slide {
     margin: 2vh auto;
@@ -115,7 +128,6 @@
 // Попапы
 .popup {
   margin: 20vh auto;
-  height: 30%;
   min-height: 180px;
   position: fixed;
   text-align: center;
@@ -132,6 +144,29 @@
       -webkit-appearance: none;
       outline: none;
       border: 1px solid $main-color;
+    }
+  }
+  &--register {
+    min-height: 400px;
+    max-height: 320px;
+    padding: 15px 20px;
+    form {
+      margin: 25px auto;
+      display: flex;
+      flex-direction: column;
+      label {
+        text-align: left;
+        margin-bottom: 10px;
+      }
+      input[type='tel'], input[type='password'] {
+        padding: 10px;
+      }
+      .ab_button {
+        background-color: $main-color;
+        &:hover {
+          background-color: lighten($main-color, 5%);
+        }
+      }
     }
   }
   &--method {
@@ -176,6 +211,9 @@
         .ab_button {
           background-color: $main-color;
           max-width: 160px;
+          &:hover {
+            background-color: lighten($main-color, 5%);
+          }
         }
       }
     }
