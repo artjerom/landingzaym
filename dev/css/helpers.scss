@@ -83,25 +83,35 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 280px;
+  width: 270px;
   overflow: hidden;
+  transiton: .3s ease-out;
+  @include clearfix();
   .arrow {
     cursor: pointer;
     position: absolute;
+    z-index: 9;
     &--right {
-      left: 245px;
-      right: 0;
+      width: 80px;
+      margin-left: 205px;
       transform: rotateY(180deg);
+      float:right;
+      clear:both;
     }
   }
   .content-slider {
     white-space: nowrap;
+    position: relative;
     width: 100%;
     figure {
       width: 100%;
       display: inline-block;
       img {
+        margin-top: 25px;
         height: 150px;
+      }
+      span {
+        white-space: pre-wrap;
       }
     }
   }
@@ -127,6 +137,7 @@
 
 // Попапы
 .popup {
+  z-index: 9999;
   margin: 20vh auto;
   min-height: 180px;
   position: fixed;

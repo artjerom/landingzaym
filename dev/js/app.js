@@ -31,6 +31,8 @@ $(function () {
             'click .btn-about': 'changeAboutTab',
 
             // Слайдер
+            'click .arrow--right': 'nextSlide',
+            'click .arrow--left': 'prevSlide',
 
             // Для попапов
             'click .js-btn_register': 'showRegister',
@@ -58,6 +60,31 @@ $(function () {
 
             $('#aboutTab-' + tabId).addClass('js-change-content--active');
 
+        },
+
+        // Следующий слайд
+        nextSlide: function (e) {
+            $(e.target).parent().parent().find('.content-slider').css({
+                'transition': '.3s ease-out',
+                'left': function (index, value) {
+                    if (parseFloat(value) <= -540) {
+                        return value = 0;
+                    }
+                    return parseFloat(value) - 270 + 'px';
+                }
+            });
+        },
+        // Предыдущий слайд
+        prevSlide: function (e) {
+            $(e.target).parent().parent().find('.content-slider').css({
+                'transition': '.3s ease-out',
+                'left': function (index, value) {
+                    if (parseFloat(value) === 0) {
+                        return value = -540;
+                    }
+                    return parseFloat(value) + 270 + 'px';
+                }
+            });
         },
 
         // Попап регистрации

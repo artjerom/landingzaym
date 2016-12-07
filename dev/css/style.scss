@@ -12,6 +12,7 @@
   max-width: 640px;
   margin: 0 auto;
   color: $main-text;
+  overflow: hidden;
 }
 .overlay {
   pointer-events: none;
@@ -261,7 +262,7 @@ section.is-working {
   .ab_slider {
     align-items: stretch;
     .arrow {
-      margin-top: 25px;
+      margin-top: 55px;
     }
     figure {
       .rev-img {

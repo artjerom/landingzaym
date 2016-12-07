@@ -10,6 +10,7 @@
   max-width: 640px;
   margin: 0 auto;
   color: #18181a;
+  overflow: hidden;
 }
 
 .overlay {
@@ -306,7 +307,7 @@ section.is-working .ab_slider {
 }
 
 section.is-working .ab_slider .arrow {
-  margin-top: 25px;
+  margin-top: 55px;
 }
 
 section.is-working .ab_slider figure .rev-img img {
@@ -610,23 +611,34 @@ footer section.main-footer .content h3 {
       flex-direction: row;
   -ms-flex-align: center;
       align-items: center;
-  width: 280px;
+  width: 270px;
   overflow: hidden;
+  transiton: .3s ease-out;
+}
+
+.ab_slider:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .ab_slider .arrow {
   cursor: pointer;
   position: absolute;
+  z-index: 9;
 }
 
 .ab_slider .arrow--right {
-  left: 245px;
-  right: 0;
+  width: 80px;
+  margin-left: 205px;
   transform: rotateY(180deg);
+  float: right;
+  clear: both;
 }
 
 .ab_slider .content-slider {
   white-space: nowrap;
+  position: relative;
   width: 100%;
 }
 
@@ -636,7 +648,12 @@ footer section.main-footer .content h3 {
 }
 
 .ab_slider .content-slider figure img {
+  margin-top: 25px;
   height: 150px;
+}
+
+.ab_slider .content-slider figure span {
+  white-space: pre-wrap;
 }
 
 .ab_slider .count-slide {
@@ -661,6 +678,7 @@ footer section.main-footer .content h3 {
 }
 
 .popup {
+  z-index: 9999;
   margin: 20vh auto;
   min-height: 180px;
   position: fixed;
