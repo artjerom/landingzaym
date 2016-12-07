@@ -114,7 +114,7 @@
 
 // Попапы
 .popup {
-  margin: 10vh auto;
+  margin: 20vh auto;
   height: 30%;
   min-height: 180px;
   position: fixed;
@@ -219,6 +219,7 @@
         }
         &--active {
           color: $main-text;
+          pointer-events: none;
           border: 2px solid $main-color;
         }
       }

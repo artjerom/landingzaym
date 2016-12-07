@@ -32,10 +32,13 @@ var LoanCalculatorView = Backbone.View.extend({
             'backgroundImage': 'linear-gradient(#3bb38e, #3bb38e)'
         });
 
+        $('.js-out-sum').css('color', '#3bb38e');
+
         if (val > 10000) {
             $(e.target).css({
                 'background-image': 'linear-gradient(rgb(254, 150, 39), rgb(254, 150, 39))'
             });
+            $('.js-out-sum').css('color', '#fe9627');
         }
 
         $(fieldSum).val(e.target.value + ' ₽');
@@ -58,10 +61,13 @@ var LoanCalculatorView = Backbone.View.extend({
             'backgroundImage': 'linear-gradient(#3bb38e, #3bb38e)'
         });
 
+        $('.js-out-sum').css('color', '#3bb38e');
+
         if (range.val() > 10000) {
             $(range).css({
                 'background-image': 'linear-gradient(rgb(254, 150, 39), rgb(254, 150, 39))'
             });
+            $('.js-out-sum').css('color', '#fe9627');
         }
 
         $('.js-sum').val(e.target.value);

@@ -637,7 +637,7 @@ footer section.main-footer .content h3 {
 }
 
 .popup {
-  margin: 10vh auto;
+  margin: 20vh auto;
   height: 30%;
   min-height: 180px;
   position: fixed;
@@ -754,5 +754,6 @@ footer section.main-footer .content h3 {
 
 .popup--method main .method--active {
   color: #18181a;
+  pointer-events: none;
   border: 2px solid #18a4d2;
 }

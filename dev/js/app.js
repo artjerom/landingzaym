@@ -54,6 +54,9 @@ $(function () {
         // Выбор способа получения
         changeMethod: function () {
             $('.method').toggleClass('method--active');
+
+            // -- Подставляем текст
+            $('.js-pay_method').html($('.method--active').find('.js-text_method').html());
         }
     });
 
