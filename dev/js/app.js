@@ -138,8 +138,6 @@ $(function () {
                 period: period
             };
 
-            console.log(JSON.stringify(data));
-
             // Запрос
             if (!$('.js-btn_register').hasClass('is-disabled')) {
                 AppHelpers.ajaxWrapper(
