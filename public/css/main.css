@@ -318,6 +318,7 @@ section.is-working .ab_slider figure .rev-img img {
 
 section.is-working .ab_slider figure .rev-commnet {
   margin-top: 20px;
+  width: 95%;
 }
 
 section.is-working .ab_slider figure .rev-commnet span {
@@ -679,7 +680,7 @@ footer section.main-footer .content h3 {
 
 .popup {
   z-index: 9999;
-  margin: 20vh auto;
+  margin: 10vh auto;
   min-height: 180px;
   position: fixed;
   text-align: center;
@@ -700,8 +701,7 @@ footer section.main-footer .content h3 {
 }
 
 .popup--register {
-  min-height: 400px;
-  max-height: 320px;
+  max-height: 460px;
   padding: 15px 20px;
 }
 
@@ -832,4 +832,10 @@ footer section.main-footer .content h3 {
   color: #18181a;
   pointer-events: none;
   border: 2px solid #18a4d2;
+}
+
+.popup .error {
+  text-align: left;
+  color: #bb0000;
+  margin: 5px 0;
 }

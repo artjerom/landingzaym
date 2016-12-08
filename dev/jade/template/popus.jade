@@ -30,7 +30,7 @@
             h3.js-text_method наличными
 
 // Регистрация
-.popup.popup--register(style='display: none')
+.popup.popup--register(style='display: block')
     .content
         h2.ab_center Регистрация
         i.ico-close.js-close_popup
@@ -44,5 +44,11 @@
             label(for='userRepeatPass') Повторите пароль
             input#userRepeatPass(type='password' placeholder='Повторите пароль')
             br
+            .error.js-err-val-phone(style='display: none;')
+                span Неверный номер телефона
+            .error.js-err-repeat-pass(style='display: none;')
+                span Пароли не совпадают
+            .error.js-err-val-pass(style='display: none;')
+                span Пароль не менее 6 символов
             .ab_center
-                a.ab_button() Зарегистрироваться
+                a.ab_button.js-btn_register.is-disabled() Зарегистрироваться

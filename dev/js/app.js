@@ -1,4 +1,5 @@
-import AppConstants from './constants.js';
+import AppConstants from './constants';
+import AppHelpers from './helpers';
 import LoanCalculatorModel from './app/LoanCalculatorModel';
 import LoanCalculatorView from './app/LoanCalculatorView';
 
@@ -34,12 +35,19 @@ $(function () {
             'click .arrow--right': 'nextSlide',
             'click .arrow--left': 'prevSlide',
 
+            // Регистрация
+            'click .js-btn_register': 'handleRegister',
+
             // Для попапов
-            'click .js-btn_register': 'showRegister',
+            'click .js-show_register': 'showRegister',
             'click .js-pay_method': 'showPayMethod',
             'click .btn_feedback': 'showFeedback',
             'change .popup': 'changePopus',
             'click .js-close_popup': 'closePopup',
+        },
+
+        initialize: function () {
+            $('#userPhone').mask("+7 (999) 999-9999");
         },
 
         // Выбор способа получения
@@ -85,6 +93,63 @@ $(function () {
                     return parseFloat(value) + 270 + 'px';
                 }
             });
+        },
+
+        handleRegister: function () {
+            let phone = $('#userPhone').val(),
+                pass = $('#userPass').val(),
+                repPass = $('#userRepeatPass').val();
+
+            // Если пароли не совпадают
+            if (pass !== repPass) {
+                $('.js-err-repeat-pass').show();
+            } else {
+                $('.js-err-repeat-pass').hide();
+            }
+
+            // Если пароль короткий
+            if (pass.length < 6) {
+                $('.js-err-val-pass').show();
+            } else if (pass.length >= 6) {
+                $('.js-err-val-pass').hide();
+            }
+
+            // Проверка телефона
+            if (phone.length !== 17) {
+                $('.js-err-val-phone').show();
+            } else {
+                $('.js-err-val-phone').hide();
+            }
+
+            if (phone.length === 17 && pass === repPass && pass.length >= 6) {
+                $('.js-btn_register').removeClass('is-disabled');
+            } else {
+                $('.js-btn_register').addClass('is-disabled');
+            }
+
+            var data = {
+                phone: phone,
+                pass: pass,
+                // Передать сумму и срок
+            };
+
+            console.log(JSON.stringify(data));
+
+            // Запрос
+            if (!$('.js-btn_register').hasClass('is-disabled')) {
+                AppHelpers.ajaxWrapper(
+                    '/register',
+                    'POST',
+                    JSON.stringify(data),
+                    function (data) {
+                        if (data.status === 'succes') {
+                            console.log('register');
+                        } else {
+                            console.log('err');
+                        }
+                    }
+                )
+            }
         },
 
         // Попап регистрации
