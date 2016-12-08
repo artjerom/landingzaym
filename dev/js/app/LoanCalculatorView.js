@@ -12,6 +12,10 @@ var LoanCalculatorView = Backbone.View.extend({
 
         'input input[type=range].js-slider--period': 'changePeriodRange',
         'change input[type=tel].js-period': 'changePeriodField',
+
+        // Для полей калькулятора
+        'focus .range_field': 'lightBorderInput',
+        'focusout .range_field': 'offLightBorderInput'
     },
 
     initialize: function () {
@@ -41,7 +45,7 @@ var LoanCalculatorView = Backbone.View.extend({
             $('.js-out-sum').css('color', '#fe9627');
         }
 
-        $(fieldSum).val(e.target.value + ' ₽');
+        $(fieldSum).val(e.target.value);
 
         // Подставляем значение
         $('.js-out-sum').html(e.target.value + '  ₽');
@@ -71,16 +75,9 @@ var LoanCalculatorView = Backbone.View.extend({
         }
 
         $('.js-sum').val(e.target.value);
-        // @TODO: Пока без рубля
-        // Подставляем символ рубля
-        if (~$('.js-sum').val().indexOf('₽')) {
-            $('.js-sum').val(e.target.value);
-        } else {
-            $('.js-sum').val(e.target.value + ' ₽');
-        }
 
         // Подставляем значение
-        $('.js-out-sum').html(e.target.value);
+        $('.js-out-sum').html(e.target.value + ' ₽');
     },
 
     // Выбор срока при помощи ползунка
@@ -120,6 +117,18 @@ var LoanCalculatorView = Backbone.View.extend({
         }
 
         $('.js-period').val(e.target.value);
+    },
+
+    lightBorderInput: function (e) {
+        $(e.target).next('label').css({
+            'borderColor': '#18a4d2'
+        });
+    },
+
+    offLightBorderInput: function (e) {
+        $(e.target).next('label').css({
+            'borderColor': '#b0bac5'
+        });
     }
 });
 

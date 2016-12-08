@@ -37,13 +37,14 @@ $(function () {
 
             // Регистрация
             'click .js-btn_register': 'handleRegister',
+            'click .js-btn_feedback': 'handleFeedback',
 
             // Для попапов
             'click .js-show_register': 'showRegister',
             'click .js-pay_method': 'showPayMethod',
             'click .btn_feedback': 'showFeedback',
             'change .popup': 'changePopus',
-            'click .js-close_popup': 'closePopup',
+            'click .js-close_popup': 'closePopup'
         },
 
         initialize: function () {
@@ -95,10 +96,13 @@ $(function () {
             });
         },
 
+        // Регистрация
         handleRegister: function () {
             let phone = $('#userPhone').val(),
                 pass = $('#userPass').val(),
-                repPass = $('#userRepeatPass').val();
+                repPass = $('#userRepeatPass').val(),
+                sum = $('.js-sum').val(),
+                period = $('.js-period').val();
 
             // Если пароли не совпадают
             if (pass !== repPass) {
@@ -130,7 +134,8 @@ $(function () {
             var data = {
                 phone: phone,
                 pass: pass,
-                // Передать сумму и срок
+                sum: sum,
+                period: period
             };
 
             console.log(JSON.stringify(data));
@@ -139,6 +144,37 @@ $(function () {
             if (!$('.js-btn_register').hasClass('is-disabled')) {
                 AppHelpers.ajaxWrapper(
                     '/register',
+                    'POST',
+                    JSON.stringify(data),
+                    function (data) {
+                        if (data.status === 'succes') {
+                            console.log('register');
+                        } else {
+                            console.log('err');
+                        }
+                    }
+                )
+            }
+        },
+
+        // Обработка формы обратной связи
+        handleFeedback: function () {
+            let theme = $('.js-select_theme').val(),
+                email = $('.js-feed-email').val(),
+                message = $('.js-feed-message').val();
+
+            var data = {
+                theme: theme,
+                email: email,
+                message: message
+            };
+
+            console.log(data);
+
+            // Запрос
+            if (!$('.js-btn_feedback').hasClass('is-disabled')) {
+                AppHelpers.ajaxWrapper(
+                    '/feedback',
                     'POST',
                     JSON.stringify(data),
                     function (data) {

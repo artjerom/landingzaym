@@ -3,7 +3,7 @@
  */
 var AppHelpers = {
     // @TODO: url
-    baseUrl: 'localhost',
+    baseUrl: '',
 
     // ajax
     ajaxWrapper: (url, type, data, successCallback, errorCallback) => {
@@ -13,7 +13,6 @@ var AppHelpers = {
         errorCallback = errorCallback || function(ermsg) {
             console.log(ermsg);
         };
-        //
         $.ajax({
             url: AppHelpers.baseUrl + url,
             type: type,

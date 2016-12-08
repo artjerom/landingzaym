@@ -5,16 +5,15 @@
         i.ico-close.js-close_popup
         main
             form(action='#')
-                select
-                    option(selected disabled) Тема обращения
-                    option() Проблема 1
-                    option() Проблема 2
-                    option() Проблема 3
-                    option() Проблема 4
-                input.js-phone(type='text' required placeholder='Ваш телефон или email *')
-                textarea.js-message(required placeholder='Текст сообщения *')
+                select.js-feed-select_theme
+                    //option(selected disabled) Тема обращения
+                    option(value='Вопрос о работе системы') Вопрос о работе системы
+                    option(value='Сообщение о ошибке') Сообщение о ошибке
+                    option(value='Предложение о сотрудничестве') Предложение о сотрудничестве
+                input.js-feed-email(type='text' required placeholder='email')
+                textarea.js-feed-message(required placeholder='Текст сообщения')
                 .ab_center
-                    a.ab_button Отправить
+                    a.ab_button.js-btn_feedback Отправить
 
 // Выбор способа получения
 .popup.popup--method(style='display: none;')
@@ -30,7 +29,7 @@
             h3.js-text_method наличными
 
 // Регистрация
-.popup.popup--register(style='display: block')
+.popup.popup--register(style='display: none')
     .content
         h2.ab_center Регистрация
         i.ico-close.js-close_popup

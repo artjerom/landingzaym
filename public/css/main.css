@@ -91,25 +91,70 @@ header main .calc-title {
       align-items: center;
 }
 
+header main .calc-title--period {
+  margin-top: 25px;
+}
+
 header main .calc-title span {
   width: 40%;
   font-weight: bold;
   white-space: nowrap;
 }
 
-header main .calc-title .range_field {
-  max-width: 125px;
-  width: 40%;
+header main .calc-title .af-input {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   text-align: right;
-  padding-right: 5px;
+}
+
+header main .calc-title .af-input .range_field {
+  max-width: 80px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  text-align: right;
+}
+
+header main .calc-title .af-input .range_field--time {
+  max-width: 51px;
+}
+
+header main .calc-title .af-input .range_field--time ~ .js-symb_inp {
+  padding-right: 8px;
+}
+
+header main .calc-title .af-input label {
+  border: 1px solid #b0bac5;
+  border-left: none;
+  cursor: text;
+  border-top-right-radius: 3px;
+  font-weight: normal;
+  border-bottom-right-radius: 3px;
+  padding: 5.5px;
 }
 
 header main .js-slider {
   width: 100%;
+  margin-bottom: 15px;
 }
 
-header main .js-slider--sum {
-  margin-bottom: 25px;
+header main .ab_range-info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header main .ab_range-info span {
+  font-size: .7em;
+  letter-spacing: 1px;
+  color: #b8bdc3;
+  float: left;
+}
+
+header main .ab_range-info span:nth-child(2) {
+  float: right;
 }
 
 header main .info-zaym {
@@ -146,8 +191,7 @@ header main .ab_button {
 }
 
 header .info {
-  margin-top: 27px;
-  padding-top: 25px;
+  margin-top: 50px;
 }
 
 header .info ul {
@@ -758,13 +802,13 @@ footer section.main-footer .content h3 {
   font-size: 1em;
 }
 
-.popup--feedback main form .js-phone, .popup--feedback main form .js-message {
+.popup--feedback main form .js-feed-email, .popup--feedback main form .js-feed-message {
   margin-bottom: 25px;
   font-size: 1.1em;
   padding: 7px;
 }
 
-.popup--feedback main form .js-message {
+.popup--feedback main form .js-feed-message {
   resize: none;
   min-height: 120px;
   background: #fff;
