@@ -4,9 +4,9 @@ header.ab_indent
         a(href='tel: 88007007286') 8 800 700-72-86
     .info-title
         h2
-            | Займ на
+            | Займ
             = ' '
-            a.ab_link.js-pay_method() вашу карту
+            a.ab_link.js-pay_method() на вашу карту
             i.ico-dropdown
             |  за 10 минут
         span Быстро, просто и без поручителей
@@ -15,15 +15,23 @@ header.ab_indent
             label(for='sum')
                 .calc-title
                     span Сумма займа
-                    // @TODO: Добавить к value ' ₽'
-                    input.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000')
+                    .af-input.af-input--sum
+                        input#focusInpSum.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000' required)
+                        label(for='focusInpSum').js-symb_inp ₽
                 input#sum.slider.js-slider.js-slider--sum(type='range', value='6000' min='1500', max='50000')
+                .ab_range-info
+                    span 1500 ₽
+                    span 50000 ₽
             label(for='period')
-                .calc-title
+                .calc-title.calc-title--period
                     span На срок до
-                    // @TODO: Добавить к value ' дней'
-                    input.range_field.range_field--time.js-period(type='tel', value='6' name='period')
+                    .af-input.af-input--period
+                        input#focusInpPeriod.range_field.range_field--time.js-period(type='tel', value='6' name='period' required)
+                        label(for='focusInpPeriod').js-symb_inp дней
                 input#period.slider.js-slider.js-slider--period(type='range', value='12' min='4', max='30')
+                .ab_range-info
+                    span 4 дня
+                    span 30 дней
             .info-zaym
                 // Информация о займе
                 .info-sum
@@ -33,7 +41,7 @@ header.ab_indent
                     span Возращаете
                     h4.js-out-sum_back 6600 ₽
             .ab_center
-                a.ab_button Получить деньги
+                a.ab_button.js-show_register Получить деньги
     .info.info--header
         ul
             li

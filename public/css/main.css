@@ -10,13 +10,14 @@
   max-width: 640px;
   margin: 0 auto;
   color: #18181a;
+  overflow: hidden;
 }
 
 .overlay {
   pointer-events: none;
 }
 
-input[type='text'], input[type='tel'] {
+input[type='text'], input[type='tel'], input[type='password'] {
   background: #fff;
   color: #18181a;
   border: solid 1px #b0bac5;
@@ -25,7 +26,7 @@ input[type='text'], input[type='tel'] {
   font-size: 1em;
 }
 
-input[type='text']:focus, input[type='tel']:focus {
+input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus {
   -webkit-appearance: none;
   outline: none;
   border: 1px solid #18a4d2;
@@ -90,25 +91,70 @@ header main .calc-title {
       align-items: center;
 }
 
+header main .calc-title--period {
+  margin-top: 25px;
+}
+
 header main .calc-title span {
   width: 40%;
   font-weight: bold;
   white-space: nowrap;
 }
 
-header main .calc-title .range_field {
-  max-width: 125px;
-  width: 40%;
+header main .calc-title .af-input {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   text-align: right;
-  padding-right: 5px;
+}
+
+header main .calc-title .af-input .range_field {
+  max-width: 80px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  text-align: right;
+}
+
+header main .calc-title .af-input .range_field--time {
+  max-width: 51px;
+}
+
+header main .calc-title .af-input .range_field--time ~ .js-symb_inp {
+  padding-right: 8px;
+}
+
+header main .calc-title .af-input label {
+  border: 1px solid #b0bac5;
+  border-left: none;
+  cursor: text;
+  border-top-right-radius: 3px;
+  font-weight: normal;
+  border-bottom-right-radius: 3px;
+  padding: 5.5px;
 }
 
 header main .js-slider {
   width: 100%;
+  margin-bottom: 15px;
 }
 
-header main .js-slider--sum {
-  margin-bottom: 25px;
+header main .ab_range-info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header main .ab_range-info span {
+  font-size: .7em;
+  letter-spacing: 1px;
+  color: #b8bdc3;
+  float: left;
+}
+
+header main .ab_range-info span:nth-child(2) {
+  float: right;
 }
 
 header main .info-zaym {
@@ -145,8 +191,7 @@ header main .ab_button {
 }
 
 header .info {
-  margin-top: 27px;
-  padding-top: 25px;
+  margin-top: 50px;
 }
 
 header .info ul {
@@ -220,7 +265,7 @@ section.about nav {
 
 section.about nav a.btn-about {
   cursor: pointer;
-  min-width: 90px;
+  min-width: 104px;
   background-color: #fff;
   color: #18a4d2;
   font-weight: bold;
@@ -231,6 +276,7 @@ section.about nav a.btn-about {
 section.about nav a.btn-about--active {
   color: #fff;
   background-color: #18a4d2;
+  pointer-events: none;
 }
 
 section.about nav a.btn-about:first-child {
@@ -299,9 +345,13 @@ section.is-working .info p span {
   background-size: cover;
 }
 
+section.is-working .ab_slider {
+  -ms-flex-align: stretch;
+      align-items: stretch;
+}
+
 section.is-working .ab_slider .arrow {
-  position: relative;
-  bottom: 70px;
+  margin-top: 55px;
 }
 
 section.is-working .ab_slider figure .rev-img img {
@@ -312,6 +362,11 @@ section.is-working .ab_slider figure .rev-img img {
 
 section.is-working .ab_slider figure .rev-commnet {
   margin-top: 20px;
+  width: 95%;
+}
+
+section.is-working .ab_slider figure .rev-commnet span {
+  white-space: pre-wrap;
 }
 
 section.zaym {
@@ -410,7 +465,7 @@ footer section.block-feedback main .feedback {
   margin-top: 25px;
 }
 
-footer section.block-feedback main .feedback a.btn_feedbadk {
+footer section.block-feedback main .feedback a.btn_feedback {
   font-size: .8em;
   display: -ms-flexbox;
   display: flex;
@@ -430,7 +485,7 @@ footer section.block-feedback main .feedback a.btn_feedbadk {
   cursor: pointer;
 }
 
-footer section.block-feedback main .feedback a.btn_feedbadk img {
+footer section.block-feedback main .feedback a.btn_feedback img {
   min-width: 20px;
   min-height: 8px;
   height: 17px;
@@ -601,18 +656,49 @@ footer section.main-footer .content h3 {
       flex-direction: row;
   -ms-flex-align: center;
       align-items: center;
+  width: 270px;
+  overflow: hidden;
+  transiton: .3s ease-out;
+}
+
+.ab_slider:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .ab_slider .arrow {
   cursor: pointer;
+  position: absolute;
+  z-index: 9;
 }
 
 .ab_slider .arrow--right {
+  width: 80px;
+  margin-left: 205px;
   transform: rotateY(180deg);
+  float: right;
+  clear: both;
 }
 
-.ab_slider .ab_slide:not(.ab_slide--active) {
-  display: none;
+.ab_slider .content-slider {
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.ab_slider .content-slider figure {
+  width: 100%;
+  display: inline-block;
+}
+
+.ab_slider .content-slider figure img {
+  margin-top: 25px;
+  height: 150px;
+}
+
+.ab_slider .content-slider figure span {
+  white-space: pre-wrap;
 }
 
 .ab_slider .count-slide {
@@ -637,8 +723,8 @@ footer section.main-footer .content h3 {
 }
 
 .popup {
+  z-index: 9999;
   margin: 10vh auto;
-  height: 30%;
   min-height: 180px;
   position: fixed;
   text-align: center;
@@ -656,6 +742,36 @@ footer section.main-footer .content h3 {
   -webkit-appearance: none;
   outline: none;
   border: 1px solid #18a4d2;
+}
+
+.popup--register {
+  max-height: 460px;
+  padding: 15px 20px;
+}
+
+.popup--register form {
+  margin: 25px auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.popup--register form label {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.popup--register form input[type='tel'], .popup--register form input[type='password'] {
+  padding: 10px;
+}
+
+.popup--register form .ab_button {
+  background-color: #18a4d2;
+}
+
+.popup--register form .ab_button:hover {
+  background-color: #1eb4e5;
 }
 
 .popup--method {
@@ -686,13 +802,13 @@ footer section.main-footer .content h3 {
   font-size: 1em;
 }
 
-.popup--feedback main form .js-phone, .popup--feedback main form .js-message {
+.popup--feedback main form .js-feed-email, .popup--feedback main form .js-feed-message {
   margin-bottom: 25px;
   font-size: 1.1em;
   padding: 7px;
 }
 
-.popup--feedback main form .js-message {
+.popup--feedback main form .js-feed-message {
   resize: none;
   min-height: 120px;
   background: #fff;
@@ -705,6 +821,10 @@ footer section.main-footer .content h3 {
 .popup--feedback main form .ab_button {
   background-color: #18a4d2;
   max-width: 160px;
+}
+
+.popup--feedback main form .ab_button:hover {
+  background-color: #1eb4e5;
 }
 
 .popup .content i.ico-close {
@@ -754,5 +874,12 @@ footer section.main-footer .content h3 {
 
 .popup--method main .method--active {
   color: #18181a;
+  pointer-events: none;
   border: 2px solid #18a4d2;
+}
+
+.popup .error {
+  text-align: left;
+  color: #bb0000;
+  margin: 5px 0;
 }

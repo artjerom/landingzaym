@@ -13,24 +13,30 @@
       <header class="ab_indent">
         <div class="logo"><img src="img/logo.png" alt="zaymigo"><a href="tel: 88007007286">8 800 700-72-86</a></div>
         <div class="info-title">
-          <h2>Займ на <a class="ab_link js-pay_method">вашу карту</a><i class="ico-dropdown"></i> за 10 минут
+          <h2>Займ <a class="ab_link js-pay_method">на вашу карту</a><i class="ico-dropdown"></i> за 10 минут
           </h2><span>Быстро, просто и без поручителей</span>
         </div>
         <main>
           <form id="loanCalculator" action="#">
             <label for="sum">
               <div class="calc-title"><span>Сумма займа</span>
-                <!-- @TODO: Добавить к value ' ₽'-->
-                <input type="tel" name="sum" value="6000" class="range_field range_field--sum js-sum">
+                <div class="af-input af-input--sum">
+                  <input id="focusInpSum" type="tel" name="sum" value="6000" required class="range_field range_field--sum js-sum">
+                  <label for="focusInpSum" class="js-symb_inp">₽</label>
+                </div>
               </div>
               <input id="sum" type="range" value="6000" min="1500" max="50000" class="slider js-slider js-slider--sum">
+              <div class="ab_range-info"><span>1500 ₽</span><span>50000 ₽</span></div>
             </label>
             <label for="period">
-              <div class="calc-title"><span>На срок до</span>
-                <!-- @TODO: Добавить к value ' дней'-->
-                <input type="tel" value="6" name="period" class="range_field range_field--time js-period">
+              <div class="calc-title calc-title--period"><span>На срок до</span>
+                <div class="af-input af-input--period">
+                  <input id="focusInpPeriod" type="tel" value="6" name="period" required class="range_field range_field--time js-period">
+                  <label for="focusInpPeriod" class="js-symb_inp">дней</label>
+                </div>
               </div>
               <input id="period" type="range" value="12" min="4" max="30" class="slider js-slider js-slider--period">
+              <div class="ab_range-info"><span>4 дня</span><span>30 дней</span></div>
             </label>
             <div class="info-zaym">
               <!-- Информация о займе-->
@@ -41,7 +47,7 @@
                 <h4 class="js-out-sum_back">6600 ₽</h4>
               </div>
             </div>
-            <div class="ab_center"><a class="ab_button">Получить деньги</a></div>
+            <div class="ab_center"><a class="ab_button js-show_register">Получить деньги</a></div>
           </form>
         </main>
         <div class="info info--header">
@@ -56,7 +62,7 @@
       <!-- Как получить деньги-->
       <section class="how-to-money ab_indent">
         <h2 class="ab_center">Как получить деньги</h2>
-        <div class="ab_slider">
+        <div class="ab_slider ab_center">
           <div class="arrow arrow--left"><img src="img/arrow-back.png"></div>
           <div class="content-slider ab_center">
             <figure class="ab_slide ab_slide--active ab_slide--1">
@@ -65,11 +71,11 @@
             </figure>
             <figure class="ab_slide ab_slide--2">
               <div class="rev-img"><img src="img/how-slide-2.png"></div>
-              <div class="count-slide"><i data-count="1" class="ico-slide ico-slide--1"></i><i data-count="2" class="ico-slide ico-slide--active ico-slide--2">2</i><i data-count="3" class="ico-slide ico-slide--3"></i></div><span>Заполняете небольшую онлайн-заявку.</span><br><a class="ab_link">Заполнить заявку</a>
+              <div class="count-slide"><i data-count="1" class="ico-slide ico-slide--1"></i><i data-count="2" class="ico-slide ico-slide--active ico-slide--2">2</i><i data-count="3" class="ico-slide ico-slide--3"></i></div><span>Получаете решение о выдаче займа в течение 5 минут.</span><br><a class="ab_link">Как увеличить шансы</a>
             </figure>
             <figure class="ab_slide ab_slide--3">
               <div class="rev-img"><img src="img/how-slide-3.png"></div>
-              <div class="count-slide"><i data-count="1" class="ico-slide ico-slide--1"></i><i data-count="2" class="ico-slide ico-slide--2"></i><i data-count="3" class="ico-slide ico-slide--active ico-slide--3">3</i></div><span>Заполняете небольшую онлайн-заявку.</span><br><a class="ab_link">Заполнить заявку</a>
+              <div class="count-slide"><i data-count="1" class="ico-slide ico-slide--1"></i><i data-count="2" class="ico-slide ico-slide--2"></i><i data-count="3" class="ico-slide ico-slide--active ico-slide--3">3</i></div><span>Получаете деньги удобным способом.</span><br><a class="ab_link">Способы получения</a>
             </figure>
           </div>
           <div class="arrow arrow--right"><img src="img/arrow-back.png"></div>
@@ -79,14 +85,20 @@
       <section class="about ab_indent">
         <h2 class="ab_center">Почему мы?</h2>
         <main>
-          <nav class="ab_center"><a class="btn-about btn-about--active">Безопасно</a><a class="btn-about">Выгодно</a><a class="btn-about">Удобно</a></nav>
-          <div class="js-change-content js-change-content--active">
+          <nav class="ab_center"><a data-tab="1" class="btn-about btn-about--active">Безопасно</a><a data-tab="2" class="btn-about">Выгодно</a><a data-tab="3" class="btn-about">Удобно</a></nav>
+          <div id="aboutTab-1" class="js-change-content js-change-content--active">
             <p><b>Zaymigo</b>- лицензированная организация. Вы защищены законом «О потребительском кредитовании»</p>
             <ul>
               <li>Белая компания. Состоит в государственном&nbsp;<a class="ab_link">реестре МФО</a></li>
               <li>Ваши персональные данные защищены и не попадут в руки третьих лиц.</li>
               <li>Вы не передаете на свою платежную информацию.</li>
             </ul>
+          </div>
+          <div id="aboutTab-2" class="js-change-content">
+            <h2>Здесь контент для 2 таба</h2>
+          </div>
+          <div id="aboutTab-3" class="js-change-content">
+            <h2>Здесь контент для 3 таба</h2>
           </div>
         </main>
       </section>
@@ -96,18 +108,24 @@
             <h2>Zaymigo работает</h2>
             <p>За сутки мы вадали займы<span> 2300 заемщикам.</span>&nbsp;Вот что пишут некоторые из них:</p>
           </div>
-          <div class="ab_slider">
+          <div class="ab_slider ab_center">
             <div class="arrow arrow--left"><img src="img/arrow-back.png"></div>
             <div class="content-slider">
               <figure class="ab_slide ab_slide--active">
                 <div class="rev-img"><img src="img/avatar.png"></div>
                 <div class="rev-commnet"><b>Евгений Титов</b><br><span>Очень удобно, занял с первого раза быстро и без проблем. Огромное спасибо</span></div>
+                <div class="count-slide"><i class="ico-slide ico-slide--active"></i><i class="ico-slide"></i><i class="ico-slide"></i></div>
               </figure>
               <figure class="ab_slide">
                 <div class="rev-img"><img src="img/avatar-2.png"></div>
-                <div class="rev-commnet"><b>Евгений Титов</b><br><span>Очень удобно, занял с первого раза быстро и без проблем. Огромное спасибо</span></div>
+                <div class="rev-commnet"><b>Анастасия Круглова</b><br><span>Быстро одобрили и перевели деньги. В течение часа решила проблема с просрочками по кредиту</span></div>
+                <div class="count-slide"><i class="ico-slide"></i><i class="ico-slide ico-slide--active"></i><i class="ico-slide"></i></div>
               </figure>
-              <div class="count-slide"><i class="ico-slide ico-slide--active"></i><i class="ico-slide"></i><i class="ico-slide"></i><i class="ico-slide"></i><i class="ico-slide"></i></div>
+              <figure class="ab_slide">
+                <div class="rev-img"><img src="img/avatar-3.png"></div>
+                <div class="rev-commnet"><b>Евгения Петрова</b><br><span>Взяла займ без проблем, за что большое спасибо. Комиссия вышла минимальной</span></div>
+                <div class="count-slide"><i class="ico-slide"></i><i class="ico-slide"></i><i class="ico-slide ico-slide--active"></i></div>
+              </figure>
             </div>
             <div class="arrow arrow--right"><img src="img/arrow-back.png"></div>
           </div>
@@ -115,20 +133,8 @@
       </section>
       <section class="zaym ab_center">
         <h2>Дадим в долг</h2><span>Удобным способом в течение 10 минут</span>
-        <div class="ab_center"><a class="ab_button">Получить деньги</a></div>
+        <div class="ab_center"><a class="ab_button js-show_register">Получить деньги</a></div>
       </section>
-      <!--
-      <section class="zaym">
-      &lt;!&ndash;Блок: Дадим в долг&ndash;&gt;
-      </section>
-      <section class="questions">
-      &lt;!&ndash;Блок: Вопросы и ответы&ndash;&gt;
-      </section>
-      <section class="feedback">
-      &lt;!&ndash;Блок: Обратная связь&ndash;&gt;
-      </section>
-      &lt;!&ndash;
-      -->
       <footer>
         <div class="ab_indent">
           <h2>Вопросы и ответы</h2>
@@ -153,7 +159,7 @@
           <h3 class="title"><i class="ico-feedback"></i>Остались вопросы?</h3>
           <main class="ab_indent">
             <p>Не нашли ответа? Мы готовы ответить на ваши вопросы по телефону с 9:00 до 18:00 ежедневно, кроме выходных</p>
-            <div class="feedback"><a class="btn_feedbadk"><img src="img/ico-mail.png">Напишите нам</a>
+            <div class="feedback"><a class="btn_feedback"><img src="img/ico-mail.png">Напишите нам</a>
               <div class="call"><span>Или позвоните</span><br><a href="tel: 88003434343" class="tel">8 (800) 343-43-43</a></div>
             </div>
           </main>
@@ -163,6 +169,7 @@
         </section>
       </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.3/jquery.mask.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
       <script src="js/app.js"></script>
@@ -173,16 +180,15 @@
         <h2 class="ab_center">Обратная связь</h2><i class="ico-close js-close_popup"></i>
         <main>
           <form action="#">
-            <select>
-              <option selected disabled>Тема обращения</option>
-              <option>Проблема 1</option>
-              <option>Проблема 2</option>
-              <option>Проблема 3</option>
-              <option>Проблема 4</option>
+            <select class="js-feed-select_theme">
+              <!--option(selected disabled) Тема обращения-->
+              <option value="Вопрос о работе системы">Вопрос о работе системы</option>
+              <option value="Сообщение о ошибке">Сообщение о ошибке</option>
+              <option value="Предложение о сотрудничестве">Предложение о сотрудничестве</option>
             </select>
-            <input type="text" required placeholder="Ваш телефон или email *" class="js-phone">
-            <textarea required placeholder="Текст сообщения *" class="js-message"></textarea>
-            <div class="ab_center"><a class="ab_button">Отправить</a></div>
+            <input type="text" required placeholder="email" class="js-feed-email">
+            <textarea required placeholder="Текст сообщения" class="js-feed-message"></textarea>
+            <div class="ab_center"><a class="ab_button js-btn_feedback">Отправить</a></div>
           </form>
         </main>
       </div>
@@ -193,12 +199,30 @@
         <h2 class="ab_center">Способ получения</h2><i class="ico-close js-close_popup"></i>
         <main class="ab_center">
           <div class="method method--card method--active"><img src="img/visa.png">
-            <h3>на карту</h3>
+            <h3 class="js-text_method">на карту</h3>
           </div>
           <div class="method method--contact"><img src="img/cash.png">
-            <h3>наличными</h3>
+            <h3 class="js-text_method">наличными</h3>
           </div>
         </main>
+      </div>
+    </div>
+    <!-- Регистрация-->
+    <div style="display: none" class="popup popup--register">
+      <div class="content">
+        <h2 class="ab_center">Регистрация</h2><i class="ico-close js-close_popup"></i>
+        <form action="#" class="ab_center">
+          <label for="userPhone">Моб. телефон</label>
+          <input id="userPhone" type="tel" placeholder="Номер телефона" required><br>
+          <label for="userPass">Пароль</label>
+          <input id="userPass" type="password" placeholder="Пароль"><br>
+          <label for="userRepeatPass">Повторите пароль</label>
+          <input id="userRepeatPass" type="password" placeholder="Повторите пароль"><br>
+          <div style="display: none;" class="error js-err-val-phone"><span>Неверный номер телефона</span></div>
+          <div style="display: none;" class="error js-err-repeat-pass"><span>Пароли не совпадают</span></div>
+          <div style="display: none;" class="error js-err-val-pass"><span>Пароль не менее 6 символов</span></div>
+          <div class="ab_center"><a class="ab_button js-btn_register is-disabled">Зарегистрироваться</a></div>
+        </form>
       </div>
     </div>
   </body>

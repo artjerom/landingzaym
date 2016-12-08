@@ -12,15 +12,16 @@
   max-width: 640px;
   margin: 0 auto;
   color: $main-text;
+  overflow: hidden;
 }
 .overlay {
   pointer-events: none;
 }
 
-input[type='text'], input[type='tel'] {
+input[type='text'], input[type='tel'], input[type='password'] {
   background: #fff;
   color: $main-text;
-  border: solid 1px #b0bac5;
+  border: solid 1px $border-input;
   border-radius: 3px;
   padding: 5px 0;
   font-size: 1em;
@@ -75,22 +76,56 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      &--period {
+        margin-top: 25px;
+      }
       span {
         width: 40%;
         font-weight: bold;
         white-space: nowrap;
       }
-      .range_field {
-        max-width: 125px;
-        width: 40%;
+      .af-input {
+        display: flex;
+        justify-content: flex-end;
         text-align: right;
-        padding-right: 5px;
+        .range_field {
+          max-width: 80px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-right: none;
+          text-align: right;
+          &--time {
+            max-width: 51px;
+            ~ .js-symb_inp {
+              padding-right: 8px;
+            }
+          }
+        }
+        label {
+          border: 1px solid $border-input;
+          border-left: none;
+          cursor: text;
+          border-top-right-radius: 3px;
+          font-weight: normal;
+          border-bottom-right-radius: 3px;
+          padding: 5.5px;
+        }
       }
     }
     .js-slider {
       width: 100%;
-      &--sum {
-        margin-bottom: 25px;
+      margin-bottom: 15px;
+    }
+    .ab_range-info {
+      @include clearfix();
+      span {
+        font-size: .7em;
+        letter-spacing: 1px;
+        color: $text-gray;
+        float: left;
+        &:nth-child(2) {
+          float: right;
+        }
       }
     }
     .info-zaym {
@@ -122,8 +157,7 @@ header {
 
 
   .info {
-    margin-top: 27px;
-    padding-top: 25px;
+    margin-top: 50px;
     ul {
       list-style: none;
       li {
@@ -189,7 +223,7 @@ section.about {
     margin: 40px auto;
     a.btn-about {
       cursor: pointer;
-      min-width: 90px;
+      min-width: 104px;
       background-color: #fff;
       color: $main-color;
       font-weight: bold;
@@ -198,6 +232,7 @@ section.about {
       &--active {
         color: #fff;
         background-color: $main-color;
+        pointer-events: none;
       }
       &:first-child {
         border-bottom-left-radius: 20px;
@@ -258,9 +293,9 @@ section.is-working {
     }
   }
   .ab_slider {
+    align-items: stretch;
     .arrow {
-      position: relative;
-      bottom: 70px;
+      margin-top: 55px;
     }
     figure {
       .rev-img {
@@ -272,6 +307,10 @@ section.is-working {
       }
       .rev-commnet {
         margin-top: 20px;
+        width: 95%;
+        span {
+          white-space: pre-wrap;
+        }
       }
     }
   }
@@ -353,7 +392,7 @@ footer {
         justify-content: space-between;
         margin-top: 25px;
         // Кнопка обратной связи
-        a.btn_feedbadk {
+        a.btn_feedback {
           font-size: .8em;
           display: flex;
           justify-content: space-around;
