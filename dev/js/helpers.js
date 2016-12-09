@@ -80,15 +80,20 @@ var AppHelpers = {
         const factorMin = AppConstants.factorMin;
 
         sum = Number(sum);
-
+        let payback = Math.ceil(sum * feeIssue);
+        //Разовый платеж
         if (sum < AppConstants.sumBorder) {
-            return Math.ceil((sum + sum * feeIssue) * (factorMax * days + 1));
+
+            return Math.ceil((sum + payback) * (AppConstants.tarrifs[0].percent * days + 1));
+
         }
         else {
-            const percent = factorMin * 14;
-            const annPeriods = days / 14;
-            const annuity = (percent * Math.pow((1 + percent), annPeriods)) / (Math.pow((1 + percent), annPeriods) - 1);
-            return Math.ceil((sum + sum * feeIssue) * annuity);
+            let percent = AppConstants.tarrifs[1].percent * 14;
+            let ann_periods = days / 14;
+            let annuity = (percent * Math.pow((1 + percent), ann_periods)) / (Math.pow((1 + percent), ann_periods) - 1);
+
+            return Math.ceil((sum + payback) * annuity);
+
         }
 
     }

@@ -41,7 +41,11 @@ var AppConstants = {
     factorMax: 0.15,
     factorMin: 0.01,
     sumBorder: 30000,
-    FEE_ISSUE : 0.05
+    FEE_ISSUE: 0.05, // Коммисия за выдачу
+    PERCENT_STANDART: 0.015, // Стандартный процент (в день)
+    PERCENT_DELAY: 0.015, // Процент в случае просрочки (в день)
+    FINE_DELAY: 1000.00, // Максимальная сумма фиксированного штрафа за просрочку
+
 };
 
 export default AppConstants;
