@@ -36,7 +36,12 @@ var AppConstants = {
             max: 84
         },
         description: 'будет доступен после своевременного погашения одного займа'
-    }]
+    }],
+    feeIssue: 0.05,
+    factorMax: 0.15,
+    factorMin: 0.01,
+    sumBorder: 30000,
+    FEE_ISSUE : 0.05
 };
 
 export default AppConstants;

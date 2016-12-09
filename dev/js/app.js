@@ -100,9 +100,7 @@ $(function () {
         handleRegister: function () {
             let phone = $('#userPhone').val(),
                 pass = $('#userPass').val(),
-                repPass = $('#userRepeatPass').val(),
-                sum = $('.js-sum').val(),
-                period = $('.js-period').val();
+                repPass = $('#userRepeatPass').val();
 
             // Если пароли не совпадают
             if (pass !== repPass) {
@@ -134,11 +132,9 @@ $(function () {
             var data = {
                 phone: phone,
                 pass: pass,
-                sum: sum,
-                period: period
+                sum: app.loanCalculator.get('sum'),
+                period: app.loanCalculator.get('period')
             };
-
-            console.log(JSON.stringify(data));
 
             // Запрос
             if (!$('.js-btn_register').hasClass('is-disabled')) {

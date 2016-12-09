@@ -77,7 +77,7 @@ header .info-title h2 .ico-dropdown {
 header main {
   padding: 15px 20px;
   background-color: #fff;
-  box-shadow: 0 0 64px 0 #eaeaea, 0 25px 32px 0 #f4f4f4;
+  box-shadow: 0 0 64px 0 #eaeaea, 0 -25px 120px 45px #fafafa, 0 25px 32px 0 #f4f4f4;
   border-radius: 5px;
   border: 2px solid #c3c8cd;
 }
@@ -170,8 +170,9 @@ header main .info-zaym {
 
 header main .info-zaym h4 {
   color: #3bb38e;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: normal;
+  white-space: nowrap;
 }
 
 header main .info-zaym .info-sum {
@@ -727,6 +728,7 @@ footer section.main-footer .content h3 {
   margin: 10vh auto;
   min-height: 180px;
   position: fixed;
+  overflow-y: auto;
   text-align: center;
   top: 0;
   bottom: 0;
