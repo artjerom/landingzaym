@@ -69,7 +69,9 @@ header {
   main {
     padding: 15px 20px;
     background-color: #fff;
-    box-shadow: 0 0 64px 0 #eaeaea, 0 25px 32px 0 #f4f4f4;
+    box-shadow: 0 0 64px 0 #eaeaea,
+      0 -25px 120px 45px #fafafa,
+      0 25px 32px 0 #f4f4f4;
     border-radius: 5px;
     border: 2px solid #c3c8cd;
     .calc-title {
@@ -137,8 +139,9 @@ header {
       border-bottom: 2px dashed $gray;
       h4 {
         color: $accent-color;
-        font-size: 2em;
+        font-size: 1.8em;
         font-weight: normal;
+        white-space: nowrap;
       }
       .info-sum {
         text-align: left;
