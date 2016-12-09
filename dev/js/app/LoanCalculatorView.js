@@ -23,8 +23,6 @@ var LoanCalculatorView = Backbone.View.extend({
 
         this.model.on('change', this.change, this);
 
-        _.bindAll(this, 'changeSumRange');
-        _.bindAll(this, 'changePeriodRange');
     },
 
     change: function () {
@@ -34,6 +32,7 @@ var LoanCalculatorView = Backbone.View.extend({
             rangePeriod = $('input#period'),
             // Поле суммы
             fieldSum = $('input[name=sum]'),
+            // Поле срока
             fieldPeriod = $('input[name=period]');
 
         // Подставляем значение суммы займа
@@ -49,28 +48,33 @@ var LoanCalculatorView = Backbone.View.extend({
             $('.js-range_info-period span:nth-child(1)').html('4 недели');
             $('.js-range_info-period span:nth-child(2)').html('12 недель');
             $('label[for=focusInpPeriod]').html('недель');
+
             // Меняем значение ползунка
-            $(rangePeriod).attr('max', 12)
-                .css({
-                    'backgroundSize': ($(rangePeriod).val() - $(rangePeriod).attr('min')) * 100 / ($(rangePeriod).attr('max') - $(rangePeriod).attr('min')) + '% 100%'
-                });
+            this.changeRangeMorePeriod(12);
         } else if (this.model.get('period') <= 4) {
             $('label[for=focusInpPeriod]').html('дня');
-            $(rangePeriod).attr('max', 30)
-                .css({
-                    'backgroundSize': ($(rangePeriod).val() - $(rangePeriod).attr('min')) * 100 / ($(rangePeriod).attr('max') - $(rangePeriod).attr('min')) + '% 100%'
-                });
+
+            this.changeRangeMorePeriod(30);
         } else {
             $('.info-back span').html('Возвращаете');
             $('.js-out-sum_back').html(this.model.calculateLoanSum(sum, period) + ' ₽');
             $('.js-range_info-period span:nth-child(1)').html('4 дня');
             $('.js-range_info-period span:nth-child(2)').html('30 дней');
             $('label[for=focusInpPeriod]').html('дней');
-            $(rangePeriod).attr('max', 30)
-                .css({
-                    'backgroundSize': ($(rangePeriod).val() - $(rangePeriod).attr('min')) * 100 / ($(rangePeriod).attr('max') - $(rangePeriod).attr('min')) + '% 100%'
-                });
+
+            this.changeRangeMorePeriod(30);
         }
+    },
+
+    // Изменение ползунка, если сумма больше
+    changeRangeMorePeriod: function (n) {
+        let rangePeriod = $('input#period');
+
+        $(rangePeriod)
+            .attr('max', n)
+            .css({
+                'backgroundSize': ($(rangePeriod).val() - $(rangePeriod).attr('min')) * 100 / ($(rangePeriod).attr('max') - $(rangePeriod).attr('min')) + '% 100%'
+            });
     },
 
     // Выбор суммы при помощи ползунка

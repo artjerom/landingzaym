@@ -32,11 +32,11 @@ var AppHelpers = {
 
     // Финальная сумма
     printResults: () => {
-/*        let sum = app.loanCalculator.get('sum');
-        let days = app.loanCalculator.get('period');*/
+        let sum = app.loanCalculator.get('sum');
+        let days = app.loanCalculator.get('period');
 
-        let sum = $('.js-sum').val();
-        let days = $('.js-period').val();
+/*        let sum = $('.js-sum').val();
+        let days = $('.js-period').val();*/
 
         let paymethod;
 
