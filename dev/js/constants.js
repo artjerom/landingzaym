@@ -40,7 +40,7 @@ var AppConstants = {
     feeIssue: 0.05,
     factorMax: 0.15,
     factorMin: 0.01,
-    sumBorder: 15000,
+    sumBorder: 30000,
     FEE_ISSUE : 0.05
 };
 

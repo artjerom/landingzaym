@@ -3,6 +3,7 @@
  */
 
 import AppConstants from '../constants';
+import AppHelpers from '../helpers';
 
 var LoanCalculatorView = Backbone.View.extend({
 
@@ -21,11 +22,16 @@ var LoanCalculatorView = Backbone.View.extend({
     initialize: function () {
 
         this.model.on('change', this.change, this);
+
+        _.bindAll(this, 'changeSumRange');
+        _.bindAll(this, 'changePeriodRange');
     },
 
     change: function () {
         let sum = this.model.get('sum'),
             period = this.model.get('period'),
+            // Ползунок с выбора срока
+            rangePeriod = $('input#period'),
             // Поле суммы
             fieldSum = $('input[name=sum]'),
             fieldPeriod = $('input[name=period]');
@@ -37,8 +43,34 @@ var LoanCalculatorView = Backbone.View.extend({
         $(fieldSum).val(sum);
         // -- в поле период
         $(fieldPeriod).val(period);
-        // -- в поле возврата
-        $('.js-out-sum_back').html(this.model.calculateLoanSum(sum, period) + ' ₽');
+
+        if (sum > AppConstants.sumBorder) {
+            AppHelpers.printResults();
+            $('.js-range_info-period span:nth-child(1)').html('4 недели');
+            $('.js-range_info-period span:nth-child(2)').html('12 недель');
+            $('label[for=focusInpPeriod]').html('недель');
+            // Меняем значение ползунка
+            $(rangePeriod).attr('max', 12)
+                .css({
+                    'backgroundSize': ($(rangePeriod).val() - $(rangePeriod).attr('min')) * 100 / ($(rangePeriod).attr('max') - $(rangePeriod).attr('min')) + '% 100%'
+                });
+        } else if (this.model.get('period') <= 4) {
+            $('label[for=focusInpPeriod]').html('дня');
+            $(rangePeriod).attr('max', 30)
+                .css({
+                    'backgroundSize': ($(rangePeriod).val() - $(rangePeriod).attr('min')) * 100 / ($(rangePeriod).attr('max') - $(rangePeriod).attr('min')) + '% 100%'
+                });
+        } else {
+            $('.info-back span').html('Возвращаете');
+            $('.js-out-sum_back').html(this.model.calculateLoanSum(sum, period) + ' ₽');
+            $('.js-range_info-period span:nth-child(1)').html('4 дня');
+            $('.js-range_info-period span:nth-child(2)').html('30 дней');
+            $('label[for=focusInpPeriod]').html('дней');
+            $(rangePeriod).attr('max', 30)
+                .css({
+                    'backgroundSize': ($(rangePeriod).val() - $(rangePeriod).attr('min')) * 100 / ($(rangePeriod).attr('max') - $(rangePeriod).attr('min')) + '% 100%'
+                });
+        }
     },
 
     // Выбор суммы при помощи ползунка
@@ -130,6 +162,8 @@ var LoanCalculatorView = Backbone.View.extend({
         }
 
         $('.js-period').val(e.target.value);
+
+        this.model.set('period', e.target.value);
     },
 
     lightBorderInput: function (e) {
