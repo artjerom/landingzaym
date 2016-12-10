@@ -49,7 +49,7 @@ var AppHelpers = {
 
         $('.info-back span').html(paymethod+' по');
 
-        $('.js-out-sum_back').html(sum + ' ₽');
+        $('.js-out-sum_back').html(AppHelpers.formatNumber(sum) + ' ₽');
     },
 
     estimateAnnPeriods: (days) => {
@@ -96,7 +96,11 @@ var AppHelpers = {
 
         }
 
-    }
+    },
+
+    formatNumber: (num) => {
+        return num.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    },
 };
 
 export default AppHelpers;

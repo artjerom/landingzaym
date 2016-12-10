@@ -22,7 +22,6 @@ var LoanCalculatorView = Backbone.View.extend({
     initialize: function () {
 
         this.model.on('change', this.change, this);
-
     },
 
     change: function () {
@@ -36,7 +35,7 @@ var LoanCalculatorView = Backbone.View.extend({
             fieldPeriod = $('input[name=period]');
 
         // Подставляем значение суммы займа
-        $('.js-out-sum').html(sum + ' ₽');
+        $('.js-out-sum').html(AppHelpers.formatNumber(sum) + ' ₽');
 
         // -- в поле cуммы
         $(fieldSum).val(sum);
@@ -55,7 +54,7 @@ var LoanCalculatorView = Backbone.View.extend({
             this.model.get('period') == 4 ? $('label[for=focusInpPeriod]').html('недели') : $('label[for=focusInpPeriod]').html('недель');
         } else {
             $('.info-back span').html('Возвращаете');
-            $('.js-out-sum_back').html(this.model.calculateLoanSum(sum, period) + ' ₽');
+            $('.js-out-sum_back').html(AppHelpers.formatNumber(this.model.calculateLoanSum(sum, period)) + ' ₽');
             $('.js-range_info-period span:nth-child(1)').html('8 дней');
             $('.js-range_info-period span:nth-child(2)').html('30 дней');
             $('label[for=focusInpPeriod]').html('дней');
