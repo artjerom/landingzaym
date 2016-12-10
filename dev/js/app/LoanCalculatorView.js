@@ -42,36 +42,35 @@ var LoanCalculatorView = Backbone.View.extend({
         $(fieldSum).val(sum);
         // -- в поле период
         $(fieldPeriod).val(period);
+        this.model.set('period', $(rangePeriod).val());
 
         if (sum > AppConstants.sumBorder) {
             AppHelpers.printResults();
             $('.js-range_info-period span:nth-child(1)').html('4 недели');
             $('.js-range_info-period span:nth-child(2)').html('12 недель');
-            $('label[for=focusInpPeriod]').html('недель');
 
             // Меняем значение ползунка
-            this.changeRangeMorePeriod(12);
-        } else if (this.model.get('period') <= 4) {
-            $('label[for=focusInpPeriod]').html('дня');
+            this.changeRangeMorePeriod(12, 4);
 
-            this.changeRangeMorePeriod(30);
+            this.model.get('period') == 4 ? $('label[for=focusInpPeriod]').html('недели') : $('label[for=focusInpPeriod]').html('недель');
         } else {
             $('.info-back span').html('Возвращаете');
             $('.js-out-sum_back').html(this.model.calculateLoanSum(sum, period) + ' ₽');
-            $('.js-range_info-period span:nth-child(1)').html('4 дня');
+            $('.js-range_info-period span:nth-child(1)').html('8 дней');
             $('.js-range_info-period span:nth-child(2)').html('30 дней');
             $('label[for=focusInpPeriod]').html('дней');
 
-            this.changeRangeMorePeriod(30);
+            this.changeRangeMorePeriod(30, 8);
         }
     },
 
     // Изменение ползунка, если сумма больше
-    changeRangeMorePeriod: function (n) {
+    changeRangeMorePeriod: function (max, min) {
         let rangePeriod = $('input#period');
 
         $(rangePeriod)
-            .attr('max', n)
+            .attr('max', max)
+            .attr('min', min)
             .css({
                 'backgroundSize': ($(rangePeriod).val() - $(rangePeriod).attr('min')) * 100 / ($(rangePeriod).attr('max') - $(rangePeriod).attr('min')) + '% 100%'
             });
