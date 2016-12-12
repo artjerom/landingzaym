@@ -26,7 +26,8 @@ gulp.task('connect', function () {
    return connect.server({
        port: 3000,
        livereload: true,
-       root: './public'
+       // Для моб: '/.public', десктоп './public/desktop'
+       root: './public/desktop'
    });
 });
 
@@ -36,6 +37,15 @@ gulp.task('jade', function() {
             pretty: true
         }))
         .pipe(gulp.dest('./public/'))
+        .pipe(connect.reload());
+});
+
+gulp.task('jade-d', function() {
+    return gulp.src('dev/desktop/jade/index.jade')
+        .pipe(jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest('./public/desktop'))
         .pipe(connect.reload());
 });
 
@@ -49,6 +59,19 @@ gulp.task('styles', function() {
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(gulp.dest('./public/css/'))
+        .pipe(notify('Styles task completed'))
+        .pipe(connect.reload());
+});
+
+gulp.task('styles-d', function() {
+    var processors = [
+        autoprefixer({browsers: ['last 2 versions']})
+    ];
+
+    return gulp.src('./dev/desktop/css/main.scss')
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./public/desktop/css/'))
         .pipe(notify('Styles task completed'))
         .pipe(connect.reload());
 });
@@ -138,4 +161,10 @@ gulp.task('default', ['styles', 'scripts', 'jade', 'connect'], function() {
     gulp.watch('./dev/js/**/*.js', ['scripts']);
 });
 
-gulp.task('build', ['styles', 'scripts', 'images', 'external', 'fonts', 'jade']);
+gulp.task('default-desktop', ['styles-d', 'scripts', 'jade-d', 'connect'], function() {
+    gulp.watch('./dev/desktop/jade/**/*.jade', ['jade-d']);
+    gulp.watch('./dev/desktop/css/**/*.scss', ['styles-d']);
+    gulp.watch('./dev/js/**/*.js', ['scripts']);
+});
+
+gulp.task('build', ['styles', 'scripts', 'images', 'external', 'fonts', 'jade', 'jade-d', 'styles-d']);
