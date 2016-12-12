@@ -6,14 +6,13 @@
         main
             form(action='#')
                 select.js-feed-select_theme
-                    //option(selected disabled) Тема обращения
                     option(value='Вопрос о работе системы') Вопрос о работе системы
                     option(value='Сообщение о ошибке') Сообщение о ошибке
                     option(value='Предложение о сотрудничестве') Предложение о сотрудничестве
                 input.js-feed-email(type='text' required placeholder='email')
                 textarea.js-feed-message(required placeholder='Текст сообщения')
                 .ab_center
-                    a.ab_button.js-btn_feedback Отправить
+                    a.ab_button.js-btn_feedback.is-disabled Отправить
 
 // Выбор способа получения
 .popup.popup--method(style='display: none;')

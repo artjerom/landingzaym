@@ -155,7 +155,7 @@ $(function () {
 
         // Обработка формы обратной связи
         handleFeedback: function () {
-            let theme = $('.js-select_theme').val(),
+            let theme = $('.js-feed-select_theme option:selected').val(),
                 email = $('.js-feed-email').val(),
                 message = $('.js-feed-message').val();
 
@@ -165,10 +165,12 @@ $(function () {
                 message: message
             };
 
-            console.log(data);
+            email == 0 || message == 0 ? $('.js-btn_feedback').addClass('is-disabled') : $('.js-btn_feedback').removeClass('is-disabled');
 
             // Запрос
+
             if (!$('.js-btn_feedback').hasClass('is-disabled')) {
+                console.log(data);
                 AppHelpers.ajaxWrapper(
                     '/feedback',
                     'POST',

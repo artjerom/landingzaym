@@ -35,9 +35,6 @@ var AppHelpers = {
         let sum = app.loanCalculator.get('sum');
         let days = app.loanCalculator.get('period');
 
-/*        let sum = $('.js-sum').val();
-        let days = $('.js-period').val();*/
-
         let paymethod;
 
         if (sum < AppConstants.sumBorder) paymethod = 'Разовый платёж на сумму';
