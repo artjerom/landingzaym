@@ -1,0 +1,98 @@
+// Grid
+
+.ab_width {
+  width: 1000px;
+}
+
+.ab_center {
+  margin: 0 auto;
+  &--text {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.ab_grid-row {
+  margin-bottom: 20px;
+}
+
+.ab_grid-col {
+  float: left;
+  display: inline;
+  margin-right: 25px;
+
+  &--1 {width: 25px;}
+  &--2 {width: 50px;}
+  &--3 {width: 75px;}
+  &--4 {width: 100px;}
+  &--5 {width: 125px;}
+  &--6 {width: 150px;}
+  &--7 {width: 175px;}
+  &--9 {width: 200px;}
+  &--10 {width: 225px;}
+  &--11 {width: 250px;}
+  &--12 {width: 275px;}
+  &--13 {width: 300px;}
+  &--14 {width: 325px;}
+  &--15 {width: 350px;}
+  &--16 {width: 375px;}
+  &--17 {width: 400px;}
+  &--18 {width: 425px;}
+  &--19 {width: 500px;}
+  &--20 {width: 525px;}
+  &--21 {width: 550px;}
+  &--22 {width: 575px;}
+  &--23 {width: 600px;}
+  &--24 {width: 625px;}
+  &--25 {width: 650px;}
+  &--26 {width: 675px;}
+  &--27 {width: 700px;}
+  &--28 {width: 725px;}
+  &--29 {width: 750px;}
+  &--30 {width: 775px;}
+  &--31 {width: 800px;}
+  &--32 {width: 825px;}
+  &--33 {width: 950px;}
+  &--34 {width: 975px;}
+  &--35 {width: 1000px;}
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.ab_grid-offset {
+  &--1 {margin-left: 25px;}
+  &--2 {margin-left: 50px;}
+  &--3 {margin-left: 75px;}
+  &--4 {margin-left: 100px;}
+  &--5 {margin-left: 125px;}
+  &--6 {margin-left: 150px;}
+  &--7 {margin-left: 175px;}
+  &--9 {margin-left: 200px;}
+  &--10 {margin-left: 225px;}
+  &--11 {margin-left: 250px;}
+  &--12 {margin-left: 275px;}
+  &--13 {margin-left: 300px;}
+  &--14 {margin-left: 325px;}
+  &--15 {margin-left: 350px;}
+  &--16 {margin-left: 375px;}
+  &--17 {margin-left: 400px;}
+  &--18 {margin-left: 425px;}
+  &--19 {margin-left: 500px;}
+  &--20 {margin-left: 525px;}
+  &--21 {margin-left: 550px;}
+  &--22 {margin-left: 575px;}
+  &--23 {margin-left: 600px;}
+  &--24 {margin-left: 625px;}
+  &--25 {margin-left: 650px;}
+  &--26 {margin-left: 675px;}
+  &--27 {margin-left: 700px;}
+  &--28 {margin-left: 725px;}
+  &--29 {margin-left: 750px;}
+  &--30 {margin-left: 775px;}
+  &--31 {margin-left: 800px;}
+  &--32 {margin-left: 825px;}
+  &--33 {margin-left: 950px;}
+  &--34 {margin-left: 975px;}
+  &--35 {margin-left: 1000px;}
+}

@@ -45,7 +45,7 @@ gulp.task('jade-d', function() {
         .pipe(jade({
             pretty: true
         }))
-        .pipe(gulp.dest('./public/desktop'))
+        .pipe(gulp.dest('./public/desktop/'))
         .pipe(connect.reload());
 });
 

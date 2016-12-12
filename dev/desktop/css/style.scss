@@ -1,0 +1,17 @@
+header {
+  padding-top: 25px;
+  background-image: url();
+  .logo {
+    width: 220px;
+    height: 20px;
+  }
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+  .calc {
+    width: 460px;
+    height: 490px;
+    background-color: #fff;
+  }
+}
