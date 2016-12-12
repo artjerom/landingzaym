@@ -4,10 +4,12 @@ $main-color: #18a4d2;
 $main-text: #18181a;
 $gray: #e3e6e8;
 $border-input: #b0bac5;
-$text-gray: #b8bdc3;
+$text-gray: #43474a;
 $accent-color: #3bb38e;
 $text-footer: #43474a;
 $error-color: #bb0000;
+
+$test-color: rgba(85, 255, 211, 0.46);
 
 @mixin clearfix {
   &:after {
