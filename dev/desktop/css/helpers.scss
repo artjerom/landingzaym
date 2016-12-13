@@ -19,6 +19,12 @@ input[type='text'], input[type='tel'], input[type='password'] {
   }
 }
 
+.ab_background {
+  &--gray {
+    background-color: $bg-gray;
+  }
+}
+
 .ab_link {
   color: $main-color;
   text-decoration: none;
