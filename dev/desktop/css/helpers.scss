@@ -5,6 +5,20 @@
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
 }
 
+input[type='text'], input[type='tel'], input[type='password'] {
+  background: #fff;
+  color: $main-text;
+  border: solid 2px $border-input;
+  border-radius: 4px;
+  padding: 5px 0;
+  font-size: 1em;
+  &:focus {
+    -webkit-appearance: none;
+    outline: none;
+    border: 2px solid $main-color;
+  }
+}
+
 .ab_link {
   color: $main-color;
   text-decoration: none;
@@ -12,4 +26,65 @@
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
+}
+
+// Разделитель
+.ab_separator {
+  margin: 30px auto;
+  max-width: 90vw;
+  border-top: 2px dashed $gray;
+}
+
+.ab_button {
+  background: $accent-color;
+  border: 0;
+  border-bottom: 1px solid #1f7a5d;
+  text-shadow: 0 -1px #3879a2;
+  padding: 20px 25px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 3px;
+  line-height: 11px;
+  white-space: nowrap;
+  &:hover {
+    background: lighten($accent-color, 10%);
+  }
+}
+
+// Ползунок выбора
+.js-slider {
+  -webkit-appearance: none;
+  background-color: $gray;
+  background-image: linear-gradient($accent-color, $accent-color);
+  background-repeat: no-repeat;
+  @include range-track;
+  &--sum {
+    background-size: 10% 100%;
+  }
+  &--period {
+    background-size: 40% 100%;
+  }
+  &::-moz-range-track {
+    background: transparent;
+  }
+  &::-moz-focus-outer {
+    border: none;
+  }
+  &:focus {
+    outline: none !important;
+    border: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include range-thumb;
+  }
+  &::-moz-range-thumb {
+    @include range-thumb;
+  }
 }

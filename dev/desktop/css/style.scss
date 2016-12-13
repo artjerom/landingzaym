@@ -1,22 +1,13 @@
 body {
-  background-color: $test-color;
+  background-color: #fff;
 }
 
 header {
-  padding: 25px 0;
-  height: auto;
-  background:
-    url(../img/bg.png) 100% 100% no-repeat;
+  padding: 45px 0;
+  height: 700px;
+  background: url(../img/bg.png) 100% 100% no-repeat;
   background-size: cover;
   @include clearfix();
-  &::before {
-    content: '';
-    position: absolute;
-    height: 100px;
-    top: 25px;
-    display: block;
-    background: url(../img/bg-money.png) 25% 25% no-repeat;
-  }
   .logo {
     width: 220px;
     height: 20px;
@@ -24,6 +15,14 @@ header {
   main {
     display: flex;
     justify-content: space-between;
+    .ico--calc {
+      position: relative;
+      left: 115px;
+      bottom: 18px;
+      width: 130px;
+      height: 100px;
+      background: url('../img/ico-calc.png') no-repeat;
+    }
     .title {
       h1 {
         margin-top: 75px;
@@ -51,6 +50,238 @@ header {
     background-color: #fff;
     border-radius: 10px;
     border: $main-color dashed 6px;
-    box-shadow: 0 0 5em 0 darken($gray, 5%);
+    box-shadow: 0 0 6em 0 darken($gray, 10%);
+    padding: 50px 40px;
+    .calc-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &--period {
+        margin-top: 25px;
+      }
+      span {
+        width: 40%;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-shadow: 0 0 .1px #222;
+        white-space: nowrap;
+      }
+      .af-input {
+        display: flex;
+        justify-content: flex-end;
+        text-align: right;
+        .range_field {
+          max-width: 80px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-right: none;
+          text-align: right;
+          &--time {
+            max-width: 51px;
+            ~ .js-symb_inp {
+              padding-right: 8px;
+            }
+          }
+        }
+        label {
+          border: 2px solid $border-input;
+          border-left: none;
+          cursor: text;
+          border-top-right-radius: 3px;
+          font-weight: normal;
+          border-bottom-right-radius: 3px;
+          padding: 5.5px;
+        }
+      }
+    }
+    .js-slider {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .ab_range-info {
+      @include clearfix();
+      span {
+        font-size: .7em;
+        letter-spacing: 1px;
+        color: $text-gray;
+        float: left;
+        &:nth-child(2) {
+          float: right;
+        }
+      }
+    }
+    .info-zaym {
+      display: flex;
+      margin-top: 25px;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-top: 2px dotted $gray;
+      h4 {
+        color: $accent-color;
+        font-size: 1.8em;
+        font-weight: normal;
+        white-space: nowrap;
+      }
+      .info-sum {
+        text-align: left;
+      }
+      .info-back {
+        text-align: right;
+        h4 {
+          color: $gray;
+        }
+      }
+    }
+    .ab_button {
+      margin: 15px auto;
+    }
+  }
+}
+
+#about {
+  color: $text-gray;
+  width: $max-width;
+  h2 {
+    font-size: 2em;
+    color: #222;
+  }
+  .block_icons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    > div {
+      align-items: center;
+      display: flex;
+    }
+    .ico-about {
+      display: block;
+      margin-right: 15px;
+      background: url(../img/sprites/header-info.png) no-repeat;
+      &--1 {
+        width: 65px;
+        height: 60px;
+        background-position: -5px -5px;
+      }
+      &--2 {
+        width: 65px;
+        height: 60px;
+        background-position: -75px -5px;
+      }
+      &--3 {
+        width: 65px;
+        height: 57px;
+        background-position: -5px -75px;
+      }
+    }
+  }
+  .how-money {
+    margin-top: 40px;
+    .block-slides {
+      margin-top: 40px;
+      margin-bottom: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > div {
+        span {
+          line-height: 25px;
+        }
+        a.ab_link {
+          line-height: 35px;
+        }
+        .slide-img {
+          display: block;
+          margin-bottom: 25px;
+          background: url(../img/about-sprites.png) no-repeat;
+          &--1 {
+            width: 150px;
+            height: 150px;
+            background-position: -15px -195px;
+          }
+          &--2 {
+            width: 150px;
+            height: 150px;
+            background-position: -195px -15px;
+          }
+          &--3 {
+            width: 150px;
+            height: 150px;
+            background-position: -15px -15px;
+          }
+        }
+      }
+    }
+  }
+  .why-we {
+    margin-top: 60px;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      margin: 40px auto;
+      a.btn-about {
+        text-align: center;
+        cursor: pointer;
+        background-color: #fff;
+        color: $main-color;
+        font-weight: bold;
+        width: 195px;
+        padding: 13px 25px;
+        border-radius: 25px;
+        border: 1px dotted $main-color;
+        &--active {
+          color: #fff;
+          background-color: $main-color;
+          pointer-events: none;
+        }
+      }
+    }
+    .js-change-content {
+      display: none;
+      &--active {
+        display: block;
+      }
+      .title {
+        letter-spacing: 1px;
+        font-size: 1.5em;
+        line-height: 35px;
+        font-weight: 100;
+      }
+    }
+    #aboutTab-1 {
+      .main {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 80px;
+        span {
+          font-size: 1.05em;
+          line-height: 25px;
+        }
+        .ab_link {
+          line-height: 55px;
+        }
+        .content {
+          &::after {
+            position: relative;
+            display: block;
+            right: 35px;
+            font-size: 120px;
+            font-weight: bold;
+            color: rgba($text-gray, .08);
+          }
+          &--1::after {
+            content: '1';
+            bottom: 210px;
+          }
+          &--2::after {
+            content: '2';
+            bottom: 155px;
+          }
+          &--3::after {
+            content: '3';
+            bottom: 155px;
+          }
+        }
+      }
+    }
   }
 }
