@@ -59,7 +59,59 @@ input[type='text'], input[type='tel'], input[type='password'] {
   line-height: 11px;
   white-space: nowrap;
   &:hover {
+    transition: .3s ease-out;
     background: lighten($accent-color, 10%);
+  }
+}
+
+// Для калькулятора
+.calc-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-shadow: 0 0 .1px #222;
+    white-space: nowrap;
+  }
+  .af-input {
+    display: flex;
+    text-align: right;
+    .range_field {
+      max-width: 80px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+      text-align: right;
+      &--time {
+        max-width: 51px;
+        ~ .js-symb_inp {
+          padding-right: 8px;
+        }
+      }
+    }
+    label {
+      border: 2px solid $border-input;
+      border-left: none;
+      cursor: text;
+      border-top-right-radius: 3px;
+      font-weight: normal;
+      border-bottom-right-radius: 3px;
+      padding: 5.5px;
+    }
+  }
+}
+.ab_range-info {
+  @include clearfix();
+  span {
+    font-size: .7em;
+    letter-spacing: 1px;
+    color: $gray;
+    float: left;
+    &:nth-child(2) {
+      float: right;
+    }
   }
 }
 
@@ -74,7 +126,7 @@ input[type='text'], input[type='tel'], input[type='password'] {
     background-size: 10% 100%;
   }
   &--period {
-    background-size: 40% 100%;
+    background-size: 20% 100%;
   }
   &::-moz-range-track {
     background: transparent;

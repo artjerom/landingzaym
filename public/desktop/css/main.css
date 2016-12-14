@@ -59,7 +59,73 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus 
 }
 
 .ab_button:hover {
+  transition: .3s ease-out;
   background: #59c8a6;
+}
+
+.calc-title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.calc-title span {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-shadow: 0 0 .1px #222;
+  white-space: nowrap;
+}
+
+.calc-title .af-input {
+  display: -ms-flexbox;
+  display: flex;
+  text-align: right;
+}
+
+.calc-title .af-input .range_field {
+  max-width: 80px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  text-align: right;
+}
+
+.calc-title .af-input .range_field--time {
+  max-width: 51px;
+}
+
+.calc-title .af-input .range_field--time ~ .js-symb_inp {
+  padding-right: 8px;
+}
+
+.calc-title .af-input label {
+  border: 2px solid #b0bac5;
+  border-left: none;
+  cursor: text;
+  border-top-right-radius: 3px;
+  font-weight: normal;
+  border-bottom-right-radius: 3px;
+  padding: 5.5px;
+}
+
+.ab_range-info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ab_range-info span {
+  font-size: .7em;
+  letter-spacing: 1px;
+  color: #d0d4d9;
+  float: left;
+}
+
+.ab_range-info span:nth-child(2) {
+  float: right;
 }
 
 .js-slider {
@@ -82,7 +148,7 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus 
 }
 
 .js-slider--period {
-  background-size: 40% 100%;
+  background-size: 20% 100%;
 }
 
 .js-slider::-moz-range-track {
@@ -490,85 +556,17 @@ header .calc {
   background-color: #fff;
   border-radius: 10px;
   border: #18a4d2 dashed 6px;
-  box-shadow: 0 0 6em 0 #b4bac2;
+  box-shadow: 0 0 4em 0 #b9bfc7;
   padding: 50px 40px;
-}
-
-header .calc .calc-title {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-align: center;
-      align-items: center;
 }
 
 header .calc .calc-title--period {
   margin-top: 25px;
 }
 
-header .calc .calc-title span {
-  width: 40%;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-shadow: 0 0 .1px #222;
-  white-space: nowrap;
-}
-
-header .calc .calc-title .af-input {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
-  text-align: right;
-}
-
-header .calc .calc-title .af-input .range_field {
-  max-width: 80px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: none;
-  text-align: right;
-}
-
-header .calc .calc-title .af-input .range_field--time {
-  max-width: 51px;
-}
-
-header .calc .calc-title .af-input .range_field--time ~ .js-symb_inp {
-  padding-right: 8px;
-}
-
-header .calc .calc-title .af-input label {
-  border: 2px solid #b0bac5;
-  border-left: none;
-  cursor: text;
-  border-top-right-radius: 3px;
-  font-weight: normal;
-  border-bottom-right-radius: 3px;
-  padding: 5.5px;
-}
-
 header .calc .js-slider {
   width: 100%;
   margin-bottom: 15px;
-}
-
-header .calc .ab_range-info:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-header .calc .ab_range-info span {
-  font-size: .7em;
-  letter-spacing: 1px;
-  color: #505356;
-  float: left;
-}
-
-header .calc .ab_range-info span:nth-child(2) {
-  float: right;
 }
 
 header .calc .info-zaym {
@@ -611,7 +609,7 @@ header .calc .ab_button {
 
 #about h2 {
   font-size: 2em;
-  color: #222;
+  color: #18181a;
 }
 
 #about .block_icons {
@@ -724,6 +722,11 @@ header .calc .ab_button {
   border: 1px dotted #18a4d2;
 }
 
+#about .why-we nav a.btn-about:hover {
+  transition: .3s ease-out;
+  background-color: #f9f9fa;
+}
+
 #about .why-we nav a.btn-about--active {
   color: #fff;
   background-color: #18a4d2;
@@ -788,7 +791,7 @@ header .calc .ab_button {
 
 #get-money {
   color: #505356;
-  background: url(../img/arrow-get.png) center 0 no-repeat, url(../img/zaym-bg.png) repeat;
+  background: url(../img/arrow-get.png) center 0 no-repeat, url(../img/zaym-bg.png) repeat fixed;
   padding-top: 53px;
   padding-bottom: 15px;
 }
@@ -805,7 +808,7 @@ header .calc .ab_button {
   color: #3bb38e;
   text-shadow: none;
   border-bottom: 3px solid #d0d4d9;
-  box-shadow: 0 5px 16px 0px #2e8d70;
+  box-shadow: 0 5px 16px 0 #2e8d70;
 }
 
 #get-money .ab_button:hover {
@@ -837,12 +840,21 @@ header .calc .ab_button {
 }
 
 #bonuses .row-bonuses:last-child {
-  -ms-flex-pack: center;
-      justify-content: center;
+  margin-top: -25px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 #bonuses .row-bonuses:last-child > div {
-  margin: 25px 45px;
+  margin: 25px;
+}
+
+#bonuses .row-bonuses:last-child > div:first-child {
+  margin-left: 216px;
+}
+
+#bonuses .row-bonuses:last-child > div:last-child {
+  margin-right: 178px;
 }
 
 #bonuses .row-bonuses > div {
@@ -884,4 +896,191 @@ header .calc .ab_button {
 
 #bonuses .row-bonuses > div .ico-bonus--5 {
   background-position: -207px -10px;
+}
+
+#is-working {
+  padding-top: 80px;
+  width: 1000px;
+}
+
+#is-working > .ab_center--text h2 {
+  font-size: 2em;
+  color: #18181a;
+  margin-bottom: 30px;
+}
+
+#is-working > .ab_center--text .title {
+  font-size: 1.9em;
+  color: #505356;
+}
+
+#is-working .info {
+  margin-top: 75px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+#is-working .info > div {
+  width: 320px;
+  min-height: 200px;
+  background-color: #f9f9fa;
+}
+
+#is-working .info > div:nth-child(2) {
+  background-color: #f2f2f5;
+  width: 360px;
+}
+
+#is-working .info > div .ico_is-working {
+  display: block;
+  background: url(../img/is-working_sprites.png);
+  position: relative;
+  left: 220px;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+#is-working .info > div .ico_is-working--1 {
+  background-position: -15px -15px;
+}
+
+#is-working .info > div .ico_is-working--2 {
+  left: 240px;
+  background-position: -125px -15px;
+}
+
+#is-working .info > div .ico_is-working--3 {
+  background-position: -15px -125px;
+}
+
+#is-working .info > div .text {
+  position: relative;
+  margin-left: 40px;
+  bottom: 15px;
+}
+
+#is-working .info > div .text h4 {
+  color: #18a4d2;
+  font-size: 3em;
+}
+
+#is-working .info > div .text span {
+  color: #505356;
+  font-size: 1.2em;
+}
+
+#is-working .comments {
+  margin-top: 70px;
+}
+
+#is-working .comments h2 {
+  color: #505356;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+
+#is-working .comments .row-comment {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 60px;
+}
+
+#is-working .comments .row-comment .comment {
+  color: #505356;
+}
+
+#is-working .comments .row-comment .comment img {
+  border-radius: 50%;
+  box-shadow: 0 12px 12px 0 #d0d4d9;
+  margin-bottom: 15px;
+}
+
+#is-working .comments .row-comment .comment .text {
+  margin-left: 40px;
+}
+
+#is-working .comments .update {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 180px;
+  color: #98a0ab;
+  cursor: pointer;
+}
+
+#is-working .comments .update:hover span {
+  transition: .3s ease-out;
+  color: #505356;
+}
+
+#is-working .comments .update:hover .ico_update-comments {
+  transition: .3s ease-out;
+  background-color: #505356;
+}
+
+#is-working .comments .update .ico_update-comments {
+  background-color: #98a0ab;
+  mask-image: url(../img/rotate.svg);
+  -webkit-mask-image: url(../img/rotate.svg);
+  display: block;
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+#is-working .comments .update span {
+  border-bottom: 1px dashed #98a0ab;
+}
+
+#you-get {
+  background: url(../img/tiled_bg2.png) repeat fixed;
+  margin-top: 80px;
+  padding-top: 50px;
+  height: 480px;
+}
+
+#you-get h2 {
+  color: #505356;
+  font-weight: normal;
+  margin-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+#you-get .calc {
+  width: 900px;
+  margin-top: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: #18a4d2 dashed 6px;
+  box-shadow: 0 0 4em 0 #b9bfc7;
+  padding: 50px 40px;
+}
+
+#you-get .calc main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#you-get .calc main label[for='sum'] {
+  float: left;
+  width: 360px;
+}
+
+#you-get .calc main label[for='period'] {
+  float: right;
+  width: 360px;
+}
+
+#you-get .calc main .js-slider {
+  width: 100%;
+  margin-bottom: 15px;
 }
