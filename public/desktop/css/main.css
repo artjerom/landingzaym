@@ -5,6 +5,10 @@
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
 }
 
+ul {
+  list-style-type: none;
+}
+
 input[type='text'], input[type='tel'], input[type='password'] {
   background: #fff;
   color: #18181a;
@@ -1051,7 +1055,6 @@ header .calc .ab_button {
   color: #505356;
   font-weight: normal;
   margin-bottom: 40px;
-  margin-bottom: 40px;
 }
 
 #you-get .calc {
@@ -1083,4 +1086,74 @@ header .calc .ab_button {
 #you-get .calc main .js-slider {
   width: 100%;
   margin-bottom: 15px;
+}
+
+#questions {
+  margin-top: 80px;
+}
+
+#questions > h2.ab_center--text {
+  font-size: 2em;
+  color: #18181a;
+  margin-bottom: 30px;
+}
+
+#questions main nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 40px auto;
+}
+
+#questions main nav a.btn-questions {
+  text-align: center;
+  cursor: pointer;
+  width: 280px;
+  background-color: #fff;
+  color: #18a4d2;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 13px 25px;
+  border-radius: 25px;
+  border: 1px dotted #18a4d2;
+}
+
+#questions main nav a.btn-questions:hover {
+  transition: .3s ease-out;
+  background-color: #f9f9fa;
+}
+
+#questions main nav a.btn-questions--active {
+  color: #fff;
+  background-color: #18a4d2;
+  pointer-events: none;
+}
+
+#questions main .js-change-content-quest {
+  display: none;
+}
+
+#questions main .js-change-content-quest--active {
+  display: block;
+}
+
+#questions main .js-change-content-quest:nth-of-type(1) .info {
+  color: #505356;
+}
+
+#questions main .js-change-content-quest:nth-of-type(1) .info b {
+  line-height: 40px;
+}
+
+#questions main .js-change-content-quest:nth-of-type(1) .info span {
+  line-height: 20px;
+}
+
+#questions main .js-change-content-quest:nth-of-type(1) .info .links {
+  margin-top: 40px;
+}
+
+#questions main .js-change-content-quest:nth-of-type(1) .info .links .ab_link {
+  margin: 5em 0;
 }

@@ -450,7 +450,6 @@ header {
     color: $text-gray;
     font-weight: normal;
     margin-bottom: 40px;
-    margin-bottom: 40px;
   }
   .calc {
     width: 900px;
@@ -473,6 +472,66 @@ header {
       .js-slider {
         width: 100%;
         margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+#questions {
+  margin-top: 80px;
+  > h2.ab_center--text  {
+    font-size: 2em;
+    color: $main-text;
+    margin-bottom: 30px;
+  }
+  main {
+    nav {
+      display: flex;
+      justify-content: space-around;
+      margin: 40px auto;
+      a.btn-questions {
+        text-align: center;
+        cursor: pointer;
+        width: 280px;
+        background-color: #fff;
+        color: $main-color;
+        font-weight: bold;
+        white-space: nowrap;
+        padding: 13px 25px;
+        border-radius: 25px;
+        border: 1px dotted $main-color;
+        &:hover {
+          transition: .3s ease-out;
+          background-color: $bg-gray;
+        }
+        &--active {
+          color: #fff;
+          background-color: $main-color;
+          pointer-events: none;
+        }
+      }
+    }
+    .js-change-content-quest {
+      display: none;
+      &--active {
+        display: block;
+      }
+      &:nth-of-type(1) {
+        .info {
+          color: $text-gray;
+          b {
+            line-height: 40px;
+          }
+          span {
+            line-height: 20px;
+          }
+          .links {
+            margin-top: 40px;
+            .ab_link {
+              margin: 5em 0;
+            }
+          }
+        }
       }
     }
   }
