@@ -30,6 +30,11 @@ $(function () {
 
             // Табы 'почему мы'
             'click .btn-about': 'changeAboutTab',
+            // Табы 'Вопросы и ответы'
+            'click .btn-questions': 'changeQuestionTab',
+
+            // Раскрыть коменты
+            'click .update-comment': 'showComments',
 
             // Слайдер
             'click .arrow--right': 'nextSlide',
@@ -37,6 +42,7 @@ $(function () {
 
             // Регистрация
             'click .js-btn_register': 'handleRegister',
+            // Обратная связь
             'click .js-btn_feedback': 'handleFeedback',
 
             // Для попапов
@@ -68,7 +74,25 @@ $(function () {
             $('.js-change-content').removeClass('js-change-content--active');
 
             $('#aboutTab-' + tabId).addClass('js-change-content--active');
+        },
 
+        // -- вопросы и ответы
+        changeQuestionTab: function (e) {
+            $('.btn-questions--active').add(e.target).toggleClass('btn-questions--active');
+
+            let tabId = $(e.target).attr('data-tab');
+
+            $('.js-change-content-quest').removeClass('js-change-content-quest--active');
+
+            $('#QuestTab-' + tabId).addClass('js-change-content-quest--active');
+        },
+
+        showComments: function () {
+            $('.ico_update-comments').addClass('ico_update-comments--active');
+            setTimeout(function () {
+                $('.js-row-comment').css('display', 'flex').slideDown(500);
+                $('.update-comment').hide();
+            }, 1000);
         },
 
         // Следующий слайд

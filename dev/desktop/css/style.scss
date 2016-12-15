@@ -28,6 +28,15 @@ header {
         margin-top: 75px;
         margin-bottom: 25px;
       }
+      .ico-dropdown {
+        display: inline-block;
+        position: relative;
+        left: 15px;
+        top: 10px;
+        width: 25px;
+        height: 25px;
+        background: url(../img/ic_dropdown.png) no-repeat;
+      }
       > span {
         font-size: 1.3em;
         color: $text-gray;
@@ -408,13 +417,19 @@ header {
         }
       }
     }
-    .update {
+    .js-row-comment {
+      display: none;
+    }
+    .update-comment {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 180px;
       color: darken($gray, 20%);
       cursor: pointer;
+      &--active {
+        display: none;
+      }
       &:hover {
         span {
           transition: .3s ease-out;
@@ -433,6 +448,11 @@ header {
         margin-right: 5px;
         width: 25px;
         height: 25px;
+        &--active {
+          animation-name: rotate;
+          animation-iteration-count: infinite;
+          animation-duration: 3s;
+        }
       }
       span {
         border-bottom: 1px dashed darken($gray, 20%);
@@ -516,7 +536,7 @@ header {
       &--active {
         display: block;
       }
-      &:nth-of-type(1) {
+      .content:nth-of-type(1) {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -542,7 +562,7 @@ header {
 
 #feedback {
   margin-top: 90px;
-  margin-bottom: -20px;
+  padding-bottom: 30px;
   background-color: $bg-gray;
   main {
     display: flex;
@@ -574,13 +594,14 @@ header {
           }
         }
         .to-feedback {
-          transition: .3s ease-out;
-          position: relative;
+          position: absolute;
           color: #b4b9bf;
           font-size: .8em;
-          bottom: 120px;
-          left: 290px;
+          bottom: 20px;
+          left: 295px;
+          z-index: 2;
           span {
+            white-space: nowrap;
             margin-right: 15px;
           }
         }
@@ -592,6 +613,7 @@ header {
         background-color: $bg-gray;
         padding: 15px 10px;
         color: $text-gray;
+        z-index: 3;
       }
       #message {
         height: 75px;

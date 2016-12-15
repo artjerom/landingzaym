@@ -68,7 +68,7 @@
           <h2 class="ab_center--text">Как получить деньги</h2>
           <div class="block-slides ab_center--text">
             <div>
-              <div class="slide-img slide-img--1 ab_center--text"></div><span>Заполняете небольшую<br>онлайн-заяву</span><br><a class="ab_link">Заполнить заявку</a>
+              <div class="slide-img slide-img--1 ab_center--text"></div><span>Заполняете небольшую<br>онлайн-заяву</span><br><a class="js-show_register ab_link">Заполнить заявку</a>
             </div>
             <div>
               <div class="slide-img slide-img--2 ab_center--text"></div><span>Получаете решение о выдаче<br>займа в течение 5 минут</span><br><a class="ab_link">Как увеличить шансы?</a>
@@ -99,7 +99,7 @@
         </div>
       </section>
       <section id="get-money" class="ab_center--text">
-        <h2>Дадим в долг<br>быстро, просто и без поручителей.</h2><a class="ab_button">Получить деньги</a>
+        <h2>Дадим в долг<br>быстро, просто и без поручителей.</h2><a class="ab_button js-show_register">Получить деньги</a>
       </section>
       <div class="ab_background--gray">
         <section id="bonuses" class="ab_center--text">
@@ -155,7 +155,15 @@
                 <div class="text"><b>Евгения Петрова</b><br><span>Взяла займ без проблем, за что<br>большое спасибо. Комиссия вышла<br>минимальной</span></div>
               </div>
             </div>
-            <div class="update js_update-comment ab_center--text"><i class="ico_update-comments"></i><span>Еще отзывы</span></div>
+            <div class="update-comment js_update-comment ab_center--text"><i class="ico_update-comments"></i><span>Еще отзывы</span></div>
+            <div class="row-comment js-row-comment">
+              <div class="comment"><img src="/img/avatar3.png">
+                <div class="text"><b>Евгений Титов</b><br><span>Очень удобно, после первого раза<br>быстро и без проблем. Огромное<br>спасибо за простой и быстрый займ.</span></div>
+              </div>
+              <div class="comment"><img src="/img/avatar-2.png">
+                <div class="text"><b>Анастасия Круглова</b><br><span>Быстро одобрили и перевели деньги.<br>В течении часа решила проблемы с<br>просрочками по кредиту.</span></div>
+              </div>
+            </div>
           </main>
         </div>
       </section>
@@ -194,23 +202,25 @@
         <h2 class="ab_center--text">Вопросы и ответы</h2>
         <main>
           <nav class="ab_center"><a data-tab="1" class="btn-questions btn-questions--active">Получение займа</a><a data-tab="2" class="btn-questions">Погашение займа</a><a data-tab="3" class="btn-questions">О сервие Zaymigo</a></nav>
-          <div id="aboutTab-1" class="js-change-content-quest js-change-content-quest--active">
-            <ul class="info"><b>Как повысить шансы на получения займа?</b><br>
-              <li><span>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></li><br>
-              <li><a class="ab_link">Я хочу изменить даты погашения задолженности,<br>как это сделать?</a></li><br>
-              <li><a class="ab_link">Почему вы предлагаете мне меньшую сумму, чем<br>в прошлый раз?</a></li>
-            </ul>
-            <ul class="info">
-              <li><a class="ab_link">Раньше я брал и успешно погашал кредиты,<br>почему мне отказали?</a></li><br>
-              <li><a class="ab_link">На каких условиях я могу получить деньги?</a></li><br>
-              <li><a class="ab_link">Что делать, если у меня плохая кредитная<br>история</a></li><br>
-              <li><a class="ab_link">С каким бюро кредитных историй Вы<br>сотрудничаете?</a></li>
-            </ul>
+          <div id="QuestTab-1" class="js-change-content-quest js-change-content-quest--active">
+            <div class="content">
+              <ul class="info"><b>Как повысить шансы на получения займа?</b><br>
+                <li><span>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></li><br>
+                <li><a class="ab_link">Я хочу изменить даты погашения задолженности,<br>как это сделать?</a></li><br>
+                <li><a class="ab_link">Почему вы предлагаете мне меньшую сумму, чем<br>в прошлый раз?</a></li>
+              </ul>
+              <ul class="info">
+                <li><a class="ab_link">Раньше я брал и успешно погашал кредиты,<br>почему мне отказали?</a></li><br>
+                <li><a class="ab_link">На каких условиях я могу получить деньги?</a></li><br>
+                <li><a class="ab_link">Что делать, если у меня плохая кредитная<br>история</a></li><br>
+                <li><a class="ab_link">С каким бюро кредитных историй Вы<br>сотрудничаете?</a></li>
+              </ul>
+            </div>
           </div>
-          <div id="aboutTab-2" class="js-change-content-quest">
+          <div id="QuestTab-2" class="js-change-content-quest">
             <h2>Здесь контент для 2 таба</h2>
           </div>
-          <div id="aboutTab-3" class="js-change-content-quest">
+          <div id="QuestTab-3" class="js-change-content-quest">
             <h2>Здесь контент для 3 таба</h2>
           </div>
         </main>
@@ -237,6 +247,37 @@
       <footer class="ab_center--text">
         <div class="logo"><img src="img/logo-footer.png"></div>
       </footer>
+    </div>
+    <div style="display: none;" class="popup popup--method">
+      <div class="content">
+        <h2 class="ab_center">Способ получения</h2><i class="ico-close js-close_popup"></i>
+        <main class="ab_center">
+          <div class="method method--card method--active"><img src="img/visa.png">
+            <h3 class="js-text_method">на карту</h3>
+          </div>
+          <div class="method method--contact"><img src="img/cash.png">
+            <h3 class="js-text_method">наличными</h3>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Регистрация-->
+    <div style="display: none" class="popup popup--register">
+      <div class="content">
+        <h2 class="ab_center">Регистрация</h2><i class="ico-close js-close_popup"></i>
+        <form action="#" class="ab_center">
+          <label for="userPhone">Моб. телефон</label>
+          <input id="userPhone" type="tel" placeholder="Номер телефона" required><br>
+          <label for="userPass">Пароль</label>
+          <input id="userPass" type="password" placeholder="Пароль"><br>
+          <label for="userRepeatPass">Повторите пароль</label>
+          <input id="userRepeatPass" type="password" placeholder="Повторите пароль"><br>
+          <div style="display: none;" class="error js-err-val-phone"><span>Неверный номер телефона</span></div>
+          <div style="display: none;" class="error js-err-repeat-pass"><span>Пароли не совпадают</span></div>
+          <div style="display: none;" class="error js-err-val-pass"><span>Пароль не менее 6 символов</span></div>
+          <div class="ab_center"><a class="ab_button js-btn_register is-disabled">Зарегистрироваться</a></div>
+        </form>
+      </div>
     </div>
     <!--    // Калькулятор и шапка-->
     <!--    include template/calculator-->
