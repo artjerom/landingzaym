@@ -7,7 +7,7 @@ var LoanCalculatorModel = Backbone.Model.extend({
     // Значения по умолчанию
     defaults: {
         sum: 6000,
-        period: 6,
+        period: 12,
         type: 'once' // "once" or "two_weeks"
     },
 

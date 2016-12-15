@@ -90,8 +90,8 @@ $(function () {
         showComments: function () {
             $('.ico_update-comments').addClass('ico_update-comments--active');
             setTimeout(function () {
-                $('.js-row-comment').css('display', 'flex').slideDown(500);
-                $('.update-comment').hide();
+                $('.js-row-comment').slideDown(500).css('display', 'flex');
+                $('.update-comment').hide(100);
             }, 1000);
         },
 
