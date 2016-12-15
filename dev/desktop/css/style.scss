@@ -517,6 +517,9 @@ header {
         display: block;
       }
       &:nth-of-type(1) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         .info {
           color: $text-gray;
           b {
@@ -534,5 +537,98 @@ header {
         }
       }
     }
+  }
+}
+
+#feedback {
+  margin-top: 90px;
+  margin-bottom: -20px;
+  background-color: $bg-gray;
+  main {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    padding-top: 25px;
+    .info {
+      .ico_feedback {
+        display: block;
+        height: 35px;
+        width: 35px;
+        background: url(../img/ic_conversation.png) no-repeat;
+      }
+      .text {
+        color: $main-text;
+        position: relative;
+        bottom: 15px;
+        left: 40px;
+        h3 {
+          font-size: 1.4em;
+          margin-bottom: 20px;
+        }
+        .call-me {
+          margin-top: 20px;
+          line-height: 25px;
+          .phone {
+            color: $main-color;
+            font-size: 1.6em;
+          }
+        }
+        .to-feedback {
+          transition: .3s ease-out;
+          position: relative;
+          color: #b4b9bf;
+          font-size: .8em;
+          bottom: 120px;
+          left: 290px;
+          span {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+    .feedback {
+      width: 420px;
+      input, #message {
+        background-color: $bg-gray;
+        padding: 15px 10px;
+        color: $text-gray;
+      }
+      #message {
+        height: 75px;
+        width: 100%;
+        resize: none;
+
+      }
+      .row {
+        margin-bottom: 20px;
+        input {
+          width: 200px;
+        }
+        display: flex;
+        justify-content: space-between;
+
+      }
+      .ab_button {
+        margin-top: 20px;
+        background-color: $gray;
+        border-bottom: 2px solid darken($gray, 15%);
+        color: $text-gray;
+        text-shadow: none;
+        padding: 15px 35px;
+        &:hover {
+          transition: .3s ease-out;
+          background-color: darken($gray, 5%);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #2d3a4a;
+  img {
+    width: 220px;
+    height: 20px;
   }
 }

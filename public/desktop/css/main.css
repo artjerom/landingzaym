@@ -9,7 +9,7 @@ ul {
   list-style-type: none;
 }
 
-input[type='text'], input[type='tel'], input[type='password'] {
+input[type='text'], input[type='tel'], input[type='password'], textarea {
   background: #fff;
   color: #18181a;
   border: solid 2px #b0bac5;
@@ -18,7 +18,7 @@ input[type='text'], input[type='tel'], input[type='password'] {
   font-size: 1em;
 }
 
-input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus {
+input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus, textarea:focus {
   -webkit-appearance: none;
   outline: none;
   border: 2px solid #18a4d2;
@@ -53,7 +53,6 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus 
   display: inline-block;
   vertical-align: top;
   font-weight: bold;
-  text-transform: uppercase;
   letter-spacing: 1px;
   color: #ffffff;
   cursor: pointer;
@@ -1138,6 +1137,15 @@ header .calc .ab_button {
   display: block;
 }
 
+#questions main .js-change-content-quest:nth-of-type(1) {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
 #questions main .js-change-content-quest:nth-of-type(1) .info {
   color: #505356;
 }
@@ -1156,4 +1164,113 @@ header .calc .ab_button {
 
 #questions main .js-change-content-quest:nth-of-type(1) .info .links .ab_link {
   margin: 5em 0;
+}
+
+#feedback {
+  margin-top: 90px;
+  margin-bottom: -20px;
+  background-color: #f9f9fa;
+}
+
+#feedback main {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 1000px;
+  padding-top: 25px;
+}
+
+#feedback main .info .ico_feedback {
+  display: block;
+  height: 35px;
+  width: 35px;
+  background: url(../img/ic_conversation.png) no-repeat;
+}
+
+#feedback main .info .text {
+  color: #18181a;
+  position: relative;
+  bottom: 15px;
+  left: 40px;
+}
+
+#feedback main .info .text h3 {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+
+#feedback main .info .text .call-me {
+  margin-top: 20px;
+  line-height: 25px;
+}
+
+#feedback main .info .text .call-me .phone {
+  color: #18a4d2;
+  font-size: 1.6em;
+}
+
+#feedback main .info .text .to-feedback {
+  transition: .3s ease-out;
+  position: relative;
+  color: #b4b9bf;
+  font-size: .8em;
+  bottom: 120px;
+  left: 290px;
+}
+
+#feedback main .info .text .to-feedback span {
+  margin-right: 15px;
+}
+
+#feedback main .feedback {
+  width: 420px;
+}
+
+#feedback main .feedback input, #feedback main .feedback #message {
+  background-color: #f9f9fa;
+  padding: 15px 10px;
+  color: #505356;
+}
+
+#feedback main .feedback #message {
+  height: 75px;
+  width: 100%;
+  resize: none;
+}
+
+#feedback main .feedback .row {
+  margin-bottom: 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+#feedback main .feedback .row input {
+  width: 200px;
+}
+
+#feedback main .feedback .ab_button {
+  margin-top: 20px;
+  background-color: #d0d4d9;
+  border-bottom: 2px solid #a6adb7;
+  color: #505356;
+  text-shadow: none;
+  padding: 15px 35px;
+}
+
+#feedback main .feedback .ab_button:hover {
+  transition: .3s ease-out;
+  background-color: #c2c7ce;
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #2d3a4a;
+}
+
+footer img {
+  width: 220px;
+  height: 20px;
 }

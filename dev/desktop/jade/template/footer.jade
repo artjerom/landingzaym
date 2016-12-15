@@ -1,0 +1,28 @@
+#feedback.ab_center
+    main.ab_center
+        .info
+            i.ico_feedback
+            .text
+                h3 Остались вопросы?
+                span
+                    | Не нашли ответа? Мы готовы ответить на ваши вопросы по
+                    br
+                    | телефону с 9.00 до 18.00 ежедневно, кроме выходных.
+                .call-me
+                    span Позвоните нам
+                    br
+                    span.phone 8 (800) 700-72-86
+                .to-feedback
+                    span Или напишите нам
+                    img(src='img/arrow-feedback.png')
+        form.feedback(action='#')
+            .row
+                input#name(type='text' name='name' placeholder='Ваше имя')
+                input#email(type='text' name='email' placeholder='Ваша почта')
+            textarea#message(name='message' placeholder='Сообщение')
+            .ab_center--text
+                a.ab_button.ab_center--text Отправить
+
+footer.ab_center--text
+    .logo
+        img(src='img/logo-footer.png')
