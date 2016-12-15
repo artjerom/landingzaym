@@ -124,6 +124,16 @@ gulp.task('images', function(){
         .pipe(gulp.dest('./public/img'));
 });
 
+gulp.task('images-d', function(){
+
+    return gulp.src('./dev/desktop/img/*')
+        .pipe(imagemin({
+            progressive: true,
+            use: [pngquant(), jpegtran()]
+        }))
+        .pipe(gulp.dest('./public/desktop/img'));
+});
+
 // Копирование шрифтов в public
 gulp.task('fonts', function () {
     return gulp.src('./dev/fonts/*/*')
@@ -167,4 +177,4 @@ gulp.task('default-desktop', ['styles-d', 'scripts', 'jade-d', 'connect'], funct
     gulp.watch('./dev/js/**/*.js', ['scripts']);
 });
 
-gulp.task('build', ['styles', 'scripts', 'images', 'external', 'fonts', 'jade', 'jade-d', 'styles-d']);
+gulp.task('build', ['styles', 'scripts', 'images', 'external', 'fonts', 'jade', 'jade-d', 'styles-d', 'images-d']);

@@ -5,6 +5,30 @@
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
 }
 
+ul {
+  list-style-type: none;
+}
+
+input[type='text'], input[type='tel'], input[type='password'], textarea {
+  background: #fff;
+  color: $main-text;
+  border: solid 2px $border-input;
+  border-radius: 4px;
+  padding: 5px 0;
+  font-size: 1em;
+  &:focus {
+    -webkit-appearance: none;
+    outline: none;
+    border: 2px solid $main-color;
+  }
+}
+
+.ab_background {
+  &--gray {
+    background-color: $bg-gray;
+  }
+}
+
 .ab_link {
   color: $main-color;
   text-decoration: none;
@@ -12,4 +36,116 @@
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
+}
+
+// Разделитель
+.ab_separator {
+  margin: 30px auto;
+  max-width: 90vw;
+  border-top: 2px dashed $gray;
+}
+
+.ab_button {
+  background: $accent-color;
+  border: 0;
+  border-bottom: 1px solid #1f7a5d;
+  text-shadow: 0 -1px #3879a2;
+  padding: 20px 25px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 3px;
+  line-height: 11px;
+  white-space: nowrap;
+  &:hover {
+    transition: .3s ease-out;
+    background: lighten($accent-color, 10%);
+  }
+}
+
+// Для калькулятора
+.calc-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-shadow: 0 0 .1px #222;
+    white-space: nowrap;
+  }
+  .af-input {
+    display: flex;
+    text-align: right;
+    .range_field {
+      max-width: 80px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+      text-align: right;
+      &--time {
+        max-width: 51px;
+        ~ .js-symb_inp {
+          padding-right: 8px;
+        }
+      }
+    }
+    label {
+      border: 2px solid $border-input;
+      border-left: none;
+      cursor: text;
+      border-top-right-radius: 3px;
+      font-weight: normal;
+      border-bottom-right-radius: 3px;
+      padding: 5.5px;
+    }
+  }
+}
+.ab_range-info {
+  @include clearfix();
+  span {
+    font-size: .7em;
+    letter-spacing: 1px;
+    color: $gray;
+    float: left;
+    &:nth-child(2) {
+      float: right;
+    }
+  }
+}
+
+// Ползунок выбора
+.js-slider {
+  -webkit-appearance: none;
+  background-color: $gray;
+  background-image: linear-gradient($accent-color, $accent-color);
+  background-repeat: no-repeat;
+  @include range-track;
+  &--sum {
+    background-size: 10% 100%;
+  }
+  &--period {
+    background-size: 20% 100%;
+  }
+  &::-moz-range-track {
+    background: transparent;
+  }
+  &::-moz-focus-outer {
+    border: none;
+  }
+  &:focus {
+    outline: none !important;
+    border: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include range-thumb;
+  }
+  &::-moz-range-thumb {
+    @include range-thumb;
+  }
 }

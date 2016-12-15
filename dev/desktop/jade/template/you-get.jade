@@ -1,23 +1,7 @@
-header
-    main.ab_width.ab_center
-        .title
-            img.logo(src='../img/logo.png')
-            h1
-                | Займ
-                = ' '
-                a.ab_link.js-pay_method() на вашу карту
-                i.ico-dropdown
-                br
-                |  быстро и просто
-            span Оформите заявку, и получите деньги
-            br
-            span на карту в течение десяти минут.
-            .call
-                b Есть вопросы? Звоните!
-                br
-                span.tel 8 800 787-89-65
-        i.ico.ico--calc
-        form.calc#loanCalculator
+section#you-get.ab_center
+    h2.ab_center--text Получите и вы
+    form.calc#loanCalculator.ab_center
+        main
             label(for='sum')
                 .calc-title
                     span Сумма займа
@@ -39,13 +23,6 @@ header
                 .ab_range-info.js-range_info-period
                     span 8 дней
                     span 30 дней
-            .info-zaym
-                // Информация о займе
-                .info-sum
-                    span Занимаете
-                    h4.js-out-sum 6 000 ₽
-                .info-back
-                    span Возращаете
-                    h4.js-out-sum_back 7 434 ₽
-            .ab_center--text
-                a.ab_button.js-show_register Получить деньги
+        hr.ab_separator
+        .ab_center--text
+            .ab_button.js-show_register Получить деньги
