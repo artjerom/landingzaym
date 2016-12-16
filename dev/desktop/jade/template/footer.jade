@@ -15,13 +15,15 @@
                 .to-feedback
                     span Или напишите нам
                     img(src='img/arrow-feedback.png')
-        form.feedback(action='#')
+        form.feedback#jsFeedback(action='#')
             .row
-                input#name(type='text' name='name' placeholder='Ваше имя')
-                input#email(type='text' name='email' placeholder='Ваша почта')
-            textarea#message(name='message' placeholder='Сообщение')
+                input#name(type='text' data-type='field' name='name' placeholder='Ваше имя')
+                input#email(type='text' data-type='field' name='email' placeholder='Ваша почта')
+            textarea#message(name='message' data-type='field' placeholder='Сообщение')
+            .block-err
+                span Заполните все поля
             .ab_center--text
-                a.ab_button.ab_center--text Отправить
+                a.ab_button.ab_center--text.js-btn_feedback.is-disabled Отправить
 
 footer.ab_center--text
     .logo

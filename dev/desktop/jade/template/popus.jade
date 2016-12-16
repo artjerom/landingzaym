@@ -15,15 +15,15 @@
     .content
         h2.ab_center Регистрация
         i.ico-close.js-close_popup
-        form.ab_center(action='#')
+        form.ab_center#jsRegister(action='#')
             label(for='userPhone') Моб. телефон
-            input#userPhone(type='tel' placeholder='Номер телефона' required)
+            input#userPhone(type='tel' data-type='field' placeholder='Номер телефона' required)
             br
             label(for='userPass') Пароль
-            input#userPass(type='password' placeholder='Пароль')
+            input#userPass(type='password' data-type='field' data-min='6' placeholder='Пароль')
             br
             label(for='userRepeatPass') Повторите пароль
-            input#userRepeatPass(type='password' placeholder='Повторите пароль')
+            input#userRepeatPass(type='password' data-type='field' placeholder='Повторите пароль')
             br
             .error.js-err-val-phone(style='display: none;')
                 span Неверный номер телефона

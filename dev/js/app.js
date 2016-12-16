@@ -12,7 +12,7 @@ $(function () {
     });
     app.loanCalculatorView = new LoanCalculatorView({
         model: app.loanCalculator,
-        el: '#loanCalculator'
+        el: 'form.calc'
     });
 
     let AppModel = Backbone.Model.extend({
@@ -55,6 +55,21 @@ $(function () {
 
         initialize: function () {
             $('#userPhone').mask("+7 (999) 999-9999");
+
+            // Подставляем время
+            let date = new Date();
+            date.setMinutes(date.getMinutes() + 15);
+
+            let resHour = date.getHours(),
+                resMin = date.getMinutes();
+
+            if (date.getHours().toString().length == 1) resHour = '0' + date.getHours();
+
+            if (date.getMinutes().toString().length == 1) resMin = '0' + date.getMinutes();
+
+            let res = resHour + ':' + resMin;
+
+            $('.you-loan .js-loan').html(' ' + res);
         },
 
         // Выбор способа получения
@@ -90,7 +105,11 @@ $(function () {
         showComments: function () {
             $('.ico_update-comments').addClass('ico_update-comments--active');
             setTimeout(function () {
-                $('.js-row-comment').slideDown(500).css('display', 'flex');
+                $('.js-row-comment').slideDown(500).css({
+                    'display': 'flex'
+                    // 'justify-content': 'space-between'
+                });
+                $('.row-comment-hide').slideUp(650);
                 $('.update-comment').hide(100);
             }, 1000);
         },
@@ -126,6 +145,8 @@ $(function () {
                 pass = $('#userPass').val(),
                 repPass = $('#userRepeatPass').val();
 
+            AppHelpers.formValidate('jsRegister');
+
             // Если пароли не совпадают
             if (pass !== repPass) {
                 $('.js-err-repeat-pass').show();
@@ -141,10 +162,12 @@ $(function () {
             }
 
             // Проверка телефона
-            if (phone.length !== 17) {
+            if (phone.length != 17) {
                 $('.js-err-val-phone').show();
+                $(phone).addClass('err-filed');
             } else {
                 $('.js-err-val-phone').hide();
+                $(phone).removeClass('err-filed');
             }
 
             if (phone.length === 17 && pass === repPass && pass.length >= 6) {
@@ -189,7 +212,7 @@ $(function () {
                 message: message
             };
 
-            email == 0 || message == 0 ? $('.js-btn_feedback').addClass('is-disabled') : $('.js-btn_feedback').removeClass('is-disabled');
+            AppHelpers.formValidate('jsFeedback');
 
             // Запрос
 

@@ -27,6 +27,17 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
   }
 }
 
+// Проверка полей
+.block-err {
+  display: none;
+  color: $error-color;
+  position: absolute;
+}
+.err-field {
+  transition: .3s ease-out;
+  border-color: $error-color !important;
+}
+
 .ab_background {
   &--gray {
     background-color: $bg-gray;
@@ -160,7 +171,7 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
   margin: 10vh auto;
   min-height: 180px;
   position: fixed;
-  overflow-y: auto;
+  overflow-y: hidden;
   text-align: center;
   top: 0;
   bottom: 0;
@@ -174,7 +185,7 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
     &:focus {
       -webkit-appearance: none;
       outline: none;
-      border: 1px solid $main-color;
+      border: 2px solid $main-color;
     }
   }
   &--register {

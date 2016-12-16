@@ -83,8 +83,7 @@ var AppHelpers = {
 
             return Math.ceil((sum + payback) * (AppConstants.tarrifs[0].percent * days + 1));
 
-        }
-        else {
+        } else {
             let percent = AppConstants.tarrifs[1].percent * 14;
             let ann_periods = days / 14;
             let annuity = (percent * Math.pow((1 + percent), ann_periods)) / (Math.pow((1 + percent), ann_periods) - 1);
@@ -97,6 +96,31 @@ var AppHelpers = {
 
     formatNumber: (num) => {
         return num.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    },
+
+    // Валидация форм
+    formValidate: function (formId) {
+        let form = '#' + formId;
+        let field = $(form + ' [data-type=field]');
+        let err = $(form + ' .block-err');
+        let btn = $(form + ' a.ab_button');
+
+        for (let i = 0; i < field.length; i++) {
+            if ($(field[i]).val() == 0) {
+                $(field[i]).addClass('err-field');
+            } else {
+                $(field[i]).removeClass('err-field');
+            }
+        }
+
+        if ($(form + ' .err-field').length == 0) {
+            $(btn).removeClass('is-disabled');
+            $(err).hide();
+        } else {
+            $(btn).addClass('is-disabled');
+            $(err).show();
+        }
+
     },
 };
 

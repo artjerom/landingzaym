@@ -28,6 +28,11 @@ header {
         margin-top: 75px;
         margin-bottom: 25px;
       }
+      .you-loan {
+        margin: 15px 0;
+        font-size: 1.3em;
+        color: $text-gray;
+      }
       .ico-dropdown {
         display: inline-block;
         position: relative;
@@ -43,7 +48,7 @@ header {
       }
       .call {
         color: darken($text-gray, 5%);
-        margin-top: 40px;
+        margin-top: 10px;
         line-height: 30px;
         .tel {
           color: $main-color;
@@ -406,6 +411,7 @@ header {
       justify-content: space-around;
       margin-bottom: 60px;
       .comment {
+        width: 300px;
         color: $text-gray;
         img {
           border-radius: 50%;
@@ -419,6 +425,7 @@ header {
     }
     .js-row-comment {
       display: none;
+      justify-content: space-between;
     }
     .update-comment {
       display: flex;
@@ -481,11 +488,11 @@ header {
     padding: 50px 40px;
     main {
       @include clearfix();
-      label[for='sum'] {
+      label[for='sum2'] {
         float: left;
         width: 360px;
       }
-      label[for='period'] {
+      label[for='period2'] {
         float: right;
         width: 360px;
       }
@@ -536,23 +543,40 @@ header {
       &--active {
         display: block;
       }
-      .content:nth-of-type(1) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .info {
-          color: $text-gray;
-          b {
-            line-height: 40px;
+      // Для 1-го таба
+      &--1 {
+        .content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .info {
+            color: $text-gray;
+            b {
+              line-height: 40px;
+            }
+            span {
+              line-height: 20px;
+            }
+            .links {
+              margin-top: 40px;
+              .ab_link {
+                margin: 5em 0;
+              }
+            }
+          }
+        }
+      }
+      // Для 3-го таба
+      &--3 {
+        .content {
+          h2 {
+            color: $main-color;
+            margin: 25px 0;
           }
           span {
-            line-height: 20px;
-          }
-          .links {
-            margin-top: 40px;
-            .ab_link {
-              margin: 5em 0;
-            }
+            color: $text-gray;
+            display: inline-block;
+            padding: 15px 0;
           }
         }
       }

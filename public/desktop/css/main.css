@@ -28,6 +28,17 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   border: 2px solid #18a4d2;
 }
 
+.block-err {
+  display: none;
+  color: #bb0000;
+  position: absolute;
+}
+
+.err-field {
+  transition: .3s ease-out;
+  border-color: #bb0000 !important;
+}
+
 .ab_background--gray {
   background-color: #f9f9fa;
 }
@@ -203,7 +214,7 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   margin: 10vh auto;
   min-height: 180px;
   position: fixed;
-  overflow-y: auto;
+  overflow-y: hidden;
   text-align: center;
   top: 0;
   bottom: 0;
@@ -218,7 +229,7 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
 .popup input:focus, .popup select:focus {
   -webkit-appearance: none;
   outline: none;
-  border: 1px solid #18a4d2;
+  border: 2px solid #18a4d2;
 }
 
 .popup--register {
@@ -718,6 +729,12 @@ header main .title h1 {
   margin-bottom: 25px;
 }
 
+header main .title .you-loan {
+  margin: 15px 0;
+  font-size: 1.3em;
+  color: #505356;
+}
+
 header main .title .ico-dropdown {
   display: inline-block;
   position: relative;
@@ -735,7 +752,7 @@ header main .title > span {
 
 header main .title .call {
   color: #444649;
-  margin-top: 40px;
+  margin-top: 10px;
   line-height: 30px;
 }
 
@@ -1186,6 +1203,7 @@ header .calc .ab_button {
 }
 
 #is-working .comments .row-comment .comment {
+  width: 300px;
   color: #505356;
 }
 
@@ -1201,6 +1219,8 @@ header .calc .ab_button {
 
 #is-working .comments .js-row-comment {
   display: none;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 
 #is-working .comments .update-comment {
@@ -1278,12 +1298,12 @@ header .calc .ab_button {
   clear: both;
 }
 
-#you-get .calc main label[for='sum'] {
+#you-get .calc main label[for='sum2'] {
   float: left;
   width: 360px;
 }
 
-#you-get .calc main label[for='period'] {
+#you-get .calc main label[for='period2'] {
   float: right;
   width: 360px;
 }
@@ -1343,7 +1363,7 @@ header .calc .ab_button {
   display: block;
 }
 
-#questions main .js-change-content-quest .content:nth-of-type(1) {
+#questions main .js-change-content-quest--1 .content {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -1352,24 +1372,35 @@ header .calc .ab_button {
       align-items: center;
 }
 
-#questions main .js-change-content-quest .content:nth-of-type(1) .info {
+#questions main .js-change-content-quest--1 .content .info {
   color: #505356;
 }
 
-#questions main .js-change-content-quest .content:nth-of-type(1) .info b {
+#questions main .js-change-content-quest--1 .content .info b {
   line-height: 40px;
 }
 
-#questions main .js-change-content-quest .content:nth-of-type(1) .info span {
+#questions main .js-change-content-quest--1 .content .info span {
   line-height: 20px;
 }
 
-#questions main .js-change-content-quest .content:nth-of-type(1) .info .links {
+#questions main .js-change-content-quest--1 .content .info .links {
   margin-top: 40px;
 }
 
-#questions main .js-change-content-quest .content:nth-of-type(1) .info .links .ab_link {
+#questions main .js-change-content-quest--1 .content .info .links .ab_link {
   margin: 5em 0;
+}
+
+#questions main .js-change-content-quest--3 .content h2 {
+  color: #18a4d2;
+  margin: 25px 0;
+}
+
+#questions main .js-change-content-quest--3 .content span {
+  color: #505356;
+  display: inline-block;
+  padding: 15px 0;
 }
 
 #feedback {
