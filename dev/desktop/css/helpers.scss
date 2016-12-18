@@ -5,6 +5,10 @@
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
 }
 
+.overlay {
+  pointer-events: none;
+}
+
 ul {
   list-style-type: none;
 }
@@ -21,6 +25,17 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
     outline: none;
     border: 2px solid $main-color;
   }
+}
+
+// Проверка полей
+.block-err {
+  display: none;
+  color: $error-color;
+  position: absolute;
+}
+.err-field {
+  transition: .3s ease-out;
+  border-color: $error-color !important;
 }
 
 .ab_background {
@@ -147,5 +162,168 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
   }
   &::-moz-range-thumb {
     @include range-thumb;
+  }
+}
+
+// Попапы
+.popup {
+  z-index: 9999;
+  margin: 10vh auto;
+  min-height: 180px;
+  position: fixed;
+  overflow-y: hidden;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 85%;
+  box-shadow: 0 0 24px 0 rgba(0,0,0,0.7), 0 0 0 999em rgba(0,0,0,0.5);
+  max-width: 460px;
+  background-color: #fff;
+  input, select {
+    &:focus {
+      -webkit-appearance: none;
+      outline: none;
+      border: 2px solid $main-color;
+    }
+  }
+  &--register {
+    max-height: 460px;
+    padding: 15px 20px;
+    form {
+      margin: 25px auto;
+      display: flex;
+      flex-direction: column;
+      label {
+        text-align: left;
+        margin-bottom: 10px;
+      }
+      input[type='tel'], input[type='password'] {
+        padding: 10px;
+      }
+      .ab_button {
+        background-color: $main-color;
+        &:hover {
+          background-color: lighten($main-color, 5%);
+        }
+      }
+    }
+  }
+  &--method {
+    max-height: 180px;
+  }
+  &--feedback {
+    height: 40%;
+    padding: 15px 20px;
+    min-height: 420px;
+    // Обратная связь
+    main {
+      form {
+        display: flex;
+        flex-direction: column;
+        // Дропдаун
+        select {
+          border: 1px solid #b0bac5;
+          z-index: 9999;
+          padding: 10px;
+          margin: 25px 0;
+          background-color: #fff;
+          color: #ababab;
+          border-radius: 3px;
+          font-size: 1em;
+        }
+        // Текстовые поля
+        .js-feed-email, .js-feed-message {
+          margin-bottom: 25px;
+          //height: 40px;
+          font-size: 1.1em;
+          padding: 7px;
+        }
+        .js-feed-message {
+          resize: none;
+          min-height: 120px;
+          background: #fff;
+          color: $main-text;
+          border: solid 1px #b0bac5;
+          border-radius: 3px;
+          font-size: 1em;
+        }
+        .ab_button {
+          background-color: $main-color;
+          max-width: 160px;
+          &:hover {
+            background-color: lighten($main-color, 5%);
+          }
+        }
+      }
+    }
+  }
+  .content {
+    i.ico-close {
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      width: 10%;
+      height: 11%;
+      background: url(../img/btn_close.png) no-repeat;
+      display: block;
+      background-size: 45%;
+    }
+    h2 {
+      font-size: 1em;
+    }
+  }
+  // Выбор способа получения
+  &--method {
+    padding: 15px 5px;
+    main {
+      display: flex;
+      margin-top: 25px;
+      .method {
+        cursor: pointer;
+        width: 100%;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 2px dotted $gray;
+        color: $text-gray;
+        img {
+          margin-bottom: 10px;
+          width: 90%;
+        }
+        h3 {
+          font-size: .9em;
+        }
+        &--active {
+          color: $main-text;
+          pointer-events: none;
+          border: 2px solid $main-color;
+        }
+      }
+    }
+  }
+  .error {
+    text-align: left;
+    color: $error-color;
+    margin: 5px 0;
+  }
+}
+
+
+// Анимация стрелки
+@keyframes rotate {
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: round(360deg);
+  }
+  75% {
+    transform: rotate(720deg);
+  }
+  100% {
+    transform: rotate(1080deg);
   }
 }

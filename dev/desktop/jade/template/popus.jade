@@ -1,0 +1,35 @@
+.popup.popup--method(style='display: none;')
+    .content
+        h2.ab_center Способ получения
+        i.ico-close.js-close_popup
+        main.ab_center
+            .method.method--card.method--active
+                img(src='img/visa.png')
+                h3.js-text_method на карту
+            .method.method--contact
+                img(src='img/cash.png')
+                h3.js-text_method наличными
+
+// Регистрация
+.popup.popup--register(style='display: none')
+    .content
+        h2.ab_center Регистрация
+        i.ico-close.js-close_popup
+        form.ab_center#jsRegister(action='#')
+            label(for='userPhone') Моб. телефон
+            input#userPhone(type='tel' data-type='field' placeholder='Номер телефона' required)
+            br
+            label(for='userPass') Пароль
+            input#userPass(type='password' data-type='field' data-min='6' placeholder='Пароль')
+            br
+            label(for='userRepeatPass') Повторите пароль
+            input#userRepeatPass(type='password' data-type='field' placeholder='Повторите пароль')
+            br
+            .error.js-err-val-phone(style='display: none;')
+                span Неверный номер телефона
+            .error.js-err-repeat-pass(style='display: none;')
+                span Пароли не совпадают
+            .error.js-err-val-pass(style='display: none;')
+                span Пароль не менее 6 символов
+            .ab_center
+                a.ab_button.js-btn_register.is-disabled() Зарегистрироваться

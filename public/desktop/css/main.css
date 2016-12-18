@@ -5,6 +5,10 @@
   font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
 }
 
+.overlay {
+  pointer-events: none;
+}
+
 ul {
   list-style-type: none;
 }
@@ -22,6 +26,17 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   -webkit-appearance: none;
   outline: none;
   border: 2px solid #18a4d2;
+}
+
+.block-err {
+  display: none;
+  color: #bb0000;
+  position: absolute;
+}
+
+.err-field {
+  transition: .3s ease-out;
+  border-color: #bb0000 !important;
 }
 
 .ab_background--gray {
@@ -192,6 +207,184 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   background: #ffffff;
   cursor: pointer;
   margin-top: -8px;
+}
+
+.popup {
+  z-index: 9999;
+  margin: 10vh auto;
+  min-height: 180px;
+  position: fixed;
+  overflow-y: hidden;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 85%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.7), 0 0 0 999em rgba(0, 0, 0, 0.5);
+  max-width: 460px;
+  background-color: #fff;
+}
+
+.popup input:focus, .popup select:focus {
+  -webkit-appearance: none;
+  outline: none;
+  border: 2px solid #18a4d2;
+}
+
+.popup--register {
+  max-height: 460px;
+  padding: 15px 20px;
+}
+
+.popup--register form {
+  margin: 25px auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.popup--register form label {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.popup--register form input[type='tel'], .popup--register form input[type='password'] {
+  padding: 10px;
+}
+
+.popup--register form .ab_button {
+  background-color: #18a4d2;
+}
+
+.popup--register form .ab_button:hover {
+  background-color: #1eb4e5;
+}
+
+.popup--method {
+  max-height: 180px;
+}
+
+.popup--feedback {
+  height: 40%;
+  padding: 15px 20px;
+  min-height: 420px;
+}
+
+.popup--feedback main form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.popup--feedback main form select {
+  border: 1px solid #b0bac5;
+  z-index: 9999;
+  padding: 10px;
+  margin: 25px 0;
+  background-color: #fff;
+  color: #ababab;
+  border-radius: 3px;
+  font-size: 1em;
+}
+
+.popup--feedback main form .js-feed-email, .popup--feedback main form .js-feed-message {
+  margin-bottom: 25px;
+  font-size: 1.1em;
+  padding: 7px;
+}
+
+.popup--feedback main form .js-feed-message {
+  resize: none;
+  min-height: 120px;
+  background: #fff;
+  color: #18181a;
+  border: solid 1px #b0bac5;
+  border-radius: 3px;
+  font-size: 1em;
+}
+
+.popup--feedback main form .ab_button {
+  background-color: #18a4d2;
+  max-width: 160px;
+}
+
+.popup--feedback main form .ab_button:hover {
+  background-color: #1eb4e5;
+}
+
+.popup .content i.ico-close {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 10%;
+  height: 11%;
+  background: url(../img/btn_close.png) no-repeat;
+  display: block;
+  background-size: 45%;
+}
+
+.popup .content h2 {
+  font-size: 1em;
+}
+
+.popup--method {
+  padding: 15px 5px;
+}
+
+.popup--method main {
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+}
+
+.popup--method main .method {
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px dotted #d0d4d9;
+  color: #505356;
+}
+
+.popup--method main .method img {
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.popup--method main .method h3 {
+  font-size: .9em;
+}
+
+.popup--method main .method--active {
+  color: #18181a;
+  pointer-events: none;
+  border: 2px solid #18a4d2;
+}
+
+.popup .error {
+  text-align: left;
+  color: #bb0000;
+  margin: 5px 0;
+}
+
+@keyframes rotate {
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: 360deg;
+  }
+  75% {
+    transform: rotate(720deg);
+  }
+  100% {
+    transform: rotate(1080deg);
+  }
 }
 
 .ab_width {
@@ -536,6 +729,22 @@ header main .title h1 {
   margin-bottom: 25px;
 }
 
+header main .title .you-loan {
+  margin: 15px 0;
+  font-size: 1.3em;
+  color: #505356;
+}
+
+header main .title .ico-dropdown {
+  display: inline-block;
+  position: relative;
+  left: 15px;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  background: url(../img/ic_dropdown.png) no-repeat;
+}
+
 header main .title > span {
   font-size: 1.3em;
   color: #505356;
@@ -543,7 +752,7 @@ header main .title > span {
 
 header main .title .call {
   color: #444649;
-  margin-top: 40px;
+  margin-top: 10px;
   line-height: 30px;
 }
 
@@ -994,6 +1203,7 @@ header .calc .ab_button {
 }
 
 #is-working .comments .row-comment .comment {
+  width: 300px;
   color: #505356;
 }
 
@@ -1007,7 +1217,13 @@ header .calc .ab_button {
   margin-left: 40px;
 }
 
-#is-working .comments .update {
+#is-working .comments .js-row-comment {
+  display: none;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+#is-working .comments .update-comment {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -1019,17 +1235,21 @@ header .calc .ab_button {
   cursor: pointer;
 }
 
-#is-working .comments .update:hover span {
+#is-working .comments .update-comment--active {
+  display: none;
+}
+
+#is-working .comments .update-comment:hover span {
   transition: .3s ease-out;
   color: #505356;
 }
 
-#is-working .comments .update:hover .ico_update-comments {
+#is-working .comments .update-comment:hover .ico_update-comments {
   transition: .3s ease-out;
   background-color: #505356;
 }
 
-#is-working .comments .update .ico_update-comments {
+#is-working .comments .update-comment .ico_update-comments {
   background-color: #98a0ab;
   mask-image: url(../img/rotate.svg);
   -webkit-mask-image: url(../img/rotate.svg);
@@ -1039,7 +1259,13 @@ header .calc .ab_button {
   height: 25px;
 }
 
-#is-working .comments .update span {
+#is-working .comments .update-comment .ico_update-comments--active {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+
+#is-working .comments .update-comment span {
   border-bottom: 1px dashed #98a0ab;
 }
 
@@ -1072,12 +1298,12 @@ header .calc .ab_button {
   clear: both;
 }
 
-#you-get .calc main label[for='sum'] {
+#you-get .calc main label[for='sum2'] {
   float: left;
   width: 360px;
 }
 
-#you-get .calc main label[for='period'] {
+#you-get .calc main label[for='period2'] {
   float: right;
   width: 360px;
 }
@@ -1137,7 +1363,7 @@ header .calc .ab_button {
   display: block;
 }
 
-#questions main .js-change-content-quest:nth-of-type(1) {
+#questions main .js-change-content-quest--1 .content {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -1146,29 +1372,40 @@ header .calc .ab_button {
       align-items: center;
 }
 
-#questions main .js-change-content-quest:nth-of-type(1) .info {
+#questions main .js-change-content-quest--1 .content .info {
   color: #505356;
 }
 
-#questions main .js-change-content-quest:nth-of-type(1) .info b {
+#questions main .js-change-content-quest--1 .content .info b {
   line-height: 40px;
 }
 
-#questions main .js-change-content-quest:nth-of-type(1) .info span {
+#questions main .js-change-content-quest--1 .content .info span {
   line-height: 20px;
 }
 
-#questions main .js-change-content-quest:nth-of-type(1) .info .links {
+#questions main .js-change-content-quest--1 .content .info .links {
   margin-top: 40px;
 }
 
-#questions main .js-change-content-quest:nth-of-type(1) .info .links .ab_link {
+#questions main .js-change-content-quest--1 .content .info .links .ab_link {
   margin: 5em 0;
+}
+
+#questions main .js-change-content-quest--3 .content h2 {
+  color: #18a4d2;
+  margin: 25px 0;
+}
+
+#questions main .js-change-content-quest--3 .content span {
+  color: #505356;
+  display: inline-block;
+  padding: 15px 0;
 }
 
 #feedback {
   margin-top: 90px;
-  margin-bottom: -20px;
+  padding-bottom: 30px;
   background-color: #f9f9fa;
 }
 
@@ -1211,15 +1448,16 @@ header .calc .ab_button {
 }
 
 #feedback main .info .text .to-feedback {
-  transition: .3s ease-out;
-  position: relative;
+  position: absolute;
   color: #b4b9bf;
   font-size: .8em;
-  bottom: 120px;
-  left: 290px;
+  bottom: 20px;
+  left: 295px;
+  z-index: 2;
 }
 
 #feedback main .info .text .to-feedback span {
+  white-space: nowrap;
   margin-right: 15px;
 }
 
@@ -1231,6 +1469,7 @@ header .calc .ab_button {
   background-color: #f9f9fa;
   padding: 15px 10px;
   color: #505356;
+  z-index: 3;
 }
 
 #feedback main .feedback #message {

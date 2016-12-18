@@ -12,7 +12,7 @@ $(function () {
     });
     app.loanCalculatorView = new LoanCalculatorView({
         model: app.loanCalculator,
-        el: '#loanCalculator'
+        el: 'form.calc'
     });
 
     let AppModel = Backbone.Model.extend({
@@ -30,6 +30,11 @@ $(function () {
 
             // Табы 'почему мы'
             'click .btn-about': 'changeAboutTab',
+            // Табы 'Вопросы и ответы'
+            'click .btn-questions': 'changeQuestionTab',
+
+            // Раскрыть коменты
+            'click .update-comment': 'showComments',
 
             // Слайдер
             'click .arrow--right': 'nextSlide',
@@ -37,6 +42,7 @@ $(function () {
 
             // Регистрация
             'click .js-btn_register': 'handleRegister',
+            // Обратная связь
             'click .js-btn_feedback': 'handleFeedback',
 
             // Для попапов
@@ -49,6 +55,21 @@ $(function () {
 
         initialize: function () {
             $('#userPhone').mask("+7 (999) 999-9999");
+
+            // Подставляем время
+            let date = new Date();
+            date.setMinutes(date.getMinutes() + 15);
+
+            let resHour = date.getHours(),
+                resMin = date.getMinutes();
+
+            if (date.getHours().toString().length == 1) resHour = '0' + date.getHours();
+
+            if (date.getMinutes().toString().length == 1) resMin = '0' + date.getMinutes();
+
+            let res = resHour + ':' + resMin;
+
+            $('.you-loan .js-loan').html(' ' + res);
         },
 
         // Выбор способа получения
@@ -68,7 +89,29 @@ $(function () {
             $('.js-change-content').removeClass('js-change-content--active');
 
             $('#aboutTab-' + tabId).addClass('js-change-content--active');
+        },
 
+        // -- вопросы и ответы
+        changeQuestionTab: function (e) {
+            $('.btn-questions--active').add(e.target).toggleClass('btn-questions--active');
+
+            let tabId = $(e.target).attr('data-tab');
+
+            $('.js-change-content-quest').removeClass('js-change-content-quest--active');
+
+            $('#QuestTab-' + tabId).addClass('js-change-content-quest--active');
+        },
+
+        showComments: function () {
+            $('.ico_update-comments').addClass('ico_update-comments--active');
+            setTimeout(function () {
+                $('.js-row-comment').slideDown(500).css({
+                    'display': 'flex'
+                    // 'justify-content': 'space-between'
+                });
+                $('.row-comment-hide').slideUp(650);
+                $('.update-comment').hide(100);
+            }, 1000);
         },
 
         // Следующий слайд
@@ -102,6 +145,8 @@ $(function () {
                 pass = $('#userPass').val(),
                 repPass = $('#userRepeatPass').val();
 
+            AppHelpers.formValidate('jsRegister');
+
             // Если пароли не совпадают
             if (pass !== repPass) {
                 $('.js-err-repeat-pass').show();
@@ -117,10 +162,12 @@ $(function () {
             }
 
             // Проверка телефона
-            if (phone.length !== 17) {
+            if (phone.length != 17) {
                 $('.js-err-val-phone').show();
+                $(phone).addClass('err-filed');
             } else {
                 $('.js-err-val-phone').hide();
+                $(phone).removeClass('err-filed');
             }
 
             if (phone.length === 17 && pass === repPass && pass.length >= 6) {
@@ -165,7 +212,7 @@ $(function () {
                 message: message
             };
 
-            email == 0 || message == 0 ? $('.js-btn_feedback').addClass('is-disabled') : $('.js-btn_feedback').removeClass('is-disabled');
+            AppHelpers.formValidate('jsFeedback');
 
             // Запрос
 

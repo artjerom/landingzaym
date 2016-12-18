@@ -91,6 +91,21 @@ gulp.task('scripts', function() {
         .pipe(connect.reload());
 });
 
+gulp.task('scripts-d', function() {
+
+    browserify('dev/js/app.js', {entries: 'dev/js/app.js', debug: true})
+        .transform(babelify, {
+            presets: ['es2015'],
+            plugins: ['transform-class-properties']
+        })
+        .bundle()
+        .pipe(source('app.js'))
+        .pipe(jshint())
+        .pipe(gulp.dest('public/desktop/js/'))
+        .pipe(notify('Scripts task completed'))
+        .pipe(connect.reload());
+});
+
 gulp.task('styles-minify', function() {
 
     var processors = [
@@ -171,10 +186,10 @@ gulp.task('default', ['styles', 'scripts', 'jade', 'connect'], function() {
     gulp.watch('./dev/js/**/*.js', ['scripts']);
 });
 
-gulp.task('default-desktop', ['styles-d', 'scripts', 'jade-d', 'connect'], function() {
+gulp.task('default-desktop', ['styles-d', 'scripts-d', 'jade-d', 'connect'], function() {
     gulp.watch('./dev/desktop/jade/**/*.jade', ['jade-d']);
     gulp.watch('./dev/desktop/css/**/*.scss', ['styles-d']);
-    gulp.watch('./dev/js/**/*.js', ['scripts']);
+    gulp.watch('./dev/js/**/*.js', ['scripts-d']);
 });
 
-gulp.task('build', ['styles', 'scripts', 'images', 'external', 'fonts', 'jade', 'jade-d', 'styles-d', 'images-d']);
+gulp.task('build', ['styles', 'scripts', 'images', 'external', 'fonts', 'jade', 'jade-d', 'styles-d', 'images-d', 'scripts-d']);

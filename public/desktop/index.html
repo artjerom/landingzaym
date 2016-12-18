@@ -6,12 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="css/main.css">
-    <!-- @TODO: Перенсти в футер-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.3/jquery.mask.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
-    <script src="js/app.js"></script>
     <title>Заявка на займ</title>
   </head>
   <body>
@@ -21,6 +15,7 @@
           <div class="title"><img src="../img/logo.png" class="logo">
             <h1>Займ <a class="ab_link js-pay_method">на вашу карту</a><i class="ico-dropdown"></i><br> быстро и просто
             </h1><span>Оформите заявку, и получите деньги</span><br><span>на карту в течение десяти минут.</span>
+            <div class="you-loan"><span>Займ у вас в</span><span class="js-loan"></span></div>
             <div class="call"><b>Есть вопросы? Звоните!</b><br><span class="tel">8 800 787-89-65</span></div>
           </div><i class="ico ico--calc"></i>
           <form id="loanCalculator" class="calc">
@@ -68,7 +63,7 @@
           <h2 class="ab_center--text">Как получить деньги</h2>
           <div class="block-slides ab_center--text">
             <div>
-              <div class="slide-img slide-img--1 ab_center--text"></div><span>Заполняете небольшую<br>онлайн-заяву</span><br><a class="ab_link">Заполнить заявку</a>
+              <div class="slide-img slide-img--1 ab_center--text"></div><span>Заполняете небольшую<br>онлайн-заяву</span><br><a class="js-show_register ab_link">Заполнить заявку</a>
             </div>
             <div>
               <div class="slide-img slide-img--2 ab_center--text"></div><span>Получаете решение о выдаче<br>займа в течение 5 минут</span><br><a class="ab_link">Как увеличить шансы?</a>
@@ -99,7 +94,7 @@
         </div>
       </section>
       <section id="get-money" class="ab_center--text">
-        <h2>Дадим в долг<br>быстро, просто и без поручителей.</h2><a class="ab_button">Получить деньги</a>
+        <h2>Дадим в долг<br>быстро, просто и без поручителей.</h2><a class="ab_button js-show_register">Получить деньги</a>
       </section>
       <div class="ab_background--gray">
         <section id="bonuses" class="ab_center--text">
@@ -144,43 +139,62 @@
         <div class="comments">
           <h2 class="ab_center--text">Они уже получили свои деньги</h2>
           <main>
-            <div class="row-comment">
+            <div class="row-comment row-comment-hide">
               <div class="comment"><img src="/img/avatar3.png">
                 <div class="text"><b>Евгений Титов</b><br><span>Очень удобно, после первого раза<br>быстро и без проблем. Огромное<br>спасибо за простой и быстрый займ.</span></div>
               </div>
               <div class="comment"><img src="/img/avatar-2.png">
-                <div class="text"><b>Анастасия Круглова</b><br><span>Быстро одобрили и перевели деньги.<br>В течении часа решила проблемы с<br>просрочками по кредиту.</span></div>
+                <div class="text"><b>Анастасия Круглова</b><br><span>
+                    Быстро одобрили и перевели деньги.
+                    В течении часа решила проблемы с
+                    просрочками по кредиту.</span></div>
               </div>
               <div class="comment"><img src="/img/avatar-3.png">
-                <div class="text"><b>Евгения Петрова</b><br><span>Взяла займ без проблем, за что<br>большое спасибо. Комиссия вышла<br>минимальной</span></div>
+                <div class="text"><b>Евгения Петрова</b><br><span>Взяла займ без проблем, за что<br>большое спасибо. Комиссия вышла
+                    минимальной.</span></div>
               </div>
             </div>
-            <div class="update js_update-comment ab_center--text"><i class="ico_update-comments"></i><span>Еще отзывы</span></div>
+            <div class="update-comment js_update-comment ab_center--text"><i class="ico_update-comments"></i><span>Еще отзывы</span></div>
+            <div class="row-comment js-row-comment">
+              <div class="comment"><img src="/img/client_1.png">
+                <div class="text"><b>Сергей Макаров</b><br><span>Все работает! Все четко и быстро!<br>Потратил 5 минут на оформление заявки.
+                    Очень удобно!!!</span></div>
+              </div>
+              <div class="comment"><img src="/img/client_2.png">
+                <div class="text"><b>Никита</b><br><span>
+                    Лишили степендии,а перевод от родителей
+                    задержался. Думал опять на
+                    одних макаронах пельменях и макаронах целую<br>неделю жить буду, но сервис выручил и спас<br>меня от язвы)</span></div>
+              </div>
+              <div class="comment"><img src="/img/client_5.png">
+                <div class="text"><b>Никита</b><br><span>Все супер) Зашел с телефона, оставил по-быстрому заявку,<br>а через 20 минут деньги уже были на карте.</span></div>
+              </div>
+            </div>
           </main>
         </div>
       </section>
       <section id="you-get" class="ab_center">
         <h2 class="ab_center--text">Получите и вы</h2>
-        <form id="loanCalculator" class="calc ab_center">
+        <form class="calc ab_center">
           <main>
-            <label for="sum">
+            <label for="sum2">
               <div class="calc-title"><span>Сумма займа</span>
                 <div class="af-input af-input--sum">
-                  <input id="focusInpSum" type="tel" name="sum" value="6000" required class="range_field range_field--sum js-sum">
-                  <label for="focusInpSum" class="js-symb_inp">₽</label>
+                  <input id="focusInpSum2" type="tel" name="sum" value="6000" required class="range_field range_field--sum js-sum">
+                  <label for="focusInpSum2" class="js-symb_inp">₽</label>
                 </div>
               </div>
-              <input id="sum" type="range" step="100" value="6000" min="1500" max="50000" class="slider js-slider js-slider--sum">
+              <input id="sum2" type="range" step="100" value="6000" min="1500" max="50000" class="slider js-slider js-slider--sum">
               <div class="ab_range-info"><span>1500 ₽</span><span>50000 ₽</span></div>
             </label>
-            <label for="period">
+            <label for="period2">
               <div class="calc-title calc-title--period"><span>На срок до</span>
                 <div class="af-input af-input--period">
-                  <input id="focusInpPeriod" type="tel" value="12" name="period" required class="range_field range_field--time js-period">
-                  <label for="focusInpPeriod" class="js-symb_inp">дней</label>
+                  <input id="focusInpPeriod2" type="tel" value="12" name="period" required class="range_field range_field--time js-period">
+                  <label for="focusInpPeriod2" class="js-symb_inp">дней</label>
                 </div>
               </div>
-              <input id="period" type="range" value="12" min="8" max="30" class="slider js-slider js-slider--period">
+              <input id="period2" type="range" value="12" min="8" max="30" class="slider js-slider js-slider--period">
               <div class="ab_range-info js-range_info-period"><span>8 дней</span><span>30 дней</span></div>
             </label>
           </main>
@@ -194,24 +208,30 @@
         <h2 class="ab_center--text">Вопросы и ответы</h2>
         <main>
           <nav class="ab_center"><a data-tab="1" class="btn-questions btn-questions--active">Получение займа</a><a data-tab="2" class="btn-questions">Погашение займа</a><a data-tab="3" class="btn-questions">О сервие Zaymigo</a></nav>
-          <div id="aboutTab-1" class="js-change-content-quest js-change-content-quest--active">
-            <ul class="info"><b>Как повысить шансы на получения займа?</b><br>
-              <li><span>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></li><br>
-              <li><a class="ab_link">Я хочу изменить даты погашения задолженности,<br>как это сделать?</a></li><br>
-              <li><a class="ab_link">Почему вы предлагаете мне меньшую сумму, чем<br>в прошлый раз?</a></li>
-            </ul>
-            <ul class="info">
-              <li><a class="ab_link">Раньше я брал и успешно погашал кредиты,<br>почему мне отказали?</a></li><br>
-              <li><a class="ab_link">На каких условиях я могу получить деньги?</a></li><br>
-              <li><a class="ab_link">Что делать, если у меня плохая кредитная<br>история</a></li><br>
-              <li><a class="ab_link">С каким бюро кредитных историй Вы<br>сотрудничаете?</a></li>
-            </ul>
+          <div id="QuestTab-1" class="js-change-content-quest js-change-content-quest--1 js-change-content-quest--active">
+            <div class="content">
+              <ul class="info"><b>Как повысить шансы на получения займа?</b><br>
+                <li><span>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></li><br>
+                <li><a class="ab_link">Я хочу изменить даты погашения задолженности,<br>как это сделать?</a></li><br>
+                <li><a class="ab_link">Почему вы предлагаете мне меньшую сумму, чем<br>в прошлый раз?</a></li>
+              </ul>
+              <ul class="info">
+                <li><a class="ab_link">Раньше я брал и успешно погашал кредиты,<br>почему мне отказали?</a></li><br>
+                <li><a class="ab_link">На каких условиях я могу получить деньги?</a></li><br>
+                <li><a class="ab_link">Что делать, если у меня плохая кредитная<br>история</a></li><br>
+                <li><a class="ab_link">С каким бюро кредитных историй Вы<br>сотрудничаете?</a></li>
+              </ul>
+            </div>
           </div>
-          <div id="aboutTab-2" class="js-change-content-quest">
-            <h2>Здесь контент для 2 таба</h2>
+          <div id="QuestTab-2" class="js-change-content-quest js-change-content-quest--2">
+            <div class="content">
+              <h2>2 таб</h2>
+            </div>
           </div>
-          <div id="aboutTab-3" class="js-change-content-quest">
-            <h2>Здесь контент для 3 таба</h2>
+          <div id="QuestTab-3" class="js-change-content-quest js-change-content-quest--3">
+            <div class="content">
+              <h2>Zaymigo - займите быстро</h2><span><b>Zaymigo -</b> инновационная микрофинансовая организация нового поколения, претендующая на звание лидера на рынке российского потребительского микрокредитования и акцентирующая свое внимание на удобстве заемщиков и скорости выдачи кредитов.</span><br><span><b>Zaymigo</b> в любое время суток окажет вам срочную финансовую помощь и предоставит вам микрозайм, невзирая на ваш уровень дохода или его отсутствие. Нет нужды выходить из дома - вся процедура оформления займа происходит в онлайне, занимает пару минут и требует от вас только паспорт. После практически мгновенного решения срочные деньги поступают на ваш банковский счет или карту в течение всего нескольких часов.</span>
+            </div>
           </div>
         </main>
       </section>
@@ -224,13 +244,14 @@
               <div class="to-feedback"><span>Или напишите нам</span><img src="img/arrow-feedback.png"></div>
             </div>
           </div>
-          <form action="#" class="feedback">
+          <form id="jsFeedback" action="#" class="feedback">
             <div class="row">
-              <input id="name" type="text" name="name" placeholder="Ваше имя">
-              <input id="email" type="text" name="email" placeholder="Ваша почта">
+              <input id="name" type="text" data-type="field" name="name" placeholder="Ваше имя">
+              <input id="email" type="text" data-type="field" name="email" placeholder="Ваша почта">
             </div>
-            <textarea id="message" name="message" placeholder="Сообщение"></textarea>
-            <div class="ab_center--text"><a class="ab_button ab_center--text">Отправить</a></div>
+            <textarea id="message" name="message" data-type="field" placeholder="Сообщение"></textarea>
+            <div class="block-err"><span>Заполните все поля</span></div>
+            <div class="ab_center--text"><a class="ab_button ab_center--text js-btn_feedback is-disabled">Отправить</a></div>
           </form>
         </main>
       </div>
@@ -238,14 +259,41 @@
         <div class="logo"><img src="img/logo-footer.png"></div>
       </footer>
     </div>
-    <!--    // Калькулятор и шапка-->
-    <!--    include template/calculator-->
-    <!--    // Как получить деньги-->
-    <!--    include template/how-money-->
-    <!--    include template/about-->
-    <!--    include template/is-working-->
-    <!--    include template/block-zaym-->
-    <!--    include template/footer-->
-    <!--include template/popus-->
+    <div style="display: none;" class="popup popup--method">
+      <div class="content">
+        <h2 class="ab_center">Способ получения</h2><i class="ico-close js-close_popup"></i>
+        <main class="ab_center">
+          <div class="method method--card method--active"><img src="img/visa.png">
+            <h3 class="js-text_method">на карту</h3>
+          </div>
+          <div class="method method--contact"><img src="img/cash.png">
+            <h3 class="js-text_method">наличными</h3>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Регистрация-->
+    <div style="display: none" class="popup popup--register">
+      <div class="content">
+        <h2 class="ab_center">Регистрация</h2><i class="ico-close js-close_popup"></i>
+        <form id="jsRegister" action="#" class="ab_center">
+          <label for="userPhone">Моб. телефон</label>
+          <input id="userPhone" type="tel" data-type="field" placeholder="Номер телефона" required><br>
+          <label for="userPass">Пароль</label>
+          <input id="userPass" type="password" data-type="field" data-min="6" placeholder="Пароль"><br>
+          <label for="userRepeatPass">Повторите пароль</label>
+          <input id="userRepeatPass" type="password" data-type="field" placeholder="Повторите пароль"><br>
+          <div style="display: none;" class="error js-err-val-phone"><span>Неверный номер телефона</span></div>
+          <div style="display: none;" class="error js-err-repeat-pass"><span>Пароли не совпадают</span></div>
+          <div style="display: none;" class="error js-err-val-pass"><span>Пароль не менее 6 символов</span></div>
+          <div class="ab_center"><a class="ab_button js-btn_register is-disabled">Зарегистрироваться</a></div>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.3/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
