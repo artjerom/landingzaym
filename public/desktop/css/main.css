@@ -161,11 +161,11 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   box-shadow: none;
 }
 
-.js-slider--sum {
+.js-slider--sum, .js-slider--sum2 {
   background-size: 10% 100%;
 }
 
-.js-slider--period {
+.js-slider--period, .js-slider--period2 {
   background-size: 20% 100%;
 }
 
