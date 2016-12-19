@@ -98,6 +98,10 @@ var LoanCalculatorView = Backbone.View.extend({
             max = $(this.sumRanges).attr('max');
 
         this.changeRangeSlider('sum', max, min);
+
+        if (this.model.get('sum') > AppConstants.sumBorder) {
+            this.model.set('period', 5)
+        }
     },
 
     // -- Выбор суммы при помощи поля
