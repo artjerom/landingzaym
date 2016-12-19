@@ -4,13 +4,13 @@
         h2.ab_center Обратная связь
         i.ico-close.js-close_popup
         main
-            form(action='#')
+            form(action='#')#jsFeedback
                 select.js-feed-select_theme
                     option(value='Вопрос о работе системы') Вопрос о работе системы
                     option(value='Сообщение о ошибке') Сообщение о ошибке
                     option(value='Предложение о сотрудничестве') Предложение о сотрудничестве
-                input.js-feed-email(type='text' required placeholder='email')
-                textarea.js-feed-message(required placeholder='Текст сообщения')
+                input.js-feed-email(type='text' data-type='field' required placeholder='email')
+                textarea.js-feed-message(required placeholder='Текст сообщения' data-type='field')
                 .ab_center
                     a.ab_button.js-btn_feedback.is-disabled Отправить
 
@@ -32,15 +32,15 @@
     .content
         h2.ab_center Регистрация
         i.ico-close.js-close_popup
-        form.ab_center(action='#')
+        form.ab_center(action='#')#jsRegister
             label(for='userPhone') Моб. телефон
-            input#userPhone(type='tel' placeholder='Номер телефона' required)
+            input#userPhone(type='tel' data-type='field' placeholder='Номер телефона' required)
             br
             label(for='userPass') Пароль
-            input#userPass(type='password' placeholder='Пароль')
+            input#userPass(type='password' data-type='field' placeholder='Пароль')
             br
             label(for='userRepeatPass') Повторите пароль
-            input#userRepeatPass(type='password' placeholder='Повторите пароль')
+            input#userRepeatPass(type='password' data-type='field' placeholder='Повторите пароль')
             br
             .error.js-err-val-phone(style='display: none;')
                 span Неверный номер телефона

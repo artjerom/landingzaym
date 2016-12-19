@@ -581,6 +581,10 @@ footer section.main-footer .content h3 {
   padding: 0px 20px;
 }
 
+.err-field {
+  border: 1px solid #bb0000 !important;
+}
+
 .separator {
   margin: 2.5vh auto;
   max-width: 90vw;
@@ -728,7 +732,7 @@ footer section.main-footer .content h3 {
   margin: 10vh auto;
   min-height: 180px;
   position: fixed;
-  overflow-y: auto;
+  overflow-y: hidden;
   text-align: center;
   top: 0;
   bottom: 0;

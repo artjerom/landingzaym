@@ -39,6 +39,10 @@
   padding: 0px 20px;
 }
 
+.err-field {
+  border: 1px solid $error-color !important;
+}
+
 // Разделитель
 .separator {
   margin: 2.5vh auto;
@@ -141,7 +145,7 @@
   margin: 10vh auto;
   min-height: 180px;
   position: fixed;
-  overflow-y: auto;
+  overflow-y: hidden;
   text-align: center;
   top: 0;
   bottom: 0;

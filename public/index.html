@@ -180,14 +180,14 @@
       <div class="content">
         <h2 class="ab_center">Обратная связь</h2><i class="ico-close js-close_popup"></i>
         <main>
-          <form action="#">
+          <form action="#" id="jsFeedback">
             <select class="js-feed-select_theme">
               <option value="Вопрос о работе системы">Вопрос о работе системы</option>
               <option value="Сообщение о ошибке">Сообщение о ошибке</option>
               <option value="Предложение о сотрудничестве">Предложение о сотрудничестве</option>
             </select>
-            <input type="text" required placeholder="email" class="js-feed-email">
-            <textarea required placeholder="Текст сообщения" class="js-feed-message"></textarea>
+            <input type="text" data-type="field" required placeholder="email" class="js-feed-email">
+            <textarea required placeholder="Текст сообщения" data-type="field" class="js-feed-message"></textarea>
             <div class="ab_center"><a class="ab_button js-btn_feedback is-disabled">Отправить</a></div>
           </form>
         </main>
@@ -211,13 +211,13 @@
     <div style="display: none" class="popup popup--register">
       <div class="content">
         <h2 class="ab_center">Регистрация</h2><i class="ico-close js-close_popup"></i>
-        <form action="#" class="ab_center">
+        <form action="#" id="jsRegister" class="ab_center">
           <label for="userPhone">Моб. телефон</label>
-          <input id="userPhone" type="tel" placeholder="Номер телефона" required><br>
+          <input id="userPhone" type="tel" data-type="field" placeholder="Номер телефона" required><br>
           <label for="userPass">Пароль</label>
-          <input id="userPass" type="password" placeholder="Пароль"><br>
+          <input id="userPass" type="password" data-type="field" placeholder="Пароль"><br>
           <label for="userRepeatPass">Повторите пароль</label>
-          <input id="userRepeatPass" type="password" placeholder="Повторите пароль"><br>
+          <input id="userRepeatPass" type="password" data-type="field" placeholder="Повторите пароль"><br>
           <div style="display: none;" class="error js-err-val-phone"><span>Неверный номер телефона</span></div>
           <div style="display: none;" class="error js-err-repeat-pass"><span>Пароли не совпадают</span></div>
           <div style="display: none;" class="error js-err-val-pass"><span>Пароль не менее 6 символов</span></div>

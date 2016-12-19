@@ -20,11 +20,7 @@ var AppHelpers = {
             type: type,
             data: data,
             success: function (data) {
-                if (data.declined == 1) {
-                    console.log('decline');
-                } else {
-                    return successCallback(data);
-                }
+                return successCallback(data);
             },
             error: errorCallback
         });
@@ -120,6 +116,8 @@ var AppHelpers = {
             $(btn).addClass('is-disabled');
             $(err).show();
         }
+
+        console.log($(form + ' .err-field').length);
 
     },
 };
