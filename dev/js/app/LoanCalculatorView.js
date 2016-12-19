@@ -68,10 +68,10 @@ var LoanCalculatorView = Backbone.View.extend({
             $('label[for=focusInpPeriod2]').html('дней');
             this.changeRangeSlider('period', 30, 8);
         }
-        this.model.set('period', $(rangePeriod).val());
-
-        $(this.sumRanges).val(sum);
         $(this.periodRanges).val(period);
+
+        this.model.set('period', $(rangePeriod).val());
+        $(this.sumRanges).val(sum);
 
     },
 
