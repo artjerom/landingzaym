@@ -140,10 +140,10 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
   background-image: linear-gradient($accent-color, $accent-color);
   background-repeat: no-repeat;
   @include range-track;
-  &--sum {
+  &--sum, &--sum2 {
     background-size: 10% 100%;
   }
-  &--period {
+  &--period, &--period2 {
     background-size: 20% 100%;
   }
   &::-moz-range-track {
