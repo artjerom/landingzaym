@@ -136,6 +136,10 @@ var LoanCalculatorView = Backbone.View.extend({
         $(range).val(e.target.value);
 
         this.changeRangeSlider('sum', $(this.sumRanges).attr('max'), $(this.sumRanges).attr('min'));
+
+        if (this.model.get('sum') > AppConstants.sumBorder) {
+            this.model.set('period', 5)
+        }
     },
 
     // Выбор срока при помощи ползунка

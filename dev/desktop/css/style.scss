@@ -5,7 +5,8 @@ body {
 header {
   padding: 45px 0;
   height: 700px;
-  background: url(../img/bg.png) 100% 100% no-repeat;
+  background: url(../img/bg.png) no-repeat;
+  background-position: 100% 100%;
   background-size: cover;
   @include clearfix();
   .logo {
@@ -31,7 +32,9 @@ header {
       .you-loan {
         margin: 15px 0;
         font-size: 1.3em;
-        color: $text-gray;
+        color: #fff;
+        padding-left: 15px;
+        background: url(../img/marker-text.png) no-repeat;
       }
       .ico-dropdown {
         display: inline-block;
