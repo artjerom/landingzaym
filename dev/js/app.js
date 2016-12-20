@@ -32,6 +32,7 @@ $(function () {
             'click .btn-about': 'changeAboutTab',
             // Табы 'Вопросы и ответы'
             'click .btn-questions': 'changeQuestionTab',
+            'click .js_tab-quest-get': 'changeQuestionTabGetZaym',
 
             // Раскрыть коменты
             'click .update-comment': 'showComments',
@@ -97,9 +98,26 @@ $(function () {
 
             let tabId = $(e.target).attr('data-tab');
 
+            console.log(tabId);
+            console.log(e.target);
+
             $('.js-change-content-quest').removeClass('js-change-content-quest--active');
 
             $('#QuestTab-' + tabId).addClass('js-change-content-quest--active');
+        },
+
+        // ---- вопросы и ответы (Получение займа)
+        changeQuestionTabGetZaym: function (e) {
+            $('.js_tab-quest-get--active').add(e.target).toggleClass('js_tab-quest-get--active');
+
+            let tabId = $(e.target).attr('data-tab');
+
+            console.log(tabId);
+            console.log(e.target);
+
+            $('.js_get-zaym-tab-content').removeClass('js_get-zaym-tab-content--active');
+
+            $('#QuestGetZaymTab-' + tabId).addClass('js_get-zaym-tab-content--active');
         },
 
         showComments: function () {
@@ -107,7 +125,6 @@ $(function () {
             setTimeout(function () {
                 $('.js-row-comment').slideDown(500).css({
                     'display': 'flex'
-                    // 'justify-content': 'space-between'
                 });
                 $('.row-comment-hide').slideUp(650);
                 $('.update-comment').hide(100);

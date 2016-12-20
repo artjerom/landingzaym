@@ -29,25 +29,6 @@
               <input id="sum" type="range" step="100" value="6000" min="1500" max="50000" class="slider js-slider js-slider--sum">
               <div class="ab_range-info"><span>1500 ₽</span><span>50000 ₽</span></div>
             </label>
-            <label for="period">
-              <div class="calc-title calc-title--period"><span>На срок до</span>
-                <div class="af-input af-input--period">
-                  <input id="focusInpPeriod" type="tel" value="12" name="period" required class="range_field range_field--time js-period">
-                  <label for="focusInpPeriod" class="js-symb_inp">дней</label>
-                </div>
-              </div>
-              <input id="period" type="range" value="12" min="8" max="30" class="slider js-slider js-slider--period">
-              <div class="ab_range-info js-range_info-period"><span>8 дней</span><span>30 дней</span></div>
-            </label>
-            <div class="info-zaym">
-              <!-- Информация о займе-->
-              <div class="info-sum"><span>Занимаете</span>
-                <h4 class="js-out-sum">6 000 ₽</h4>
-              </div>
-              <div class="info-back"><span>Возращаете</span>
-                <h4 class="js-out-sum_back">7 434 ₽</h4>
-              </div>
-            </div>
             <div class="ab_center--text"><a class="ab_button js-show_register">Получить деньги</a></div>
           </form>
         </main>
@@ -210,16 +191,30 @@
           <nav class="ab_center"><a data-tab="1" class="btn-questions btn-questions--active">Получение займа</a><a data-tab="2" class="btn-questions">Погашение займа</a><a data-tab="3" class="btn-questions">О сервие Zaymigo</a></nav>
           <div id="QuestTab-1" class="js-change-content-quest js-change-content-quest--1 js-change-content-quest--active">
             <div class="content">
-              <ul class="info"><b>Как повысить шансы на получения займа?</b><br>
-                <li><span>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></li><br>
-                <li><a class="ab_link">Я хочу изменить даты погашения задолженности,<br>как это сделать?</a></li><br>
-                <li><a class="ab_link">Почему вы предлагаете мне меньшую сумму, чем<br>в прошлый раз?</a></li>
+              <ul class="info">
+                <li><a data-tab="1" class="ab_link js_tab-quest-get js_tab-quest-get--active">Как повысить шансы на получения займа?</a>
+                  <div id="QuestGetZaymTab-1" class="js_get-zaym-tab-content js_get-zaym-tab-content--active js_get-zaym-tab-content--1"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+                </li><br>
+                <li><a data-tab="2" class="ab_link js_tab-quest-get">Я хочу изменить даты погашения задолженности,<br>как это сделать?</a>
+                  <div id="QuestGetZaymTab-2" class="js_get-zaym-tab-content js_get-zaym-tab-content--2"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+                </li><br>
+                <li><a data-tab="3" class="ab_link js_tab-quest-get">Почему вы предлагаете мне меньшую сумму, чем<br>в прошлый раз?</a>
+                  <div id="QuestGetZaymTab-3" class="js_get-zaym-tab-content js_get-zaym-tab-content--3"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+                </li>
               </ul>
               <ul class="info">
-                <li><a class="ab_link">Раньше я брал и успешно погашал кредиты,<br>почему мне отказали?</a></li><br>
-                <li><a class="ab_link">На каких условиях я могу получить деньги?</a></li><br>
-                <li><a class="ab_link">Что делать, если у меня плохая кредитная<br>история</a></li><br>
-                <li><a class="ab_link">С каким бюро кредитных историй Вы<br>сотрудничаете?</a></li>
+                <li><a data-tab="4" class="ab_link js_tab-quest-get">Раньше я брал и успешно погашал кредиты,<br>почему мне отказали?</a>
+                  <div id="QuestGetZaymTab-4" class="js_get-zaym-tab-content js_get-zaym-tab-content--4"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+                </li><br>
+                <li><a data-tab="5" class="ab_link js_tab-quest-get">На каких условиях я могу получить деньги?</a>
+                  <div id="QuestGetZaymTab-5" class="js_get-zaym-tab-content js_get-zaym-tab-content--5"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+                </li><br>
+                <li><a data-tab="6" class="ab_link js_tab-quest-get">Что делать, если у меня плохая кредитная<br>история</a>
+                  <div id="QuestGetZaymTab-6" class="js_get-zaym-tab-content js_get-zaym-tab-content--6"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+                </li><br>
+                <li><a data-tab="7" class="ab_link js_tab-quest-get">С каким бюро кредитных историй Вы<br>сотрудничаете?</a>
+                  <div id="QuestGetZaymTab-7" class="js_get-zaym-tab-content js_get-zaym-tab-content--7"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+                </li>
               </ul>
             </div>
           </div>

@@ -1,0 +1,13 @@
+form.calc#loanCalculator
+    label(for='sum')
+        .calc-title
+            span Сумма займа
+            .af-input.af-input--sum
+                input#focusInpSum.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000' required)
+                label(for='focusInpSum').js-symb_inp ₽
+        input#sum.slider.js-slider.js-slider--sum(type='range', step='100' value='6000' min='1500', max='50000')
+        .ab_range-info
+            span 1500 ₽
+            span 50000 ₽
+    .ab_center--text
+        a.ab_button.js-show_register Получить деньги

@@ -43,13 +43,24 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   background-color: #f9f9fa;
 }
 
-.ab_link {
+.ab_link, .js_tab-quest-get {
   color: #18a4d2;
   text-decoration: none;
   border-bottom: 1px dashed #18a4d2;
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.ab_link:hover, .js_tab-quest-get:hover {
+  transition: .3s ease-out;
+  color: #35bce8;
+}
+
+.ab_link--active, .js_tab-quest-get--active {
+  color: #505356;
+  border-bottom: none;
+  pointer-events: none;
 }
 
 .ab_separator {
@@ -61,7 +72,7 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
 .ab_button {
   background: #3bb38e;
   border: 0;
-  border-bottom: 1px solid #1f7a5d;
+  border-bottom: 2px solid #1f7a5d;
   text-shadow: 0 -1px #3879a2;
   padding: 20px 25px;
   font-size: 14px;
@@ -766,7 +777,7 @@ header main .title .call .tel {
 
 header .calc {
   width: 460px;
-  height: 490px;
+  max-height: 490px;
   margin-top: 70px;
   background-color: #fff;
   border-radius: 10px;
@@ -1022,7 +1033,7 @@ header .calc .ab_button {
   background-color: #fff;
   color: #3bb38e;
   text-shadow: none;
-  border-bottom: 3px solid #d0d4d9;
+  border-bottom: 2px solid #d0d4d9;
   box-shadow: 0 5px 16px 0 #2e8d70;
 }
 
@@ -1404,6 +1415,14 @@ header .calc .ab_button {
   color: #505356;
   display: inline-block;
   padding: 15px 0;
+}
+
+.js_get-zaym-tab-content {
+  display: none;
+}
+
+.js_get-zaym-tab-content--active {
+  display: block;
 }
 
 #feedback {

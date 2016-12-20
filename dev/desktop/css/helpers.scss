@@ -44,13 +44,22 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
   }
 }
 
-.ab_link {
+.ab_link, .js_tab-quest-get {
   color: $main-color;
   text-decoration: none;
   border-bottom: 1px dashed $main-color;
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
+  &:hover {
+    transition: .3s ease-out;
+    color: lighten($main-color, 10%);
+  }
+  &--active {
+    color: $text-gray;
+    border-bottom: none;
+    pointer-events: none;
+  }
 }
 
 // Разделитель
@@ -63,7 +72,7 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
 .ab_button {
   background: $accent-color;
   border: 0;
-  border-bottom: 1px solid #1f7a5d;
+  border-bottom: 2px solid #1f7a5d;
   text-shadow: 0 -1px #3879a2;
   padding: 20px 25px;
   font-size: 14px;

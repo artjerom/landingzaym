@@ -27,7 +27,7 @@ gulp.task('connect', function () {
        port: 3000,
        livereload: true,
        // Для моб: '/.public', десктоп './public/desktop'
-       root: './public'
+       root: './public/desktop'
    });
 });
 

@@ -62,7 +62,7 @@ header {
   }
   .calc {
     width: 460px;
-    height: 490px;
+    max-height: 490px;
     margin-top: 70px;
     background-color: #fff;
     border-radius: 10px;
@@ -272,7 +272,7 @@ header {
     background-color: #fff;
     color: $accent-color;
     text-shadow: none;
-    border-bottom: 3px solid $gray;
+    border-bottom: 2px solid $gray;
     box-shadow: 0 5px 16px 0 darken($accent-color, 10%);
     &:hover {
       transition: .1s ease-out;
@@ -584,6 +584,14 @@ header {
         }
       }
     }
+  }
+}
+
+// Табы вопросы и ответы (получение займа)
+.js_get-zaym-tab-content {
+  display: none;
+  &--active {
+    display: block;
   }
 }
 
