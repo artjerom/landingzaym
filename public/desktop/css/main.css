@@ -1329,6 +1329,8 @@ header .calc .ab_button {
 
 #questions {
   margin-top: 80px;
+  max-height: 580px;
+  height: 580px;
 }
 
 #questions > h2.ab_center--text {
@@ -1377,21 +1379,24 @@ header .calc .ab_button {
   display: block;
 }
 
-#questions main .js-change-content-quest--1 .content {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-align: center;
-      align-items: center;
+#questions main .js-change-content-quest--1 .content:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #questions main .js-change-content-quest--1 .content .info {
   color: #505356;
+  width: 48%;
+  float: left;
 }
 
-#questions main .js-change-content-quest--1 .content .info b {
-  line-height: 40px;
+#questions main .js-change-content-quest--1 .content .info:last-child {
+  float: right;
+}
+
+#questions main .js-change-content-quest--1 .content .info li {
+  margin: 15px 0;
 }
 
 #questions main .js-change-content-quest--1 .content .info span {
@@ -1426,7 +1431,6 @@ header .calc .ab_button {
 }
 
 #feedback {
-  margin-top: 90px;
   padding-bottom: 30px;
   background-color: #f9f9fa;
 }

@@ -509,6 +509,8 @@ header {
 
 #questions {
   margin-top: 80px;
+  max-height: 580px;
+  height: 580px;
   > h2.ab_center--text  {
     font-size: 2em;
     color: $main-text;
@@ -549,13 +551,19 @@ header {
       // Для 1-го таба
       &--1 {
         .content {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          //display: flex;
+          //justify-content: space-between;
+          //align-items: stretch;
+          @include clearfix();
           .info {
             color: $text-gray;
-            b {
-              line-height: 40px;
+            width: 48%;
+            float: left;
+            &:last-child {
+              float: right;
+            }
+            li {
+              margin: 15px 0;
             }
             span {
               line-height: 20px;
@@ -596,7 +604,7 @@ header {
 }
 
 #feedback {
-  margin-top: 90px;
+  //margin-top: 90px;
   padding-bottom: 30px;
   background-color: $bg-gray;
   main {
