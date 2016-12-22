@@ -181,10 +181,10 @@ $(function () {
             // Проверка телефона
             if (phone.length != 17) {
                 $('.js-err-val-phone').show();
-                $(phone).addClass('err-filed');
+                // $(phone).addClass('err-filed');
             } else {
                 $('.js-err-val-phone').hide();
-                $(phone).removeClass('err-filed');
+                // $(phone).removeClass('err-filed');
             }
 
             if (phone.length === 17 && pass === repPass && pass.length >= 6) {
