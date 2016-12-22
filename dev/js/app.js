@@ -207,7 +207,7 @@ $(function () {
                     'POST',
                     JSON.stringify(data),
                     function (data) {
-                        if (data.status === 'succes') {
+                        if (data.status === 'success') {
                             console.log('register');
                         } else {
                             console.log('err');

@@ -29,15 +29,16 @@ var LoanCalculatorView = Backbone.View.extend({
         this.model.on('change', this.change, this);
 
         this.render();
+
     },
 
     render: function () {
         var rendered = this.template(this.model.attributes);
         this.$el.html(rendered);
 
-        // this.change();
+        this.change();
 
-        return this;
+        // return this;
     },
 
     change: function () {
@@ -60,6 +61,7 @@ var LoanCalculatorView = Backbone.View.extend({
 
         if (sum > AppConstants.sumBorder) {
             AppHelpers.printResults();
+
             $('.js-range_info-period span:nth-child(1)').html('4 недели');
 
             $('.js-range_info-period span:nth-child(2)').html('12 недель');
@@ -68,7 +70,6 @@ var LoanCalculatorView = Backbone.View.extend({
             this.changeRangeSlider('period', 12, 4);
 
             this.changePeriodRange();
-
             this.model.get('period') == 4 ? $('label[for=focusInpPeriod]').html('недели') : $('label[for=focusInpPeriod]').html('недель');
             this.model.get('period') == 4 ? $('label[for=focusInpPeriod2]').html('недели') : $('label[for=focusInpPeriod2]').html('недель');
         } else {
@@ -80,11 +81,9 @@ var LoanCalculatorView = Backbone.View.extend({
             $('label[for=focusInpPeriod2]').html('дней');
             this.changeRangeSlider('period', 30, 8);
         }
-        $(this.periodRanges).val(period);
 
-        this.model.set('period', $(rangePeriod).val());
         $(this.sumRanges).val(sum);
-
+        $(rangePeriod).val(period);
     },
 
     // Изменение ползунка (type: sum || period)
@@ -114,6 +113,7 @@ var LoanCalculatorView = Backbone.View.extend({
         if (this.model.get('sum') > AppConstants.sumBorder) {
             this.model.set('period', 5)
         }
+
     },
 
     // -- Выбор суммы при помощи поля
@@ -152,6 +152,7 @@ var LoanCalculatorView = Backbone.View.extend({
         if (this.model.get('sum') > AppConstants.sumBorder) {
             this.model.set('period', 5)
         }
+
     },
 
     // Выбор срока при помощи ползунка
