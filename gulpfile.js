@@ -32,23 +32,28 @@ gulp.task('connect', function () {
 });
 
 gulp.task('jade', function() {
+    var config = require('./config/config.json');
+
     return gulp.src('dev/jade/index.jade')
         .pipe(jade({
-            pretty: true
+            pretty: true,
+            locals: config
         }))
         .pipe(gulp.dest('./public/'))
         .pipe(connect.reload());
 });
 
 gulp.task('jade-d', function() {
+    var config = require('./config/config.json');
+
     return gulp.src('dev/desktop/jade/index.jade')
         .pipe(jade({
-            pretty: true
+            pretty: true,
+            locals: config
         }))
         .pipe(gulp.dest('./public/desktop/'))
         .pipe(connect.reload());
 });
-
 
 gulp.task('styles', function() {
     var processors = [
