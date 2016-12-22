@@ -1,0 +1,32 @@
+script(type='text/template' id='templateCalc')
+    label(for='sum')
+        .calc-title
+            span Сумма займа
+            .af-input.af-input--sum
+                input#focusInpSum.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000' required)
+                label(for='focusInpSum').js-symb_inp ₽
+        input#sum.slider.js-slider.js-slider--sum(type='range', step='100' value='6000' min='1500', max='50000')
+        .ab_range-info
+            span 1500 ₽
+            span 50000 ₽
+    label(for='period')
+        .calc-title.calc-title--period
+            span На срок до
+            .af-input.af-input--period
+                input#focusInpPeriod.range_field.range_field--time.js-period(type='tel', value='12'
+                name='period' required)
+                label(for='focusInpPeriod').js-symb_inp дней
+        input#period.slider.js-slider.js-slider--period(type='range', value='12' min='8', max='30')
+        .ab_range-info.js-range_info-period
+            span 8 дней
+            span 30 дней
+    .info-zaym
+        // Информация о займе
+        .info-sum
+            span Занимаете
+            h4.js-out-sum 6 000 ₽
+        .info-back
+            span Возращаете
+            h4.js-out-sum_back 7 434 ₽
+    .ab_center--text
+        a.ab_button.js-show_register Получить деньги

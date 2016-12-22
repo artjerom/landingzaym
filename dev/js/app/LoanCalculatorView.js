@@ -24,8 +24,20 @@ var LoanCalculatorView = Backbone.View.extend({
 
     initialize: function () {
 
+        // this.template = _.template($('#calculatorTemplate'));
+        this.template = $('#templateCalc').html();
+
         this.model.on('change', this.change, this);
 
+        this.render();
+    },
+
+    render: function () {
+        $(this.el).html(_.template(this.template));
+
+        this.change();
+
+        return this;
     },
 
     change: function () {
