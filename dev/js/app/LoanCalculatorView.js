@@ -38,14 +38,12 @@ var LoanCalculatorView = Backbone.View.extend({
 
         this.change();
 
-        // return this;
+        return this;
     },
 
     change: function () {
         let sum = this.model.get('sum'),
             period = this.model.get('period'),
-            // Ползунок с выбора срока
-            rangePeriod = $(this.periodRanges),
             // Поле суммы
             fieldSum = $('input[name=sum]'),
             // Поле срока
@@ -69,7 +67,6 @@ var LoanCalculatorView = Backbone.View.extend({
             // Меняем значение ползунка
             this.changeRangeSlider('period', 12, 4);
 
-            this.changePeriodRange();
             this.model.get('period') == 4 ? $('label[for=focusInpPeriod]').html('недели') : $('label[for=focusInpPeriod]').html('недель');
             this.model.get('period') == 4 ? $('label[for=focusInpPeriod2]').html('недели') : $('label[for=focusInpPeriod2]').html('недель');
         } else {
@@ -82,8 +79,8 @@ var LoanCalculatorView = Backbone.View.extend({
             this.changeRangeSlider('period', 30, 8);
         }
 
-        $(this.sumRanges).val(sum);
-        $(rangePeriod).val(period);
+        // $(this.sumRanges).val(sum);
+        // $(this.periodRanges).val(period);
     },
 
     // Изменение ползунка (type: sum || period)
@@ -99,6 +96,7 @@ var LoanCalculatorView = Backbone.View.extend({
                 });
 
             this.model.set(type, $(range[i]).val());
+
         }
 
     },
@@ -111,7 +109,7 @@ var LoanCalculatorView = Backbone.View.extend({
         this.changeRangeSlider('sum', max, min);
 
         if (this.model.get('sum') > AppConstants.sumBorder) {
-            this.model.set('period', 5)
+            this.model.set('period', 5);
         }
 
     },
