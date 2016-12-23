@@ -116,8 +116,8 @@ var LoanCalculatorView = Backbone.View.extend({
                 .css({
                     'backgroundSize': ($(range[i]).val() - $(range[i]).attr('min')) * 100 / ($(range[i]).attr('max') - $(range[i]).attr('min')) + '% 100%'
                 });
+
             this.model.set(type, $(range[i]).val());
-            console.log($(range[i]).val());
         }
     },
 
