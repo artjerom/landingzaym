@@ -163,23 +163,26 @@ $(function () {
                 rePass = $('#userRepeatPass').val(),
                 period = app.loanCalculator.get('period');
 
-            AppHelpers.formValidate('jsRegister');
-
             // Если пароли не совпадают
+
             if (pass !== rePass) {
                 $('.js-err-repeat-pass').show();
             } else {
                 $('.js-err-repeat-pass').hide();
             }
-
             // Если пароль короткий
+
             if (pass.length < 6) {
                 $('.js-err-val-pass').show();
+                $('#userPass').addClass('err-field');
+                $('.js-btn_register').addClass('is-disabled');
             } else if (pass.length >= 6) {
                 $('.js-err-val-pass').hide();
+                $('#userPass').removeClass('err-field');
+                $('.js-btn_register').removeClass('is-disabled');
             }
-
             // Проверка телефона
+
             if (phone.length != 17) {
                 $('.js-err-val-phone').show();
             } else {
@@ -192,13 +195,21 @@ $(function () {
                 $('.js-btn_register').addClass('is-disabled');
             }
 
+            if ($('#agreement').is(':checked')) {
+                $('.js-btn_register').removeClass('is-disabled');
+            } else {
+                $('.js-btn_register').addClass('is-disabled');
+            }
             var data = {
                 phone: phone,
                 password: pass,
                 rePassword: rePass,
                 sum: app.loanCalculator.get('sum'),
+                agreement: $('#agreement').prop('checked'),
                 period: app.loanCalculator.get('sum') > AppConstants.sumBorder ? period * 7 : period
             };
+
+            AppHelpers.formValidate('jsRegister');
 
             // Запрос
             if (!$('.js-btn_register').hasClass('is-disabled')) {

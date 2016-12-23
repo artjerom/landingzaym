@@ -20,34 +20,36 @@
           </div><i class="ico ico--calc"></i>
           <form id="loanCalculator" class="calc">
             <script id="templateCalc" type="text/template">
-              <label for="sum">
-                <div class="calc-title"><span>Сумма займа</span>
-                  <div class="af-input af-input--sum">
-                    <input id="focusInpSum" type="tel" name="sum" value="6000" required class="range_field range_field--sum js-sum">
-                    <label for="focusInpSum" class="js-symb_inp">₽</label>
+              <div class="block-calc">
+                <label for="sum">
+                  <div class="calc-title"><span>Сумма займа</span>
+                    <div class="af-input af-input--sum">
+                      <input id="focusInpSum" type="tel" name="sum" value="6000" required class="range_field range_field--sum js-sum">
+                      <label for="focusInpSum" class="js-symb_inp">₽</label>
+                    </div>
                   </div>
-                </div>
-                <input id="sum" type="range" step="100" value="6000" min="1500" max="50000" class="slider js-slider js-slider--sum">
-                <div class="ab_range-info"><span>1500 ₽</span><span>50000 ₽</span></div>
-              </label>
-              <label for="period">
-                <div class="calc-title calc-title--period"><span>На срок до</span>
-                  <div class="af-input af-input--period">
-                    <input id="focusInpPeriod" type="tel" value="12" name="period" required class="range_field range_field--time js-period">
-                    <label for="focusInpPeriod" class="js-symb_inp">дней</label>
+                  <input id="sum" type="range" step="100" value="6000" min="1500" max="50000" class="slider js-slider js-slider--sum">
+                  <div class="ab_range-info"><span>1500 ₽</span><span>50000 ₽</span></div>
+                </label><% if (app.loanCalculator.attributes.config.showPeriod == true) {%>
+                <label for="period">
+                  <div class="calc-title calc-title--period"><span>На срок до</span>
+                    <div class="af-input af-input--period">
+                      <input id="focusInpPeriod" type="tel" value="12" name="period" required class="range_field range_field--time js-period">
+                      <label for="focusInpPeriod" class="js-symb_inp">дней</label>
+                    </div>
                   </div>
-                </div>
-                <input id="period" type="range" value="12" min="8" max="30" class="slider js-slider js-slider--period">
-                <div class="ab_range-info js-range_info-period"><span>8 дней</span><span>30 дней</span></div>
-              </label>
-              <div class="info-zaym">
-                <!-- Информация о займе-->
-                <div class="info-sum"><span>Занимаете</span>
-                  <h4 class="js-out-sum">6 000 ₽</h4>
-                </div>
-                <div class="info-back"><span>Возращаете</span>
-                  <h4 class="js-out-sum_back">7 434 ₽</h4>
-                </div>
+                  <input id="period" type="range" value="12" min="8" max="30" class="slider js-slider js-slider--period">
+                  <div class="ab_range-info js-range_info-period"><span>8 дней</span><span>30 дней</span></div>
+                </label>
+                <div class="info-zaym">
+                  <!-- Информация о займе-->
+                  <div class="info-sum"><span>Занимаете</span>
+                    <h4 class="js-out-sum">6 000 ₽</h4>
+                  </div>
+                  <div class="info-back"><span>Возращаете</span>
+                    <h4 class="js-out-sum_back">7 434 ₽</h4>
+                  </div>
+                </div><% } %>
               </div>
               <div class="ab_center--text"><a class="ab_button js-show_register">Получить деньги</a></div>
             </script>
@@ -88,7 +90,12 @@
             </div>
           </div>
           <div id="aboutTab-2" class="js-change-content">
-            <h2>Здесь контент для 2 таба</h2>
+            <div class="title ab_center ab_center--text"><span>Процентные ставки в Zaymigo значительно ниже рекомендованных<br>Центральным банком РФ.</span></div>
+            <div class="main">
+              <div class="content content--1"><span>Ставки от 0,49% в день. Срок до 12 недель.</span></div>
+              <div class="content content--2"><span>Не получается погасить в срок? Не волнуйтесь!<br>Есть продление.</span></div>
+              <div class="content content--3"><span>Вы не передаете нам свою<br>платежную информацию. Никто<br>не сможет воспользоваться<br>вашими деньгами.</span></div>
+            </div>
           </div>
           <div id="aboutTab-3" class="js-change-content">
             <h2>Здесь контент для 3 таба</h2>
@@ -177,35 +184,36 @@
       </section>
       <section id="you-get" class="ab_center">
         <h2 class="ab_center--text">Получите и вы</h2>
-        <!--form.calc.ab_center
-        main
-            label(for='sum2')
-                .calc-title
-                    span Сумма займа
-                    .af-input.af-input--sum
-                        input#focusInpSum2.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000'
-                        required)
-                        label(for='focusInpSum2').js-symb_inp ₽
-                input#sum2.slider.js-slider.js-slider--sum(type='range', step='100' value='6000' min='1500',
-                max='50000')
-                .ab_range-info
-                    span 1500 ₽
-                    span 50000 ₽
-            label(for='period2')
-                .calc-title.calc-title--period
-                    span На срок до
-                    .af-input.af-input--period
-                        input#focusInpPeriod2.range_field.range_field--time.js-period(type='tel', value='12'
-                        name='period' required)
-                        label(for='focusInpPeriod2').js-symb_inp дней
-                input#period2.slider.js-slider.js-slider--period(type='range', value='12' min='8', max='30')
-                .ab_range-info.js-range_info-period
-                    span 8 дней
-                    span 30 дней
-        hr.ab_separator
-        .ab_center--text
-            .ab_button.js-show_register Получить деньги
-        -->
+        <form class="calc ab_center">
+          <!--main
+          label(for='sum2')
+              .calc-title
+                  span Сумма займа
+                  .af-input.af-input--sum
+                      input#focusInpSum2.range_field.range_field--sum.js-sum(type='tel', name='sum', value='6000'
+                      required)
+                      label(for='focusInpSum2').js-symb_inp ₽
+              input#sum2.slider.js-slider.js-slider--sum(type='range', step='100' value='6000' min='1500',
+              max='50000')
+              .ab_range-info
+                  span 1500 ₽
+                  span 50000 ₽
+          label(for='period2')
+              .calc-title.calc-title--period
+                  span На срок до
+                  .af-input.af-input--period
+                      input#focusInpPeriod2.range_field.range_field--time.js-period(type='tel', value='12'
+                      name='period' required)
+                      label(for='focusInpPeriod2').js-symb_inp дней
+              input#period2.slider.js-slider.js-slider--period(type='range', value='12' min='8', max='30')
+              .ab_range-info.js-range_info-period
+                  span 8 дней
+                  span 30 дней
+          -->
+          <!--hr.ab_separator-->
+          <!--.ab_center--text.ab_button.js-show_register Получить деньги
+          -->
+        </form>
       </section>
       <section id="questions" class="ab_width ab_center">
         <h2 class="ab_center--text">Вопросы и ответы</h2>
@@ -295,14 +303,19 @@
         <h2 class="ab_center">Регистрация</h2><i class="ico-close js-close_popup"></i>
         <form id="jsRegister" action="#" class="ab_center">
           <label for="userPhone">Моб. телефон</label>
-          <input id="userPhone" type="tel" data-type="field" placeholder="Номер телефона" required><br>
+          <input id="userPhone" type="tel" data-type="field" placeholder="Номер телефона" required>
+          <div style="display: none;" class="error js-err-val-phone"><span>Введите ваш телефон</span></div><br>
           <label for="userPass">Пароль</label>
-          <input id="userPass" type="password" data-type="field" data-min="6" placeholder="Пароль"><br>
+          <input id="userPass" type="password" data-type="field" data-min="6" placeholder="Пароль">
+          <div style="display: none;" class="error js-err-val-pass"><span>Пароль не менее 6 символов</span></div><br>
           <label for="userRepeatPass">Повторите пароль</label>
-          <input id="userRepeatPass" type="password" data-type="field" placeholder="Повторите пароль"><br>
-          <div style="display: none;" class="error js-err-val-phone"><span>Неверный номер телефона</span></div>
+          <input id="userRepeatPass" type="password" data-type="field" placeholder="Повторите пароль">
           <div style="display: none;" class="error js-err-repeat-pass"><span>Пароли не совпадают</span></div>
-          <div style="display: none;" class="error js-err-val-pass"><span>Пароль не менее 6 символов</span></div>
+          <div class="check-agreement">
+            <input id="agreement" type="checkbox" checked="checked">
+            <label for="agreement">Даю согласие на обработку персональных данных</label>
+            <div style="display: none;" class="error js-err-agreement"><span>Дайте согласие на обработку</span></div>
+          </div>
           <div class="ab_center"><a class="ab_button js-btn_register is-disabled">Зарегистрироваться</a></div>
         </form>
       </div>

@@ -488,21 +488,30 @@ header {
     border-radius: 10px;
     border: $main-color dashed 6px;
     box-shadow: 0 0 4em 0 darken($gray, 8%);
-    padding: 50px 40px;
-    main {
-      @include clearfix();
-      label[for='sum2'] {
-        float: left;
-        width: 360px;
+    padding: 50px 40px 20px 40px;
+    @include clearfix();
+    .block-calc {
+      display: flex;
+      justify-content: space-between;
+      label[for='sum'] {
+        width: 100%;
       }
-      label[for='period2'] {
-        float: right;
-        width: 360px;
+      label[for='period'] {
+        margin-left: 50px;
+        width: 100%;
+      }
+      .info-zaym {
+        display: none;
       }
       .js-slider {
         width: 100%;
         margin-bottom: 15px;
       }
+    }
+    .ab_center--text {
+      width: 100%;
+      margin: 25px 0;
+      float: left;
     }
   }
 }

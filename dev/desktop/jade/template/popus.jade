@@ -18,18 +18,23 @@
         form.ab_center#jsRegister(action='#')
             label(for='userPhone') Моб. телефон
             input#userPhone(type='tel' data-type='field' placeholder='Номер телефона' required)
+            .error.js-err-val-phone(style='display: none;')
+                span Введите ваш телефон
             br
             label(for='userPass') Пароль
             input#userPass(type='password' data-type='field' data-min='6' placeholder='Пароль')
+            .error.js-err-val-pass(style='display: none;')
+                span Пароль не менее 6 символов
             br
             label(for='userRepeatPass') Повторите пароль
             input#userRepeatPass(type='password' data-type='field' placeholder='Повторите пароль')
-            br
-            .error.js-err-val-phone(style='display: none;')
-                span Неверный номер телефона
             .error.js-err-repeat-pass(style='display: none;')
                 span Пароли не совпадают
-            .error.js-err-val-pass(style='display: none;')
-                span Пароль не менее 6 символов
+            .check-agreement
+                input#agreement(type='checkbox' checked='checked')
+                label(for='agreement')
+                    | Даю согласие на обработку персональных данных
+                .error.js-err-agreement(style='display: none;')
+                    span Дайте согласие на обработку
             .ab_center
                 a.ab_button.js-btn_register.is-disabled() Зарегистрироваться
