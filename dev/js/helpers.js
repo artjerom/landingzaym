@@ -117,8 +117,6 @@ var AppHelpers = {
             $(err).show();
         }
 
-        console.log($(form + ' .err-field').length);
-
     },
 };
 

@@ -7,6 +7,7 @@ import AppHelpers from '../helpers';
 
 var LoanCalculatorView = Backbone.View.extend({
 
+
     sumRanges: $('input.js-slider--sum'),
     periodRanges: $('input.js-slider--period'),
 
@@ -96,7 +97,6 @@ var LoanCalculatorView = Backbone.View.extend({
                 });
 
             this.model.set(type, $(range[i]).val());
-
         }
 
     },
@@ -107,10 +107,6 @@ var LoanCalculatorView = Backbone.View.extend({
             max = $(this.sumRanges).attr('max');
 
         this.changeRangeSlider('sum', max, min);
-
-        if (this.model.get('sum') > AppConstants.sumBorder) {
-            this.model.set('period', 5);
-        }
 
     },
 
@@ -146,10 +142,6 @@ var LoanCalculatorView = Backbone.View.extend({
         $(range).val(e.target.value);
 
         this.changeRangeSlider('sum', $(this.sumRanges).attr('max'), $(this.sumRanges).attr('min'));
-
-        if (this.model.get('sum') > AppConstants.sumBorder) {
-            this.model.set('period', 5)
-        }
 
     },
 

@@ -160,12 +160,13 @@ $(function () {
         handleRegister: function () {
             let phone = $('#userPhone').val(),
                 pass = $('#userPass').val(),
-                repPass = $('#userRepeatPass').val();
+                rePass = $('#userRepeatPass').val(),
+                period = app.loanCalculator.get('period');
 
             AppHelpers.formValidate('jsRegister');
 
             // Если пароли не совпадают
-            if (pass !== repPass) {
+            if (pass !== rePass) {
                 $('.js-err-repeat-pass').show();
             } else {
                 $('.js-err-repeat-pass').hide();
@@ -181,13 +182,11 @@ $(function () {
             // Проверка телефона
             if (phone.length != 17) {
                 $('.js-err-val-phone').show();
-                // $(phone).addClass('err-filed');
             } else {
                 $('.js-err-val-phone').hide();
-                // $(phone).removeClass('err-filed');
             }
 
-            if (phone.length === 17 && pass === repPass && pass.length >= 6) {
+            if (phone.length === 17 && pass === rePass && pass.length >= 6) {
                 $('.js-btn_register').removeClass('is-disabled');
             } else {
                 $('.js-btn_register').addClass('is-disabled');
@@ -195,9 +194,10 @@ $(function () {
 
             var data = {
                 phone: phone,
-                pass: pass,
+                password: pass,
+                rePassword: rePass,
                 sum: app.loanCalculator.get('sum'),
-                period: app.loanCalculator.get('period')
+                period: app.loanCalculator.get('sum') > AppConstants.sumBorder ? period * 7 : period
             };
 
             // Запрос
