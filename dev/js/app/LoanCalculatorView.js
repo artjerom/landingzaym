@@ -30,7 +30,6 @@ var LoanCalculatorView = Backbone.View.extend({
         this.model.on('change', this.change, this);
 
         this.render();
-
     },
 
     render: function () {
@@ -38,8 +37,30 @@ var LoanCalculatorView = Backbone.View.extend({
         this.$el.html(rendered);
 
         this.change();
+        this.changeCalc('you-get', 2);
 
         return this;
+    },
+
+    // Изменение шаблона
+    changeCalc: function (section, n) {
+       let allBlock = '#' + section;
+
+        // Для суммы
+        // -- поля
+        $(allBlock + ' input[name=sum]').attr('id', 'focusInpSum' + n);
+        $(allBlock + ' .af-input--sum label.js-symb_inp').attr('for', 'focusInpSum' + n);
+        // -- полузонок
+        $(allBlock + ' input[type=range].js-slider--sum').attr('id', 'sum' + n);
+
+
+        // Для периода
+        // -- поля
+        $(allBlock + ' input[name=period]').attr('id', 'focusInpPeriod' + n);
+        $(allBlock + ' .af-input--period label.js-symb_inp').attr('for', 'focusInpPeriod' + n);
+        // -- полузонок
+        $(allBlock + ' input[type=range].js-slider--sum').attr('id', 'sum' + n);
+
     },
 
     change: function () {
@@ -80,8 +101,8 @@ var LoanCalculatorView = Backbone.View.extend({
             this.changeRangeSlider('period', 30, 8);
         }
 
-        // $(this.sumRanges).val(sum);
-        // $(this.periodRanges).val(period);
+        $(this.sumRanges).val(sum);
+        $(this.periodRanges).val(period);
     },
 
     // Изменение ползунка (type: sum || period)
@@ -95,10 +116,8 @@ var LoanCalculatorView = Backbone.View.extend({
                 .css({
                     'backgroundSize': ($(range[i]).val() - $(range[i]).attr('min')) * 100 / ($(range[i]).attr('max') - $(range[i]).attr('min')) + '% 100%'
                 });
-
             this.model.set(type, $(range[i]).val());
         }
-
     },
 
     // Выбор суммы при помощи ползунка
@@ -107,7 +126,6 @@ var LoanCalculatorView = Backbone.View.extend({
             max = $(this.sumRanges).attr('max');
 
         this.changeRangeSlider('sum', max, min);
-
     },
 
     // -- Выбор суммы при помощи поля
@@ -142,7 +160,6 @@ var LoanCalculatorView = Backbone.View.extend({
         $(range).val(e.target.value);
 
         this.changeRangeSlider('sum', $(this.sumRanges).attr('max'), $(this.sumRanges).attr('min'));
-
     },
 
     // Выбор срока при помощи ползунка
