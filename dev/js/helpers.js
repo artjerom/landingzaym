@@ -109,9 +109,6 @@ var AppHelpers = {
             }
         }
 
-        $('#userRepeatPass').val() !== $('#userPass').val() ? $('#userRepeatPass').addClass('err-field') : $('#userRepeatPass').removeClass('err-field');
-        $('#userPass').val().length < 6 ? $('#userPass').addClass('err-field') : $('#userPass').removeClass('err-field');
-
         if ($(form + ' .err-field').length == 0) {
             $(btn).removeClass('is-disabled');
             $(err).hide();

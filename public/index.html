@@ -119,20 +119,29 @@
         <div class="ab_indent">
           <h2>Вопросы и ответы</h2>
           <section class="questions">
-            <div class="info"><b>Как повысить шансы получения займа?</b><br>
-              <p>
-                Вы сможете поделиться информацией о Zaymigo в социальных сетях. Это увеличит вероятность выдачи займа
-                10%.
-              </p><br>
-              <p>Мы не рассылаем рекламу, и не кому не передаем информацию о вашем профиле.</p>
-              <!-- Ссылки-->
-              <ul>
-                <li><a href="#" target="_blank" class="ab_link">Как изменить даты погашения и задолжности?</a></li>
-                <li><a href="#" target="_blank" class="ab_link">На каких условиях я могу получить деньги?</a></li>
-                <li><a href="#" target="_blank" class="ab_link">Что делать, если у меня плохая кредитная история?</a></li>
-                <li><a href="#" target="_blank" class="ab_link">Почему мне отказали?</a></li>
-              </ul>
-            </div>
+            <ul class="info">
+              <li><a data-tab="1" class="ab_link js_tab-quest-get js_tab-quest-get--active">Как повысить шансы на получения займа?</a>
+                <div id="QuestGetZaymTab-1" class="js_get-zaym-tab-content js_get-zaym-tab-content--active js_get-zaym-tab-content--1"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+              </li><br>
+              <li><a data-tab="2" class="ab_link js_tab-quest-get">Я хочу изменить даты погашения задолженности,<br>как это сделать?</a>
+                <div id="QuestGetZaymTab-2" class="js_get-zaym-tab-content js_get-zaym-tab-content--2"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+              </li><br>
+              <li><a data-tab="3" class="ab_link js_tab-quest-get">Почему вы предлагаете мне меньшую сумму, чем<br>в прошлый раз?</a>
+                <div id="QuestGetZaymTab-3" class="js_get-zaym-tab-content js_get-zaym-tab-content--3"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+              </li><br>
+              <li><a data-tab="4" class="ab_link js_tab-quest-get">Раньше я брал и успешно погашал кредиты,<br>почему мне отказали?</a>
+                <div id="QuestGetZaymTab-4" class="js_get-zaym-tab-content js_get-zaym-tab-content--4"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+              </li><br>
+              <li><a data-tab="5" class="ab_link js_tab-quest-get">На каких условиях я могу получить деньги?</a>
+                <div id="QuestGetZaymTab-5" class="js_get-zaym-tab-content js_get-zaym-tab-content--5"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+              </li><br>
+              <li><a data-tab="6" class="ab_link js_tab-quest-get">Что делать, если у меня плохая кредитная<br>история</a>
+                <div id="QuestGetZaymTab-6" class="js_get-zaym-tab-content js_get-zaym-tab-content--6"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+              </li><br>
+              <li><a data-tab="7" class="ab_link js_tab-quest-get">С каким бюро кредитных историй Вы<br>сотрудничаете?</a>
+                <div id="QuestGetZaymTab-7" class="js_get-zaym-tab-content js_get-zaym-tab-content--7"><span><br>Вы сможете поделиться информацией о Zaymigo<br>в социальных сетях. Это увеличит вероятность выдачи займа<br>на 10%. Мы не рассылаем рекламу, и никому</span></div>
+              </li>
+            </ul>
           </section>
         </div>
         <section class="block-feedback">
@@ -192,14 +201,19 @@
         <h2 class="ab_center">Регистрация</h2><i class="ico-close js-close_popup"></i>
         <form action="#" id="jsRegister" class="ab_center">
           <label for="userPhone">Моб. телефон</label>
-          <input id="userPhone" type="tel" data-type="field" placeholder="Номер телефона" required><br>
+          <input id="userPhone" type="tel" data-type="field" placeholder="Номер телефона" required>
+          <div style="display: none;" class="error js-err-val-phone"><span>Неверный номер телефона</span></div><br>
           <label for="userPass">Пароль</label>
-          <input id="userPass" type="password" data-type="field" placeholder="Пароль"><br>
+          <input id="userPass" type="password" data-type="field" placeholder="Пароль">
+          <div style="display: none;" class="error js-err-val-pass"><span>Пароль не менее 6 символов</span></div><br>
           <label for="userRepeatPass">Повторите пароль</label>
-          <input id="userRepeatPass" type="password" data-type="field" placeholder="Повторите пароль"><br>
-          <div style="display: none;" class="error js-err-val-phone"><span>Неверный номер телефона</span></div>
+          <input id="userRepeatPass" type="password" data-type="field" placeholder="Повторите пароль">
           <div style="display: none;" class="error js-err-repeat-pass"><span>Пароли не совпадают</span></div>
-          <div style="display: none;" class="error js-err-val-pass"><span>Пароль не менее 6 символов</span></div>
+          <div class="check-agreement">
+            <input id="agreement" type="checkbox" checked="checked">
+            <label for="agreement">Даю согласие на обработку персональных данных</label>
+            <div style="display: none;" class="error js-err-agreement"><span>Дайте согласие на обработку</span></div>
+          </div>
           <div class="ab_center"><a class="ab_button js-btn_register is-disabled">Зарегистрироваться</a></div>
         </form>
       </div>

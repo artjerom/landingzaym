@@ -197,8 +197,10 @@ $(function () {
 
             if ($('#agreement').is(':checked')) {
                 $('.js-btn_register').removeClass('is-disabled');
+                $('.js-err-agreement').hide();
             } else {
                 $('.js-btn_register').addClass('is-disabled');
+                $('.js-err-agreement').show();
             }
             var data = {
                 phone: phone,
@@ -209,6 +211,8 @@ $(function () {
                 period: app.loanCalculator.get('sum') > AppConstants.sumBorder ? period * 7 : period
             };
 
+            $('#userRepeatPass').val() !== $('#userPass').val() ? $('#userRepeatPass').addClass('err-field') : $('#userRepeatPass').removeClass('err-field');
+            $('#userPass').val().length < 6 ? $('#userPass').addClass('err-field') : $('#userPass').removeClass('err-field');
             AppHelpers.formValidate('jsRegister');
 
             // Запрос
