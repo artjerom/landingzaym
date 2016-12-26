@@ -1,0 +1,38 @@
+{
+  "Settings": {
+    "setCalc": 2
+  },
+
+  "ZaymMethods": {
+    "Visa": {
+      "title": "На карту",
+      "description": "карта ...",
+      "img": ""
+    },
+    "Contact": {
+      "title": "contact",
+      "description": "контакт ...",
+      "img": ""
+    },
+    "goldCrown": {
+      "title": "Золотая корона",
+      "description": "Золотая корона ...",
+      "img": ""
+    }
+  },
+
+  "PayMethods": {
+    "Qiwi": {
+      "title": "qiwi",
+      "description": "киви ..."
+    },
+    "Contact": {
+      "title": "contact",
+      "description": "контакт ..."
+    },
+    "goldCrown": {
+      "title": "Золотая корона",
+      "description": "Золотая корона ..."
+    }
+  }
+}
