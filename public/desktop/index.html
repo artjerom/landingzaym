@@ -18,42 +18,7 @@
             <div class="you-loan"><span>Займ у вас в</span><span class="js-loan"></span></div>
             <div class="call"><b>Есть вопросы? Звоните!</b><br><span class="tel">8 800 787-89-65</span></div>
           </div><i class="ico ico--calc"></i>
-          <form id="loanCalculator" class="calc">
-            <script id="templateCalc" type="text/template">
-              <div class="block-calc">
-                <label for="sum">
-                  <div class="calc-title"><span>Сумма займа</span>
-                    <div class="af-input af-input--sum">
-                      <input id="focusInpSum" type="tel" name="sum" value="6000" required class="range_field range_field--sum js-sum">
-                      <label for="focusInpSum" class="js-symb_inp">₽</label>
-                    </div>
-                  </div>
-                  <input id="sum" type="range" step="100" value="6000" min="1500" max="50000" class="slider js-slider js-slider--sum">
-                  <div class="ab_range-info"><span>1500 ₽</span><span>50000 ₽</span></div>
-                </label><% if (app.loanCalculator.attributes.config.showPeriod == true) {%>
-                <label for="period">
-                  <div class="calc-title calc-title--period"><span>На срок до</span>
-                    <div class="af-input af-input--period">
-                      <input id="focusInpPeriod" type="tel" value="12" name="period" required class="range_field range_field--time js-period">
-                      <label for="focusInpPeriod" class="js-symb_inp">дней</label>
-                    </div>
-                  </div>
-                  <input id="period" type="range" value="12" min="8" max="30" class="slider js-slider js-slider--period">
-                  <div class="ab_range-info js-range_info-period"><span>8 дней</span><span>30 дней</span></div>
-                </label>
-                <div class="info-zaym">
-                  <!-- Информация о займе-->
-                  <div class="info-sum"><span>Занимаете</span>
-                    <h4 class="js-out-sum">6 000 ₽</h4>
-                  </div>
-                  <div class="info-back"><span>Возращаете</span>
-                    <h4 class="js-out-sum_back">7 434 ₽</h4>
-                  </div>
-                </div><% } %>
-              </div>
-              <div class="ab_center--text"><a class="ab_button js-show_register">Получить деньги</a></div>
-            </script>
-          </form>
+          <form class="calc"></form>
         </main>
       </header>
       <section id="about" class="ab_center">
@@ -84,7 +49,7 @@
           <div id="aboutTab-1" class="js-change-content js-change-content--active">
             <div class="title ab_center ab_center--text"><b>Zaymigo -</b><span>&nbsp;лицензированная организация.<br>Вы защищены законом «О потребительском кредитовании»</span></div>
             <div class="main">
-              <div class="content content--1"><span>Белая компания. Состоит в<br>государственном реестре МФО<br>за номером 2110177000478 от<br>25.10.2013 года;</span><br><a class="ab_link">Свидетельство МФО</a></div>
+              <div class="content content--1"><span>Белая компания. Состоит в<br>государственном реестре МФО<br>за номером 2110177000478 от<br>25.10.2013 года;<br><a class="ab_link">Свидетельство МФО</a></span></div>
               <div class="content content--2"><span>Ваши персональные данные<br>защищены протоколами<br>безопасности и не попадут в<br>руки третьих лиц.</span></div>
               <div class="content content--3"><span>Вы не передаете нам свою<br>платежную информацию. Никто<br>не сможет воспользоваться<br>вашими деньгами.</span></div>
             </div>
@@ -92,13 +57,26 @@
           <div id="aboutTab-2" class="js-change-content">
             <div class="title ab_center ab_center--text"><span>Процентные ставки в Zaymigo значительно ниже рекомендованных<br>Центральным банком РФ.</span></div>
             <div class="main">
-              <div class="content content--1"><span>Ставки от 0,49% в день. Срок до 12 недель.</span></div>
-              <div class="content content--2"><span>Не получается погасить в срок? Не волнуйтесь!<br>Есть продление.</span></div>
-              <div class="content content--3"><span>Вы не передаете нам свою<br>платежную информацию. Никто<br>не сможет воспользоваться<br>вашими деньгами.</span></div>
+              <div class="content content--1"><span>Ставки от 0,49% в день.<br>Срок до 12 недель.</span></div>
+              <div class="content content--2"><span>Не получается погасить в срок?<br>Не волнуйтесь! Есть продление.</span></div>
+              <div class="content content--3"><span>Досрочное погашение без переплаты.<br>Онлайн и в любой день.</span></div>
             </div>
           </div>
           <div id="aboutTab-3" class="js-change-content">
-            <h2>Здесь контент для 3 таба</h2>
+            <div class="title ab_center ab_center--text"><span>Получить займ в Zaymigo крайне просто. Заполняете короткую<br>заявку и получаете деньги удобным для вас способом!</span></div>
+            <div class="main">
+              <div class="content content--1"><span>Оформление из любой точки<br>России.</span></div>
+              <div class="content content--2"><span>Доступно с любого устройства:<br>компьютера, телефона или планшета.</span></div>
+              <div class="content content--3"><span>В любое время дня и ночи.<br>Без праздников и выходных.</span></div>
+            </div>
+          </div>
+          <div id="aboutTab-4" class="js-change-content">
+            <div class="title ab_center ab_center--text"><span>Среднее время от начала заполнения заявки на займ до получения одобрения<br>составляет всего 12 минут.</span></div>
+            <div class="main">
+              <div class="content content--1"><span>После заполнения анкеты,<br>система принимает моментальное<br>решение по займу в<br>автоматическом режиме.</span></div>
+              <div class="content content--2"><span>После одобрения деньги<br>перечисляются вам удобным<br>способом мгновенно.</span></div>
+              <div class="content content--3"><span>Наличные могут быть у вас<br>на руках уже через 30 минут.<br> В любой точке РФ.</span></div>
+            </div>
           </div>
         </div>
       </section>
@@ -320,6 +298,40 @@
         </form>
       </div>
     </div>
+    <script id="templateCalc" type="text/template">
+      <div class="block-calc">
+        <label for="sum">
+          <div class="calc-title"><span>Сумма займа</span>
+            <div class="af-input af-input--sum">
+              <input id="focusInpSum" type="tel" name="sum" value="6000" required class="range_field range_field--sum js-sum">
+              <label for="focusInpSum" class="js-symb_inp">₽</label>
+            </div>
+          </div>
+          <input id="sum" type="range" step="100" value="6000" min="1500" max="50000" class="js-slider js-slider--sum">
+          <div class="ab_range-info"><span>1500 ₽</span><span>50000 ₽</span></div>
+        </label><% if (app.loanCalculator.attributes.config.showPeriod == true) {%>
+        <label for="period">
+          <div class="calc-title calc-title--period"><span>На срок до</span>
+            <div class="af-input af-input--period">
+              <input id="focusInpPeriod" type="tel" value="12" name="period" required class="range_field range_field--time js-period">
+              <label for="focusInpPeriod" class="js-symb_inp">дней</label>
+            </div>
+          </div>
+          <input id="period" type="range" value="12" min="8" max="30" class="js-slider js-slider--period">
+          <div class="ab_range-info js-range_info-period"><span>8 дней</span><span>30 дней</span></div>
+        </label>
+        <div class="info-zaym">
+          <!-- Информация о займе-->
+          <div class="info-sum"><span>Занимаете</span>
+            <h4 class="js-out-sum">6 000 ₽</h4>
+          </div>
+          <div class="info-back"><span>Возращаете</span>
+            <h4 class="js-out-sum_back">7 434 ₽</h4>
+          </div>
+        </div><% } %>
+      </div>
+      <div class="ab_center--text"><a class="ab_button js-show_register">Получить деньги</a></div>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.3/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

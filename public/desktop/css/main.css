@@ -1042,6 +1042,7 @@ header .calc .ab_button {
 
 #about .why-we .js-change-content {
   display: none;
+  height: 360px;
 }
 
 #about .why-we .js-change-content--active {
@@ -1055,7 +1056,7 @@ header .calc .ab_button {
   font-weight: 100;
 }
 
-#about .why-we #aboutTab-1 .main {
+#about .why-we .main {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
@@ -1063,16 +1064,16 @@ header .calc .ab_button {
   margin-top: 80px;
 }
 
-#about .why-we #aboutTab-1 .main span {
+#about .why-we .main span {
   font-size: 1.05em;
   line-height: 25px;
 }
 
-#about .why-we #aboutTab-1 .main .ab_link {
+#about .why-we .main .ab_link {
   line-height: 55px;
 }
 
-#about .why-we #aboutTab-1 .main .content::after {
+#about .why-we .main .content::after {
   position: relative;
   display: block;
   right: 35px;
@@ -1081,19 +1082,44 @@ header .calc .ab_button {
   color: rgba(80, 83, 86, 0.08);
 }
 
-#about .why-we #aboutTab-1 .main .content--1::after {
+#about .why-we .main .content--1::after {
   content: '1';
+}
+
+#about .why-we .main .content--2::after {
+  content: '2';
+}
+
+#about .why-we .main .content--3::after {
+  content: '3';
+}
+
+#about .why-we #aboutTab-1 .content--1::after {
   bottom: 210px;
 }
 
-#about .why-we #aboutTab-1 .main .content--2::after {
-  content: '2';
+#about .why-we #aboutTab-1 .content--2::after {
   bottom: 155px;
 }
 
-#about .why-we #aboutTab-1 .main .content--3::after {
-  content: '3';
+#about .why-we #aboutTab-1 .content--3::after {
   bottom: 155px;
+}
+
+#about .why-we #aboutTab-2 .content--1::after, #about .why-we #aboutTab-2 .content--2::after, #about .why-we #aboutTab-2 .content--3::after, #about .why-we #aboutTab-3 .content--1::after, #about .why-we #aboutTab-3 .content--2::after, #about .why-we #aboutTab-3 .content--3::after {
+  bottom: 100px;
+}
+
+#about .why-we #aboutTab-4 .content--1::after {
+  bottom: 140px;
+}
+
+#about .why-we #aboutTab-4 .content--2::after {
+  bottom: 115px;
+}
+
+#about .why-we #aboutTab-4 .content--3::after {
+  bottom: 115px;
 }
 
 #get-money {

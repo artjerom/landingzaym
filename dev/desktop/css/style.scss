@@ -207,6 +207,7 @@ header {
     }
     .js-change-content {
       display: none;
+      height: 360px;
       &--active {
         display: block;
       }
@@ -217,41 +218,53 @@ header {
         font-weight: 100;
       }
     }
-    #aboutTab-1 {
-      .main {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 80px;
-        span {
-          font-size: 1.05em;
-          line-height: 25px;
+    .main {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 80px;
+      span {
+        font-size: 1.05em;
+        line-height: 25px;
+      }
+      .ab_link {
+        line-height: 55px;
+      }
+      .content {
+        &::after {
+          position: relative;
+          display: block;
+          right: 35px;
+          font-size: 120px;
+          font-weight: bold;
+          color: rgba($text-gray, .08);
         }
-        .ab_link {
-          line-height: 55px;
+        &--1::after {
+          content: '1';
         }
-        .content {
-          &::after {
-            position: relative;
-            display: block;
-            right: 35px;
-            font-size: 120px;
-            font-weight: bold;
-            color: rgba($text-gray, .08);
-          }
-          &--1::after {
-            content: '1';
-            bottom: 210px;
-          }
-          &--2::after {
-            content: '2';
-            bottom: 155px;
-          }
-          &--3::after {
-            content: '3';
-            bottom: 155px;
-          }
+        &--2::after {
+          content: '2';
+        }
+        &--3::after {
+          content: '3';
         }
       }
+    }
+    #aboutTab-1 {
+      .content--1::after {bottom: 210px;}
+      .content--2::after {bottom: 155px;}
+      .content--3::after {bottom: 155px;}
+    }
+    #aboutTab-2, #aboutTab-3 {
+      .content {
+        &--1, &--2, &--3 {
+          &::after {bottom: 100px;}
+        }
+      }
+    }
+    #aboutTab-4 {
+      .content--1::after {bottom: 140px;}
+      .content--2::after {bottom: 115px;}
+      .content--3::after {bottom: 115px;}
     }
   }
 }

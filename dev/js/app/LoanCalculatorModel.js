@@ -11,7 +11,9 @@ var LoanCalculatorModel = Backbone.Model.extend({
         type: 'once', // "once" or "two_weeks"
         config: {
             showPeriod: true
-        }
+        },
+        maxPeriod: 30,
+        minPeriod: 8,
     },
 
     // Подсчет общей суммы займа (ОД + Проценты + Комиссии)

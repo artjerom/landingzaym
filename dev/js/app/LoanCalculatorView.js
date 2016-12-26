@@ -8,8 +8,8 @@ import AppHelpers from '../helpers';
 var LoanCalculatorView = Backbone.View.extend({
 
 
-    sumRanges: $('input.js-slider--sum'),
-    periodRanges: $('input.js-slider--period'),
+    sumRanges: 'input.js-slider--sum',
+    periodRanges: 'input.js-slider--period',
 
     events: {
         'input input[type=range].js-slider--sum': 'changeSumRange',
@@ -29,6 +29,7 @@ var LoanCalculatorView = Backbone.View.extend({
 
         this.model.on('change', this.change, this);
 
+
         this.render();
     },
 
@@ -36,8 +37,8 @@ var LoanCalculatorView = Backbone.View.extend({
         var rendered = this.template(this.model.attributes);
         this.$el.html(rendered);
 
-        this.change();
         this.changeCalc('you-get', 2);
+        this.change();
 
         return this;
     },
@@ -53,13 +54,12 @@ var LoanCalculatorView = Backbone.View.extend({
         // -- полузонок
         $(allBlock + ' input[type=range].js-slider--sum').attr('id', 'sum' + n);
 
-
         // Для периода
         // -- поля
         $(allBlock + ' input[name=period]').attr('id', 'focusInpPeriod' + n);
         $(allBlock + ' .af-input--period label.js-symb_inp').attr('for', 'focusInpPeriod' + n);
         // -- полузонок
-        $(allBlock + ' input[type=range].js-slider--sum').attr('id', 'sum' + n);
+        $(allBlock + ' input[type=range].js-slider--period').attr('id', 'period' + n);
 
     },
 
@@ -86,11 +86,12 @@ var LoanCalculatorView = Backbone.View.extend({
 
             $('.js-range_info-period span:nth-child(2)').html('12 недель');
 
-            // Меняем значение ползунка
-            this.changeRangeSlider('period', 12, 4);
-
+            this.model.set('maxPeriod', 12);
+            this.model.set('minPeriod', 4);
             this.model.get('period') == 4 ? $('label[for=focusInpPeriod]').html('недели') : $('label[for=focusInpPeriod]').html('недель');
+
             this.model.get('period') == 4 ? $('label[for=focusInpPeriod2]').html('недели') : $('label[for=focusInpPeriod2]').html('недель');
+
         } else {
             $('.info-back span').html('Возвращаете');
             $('.js-out-sum_back').html(AppHelpers.formatNumber(this.model.calculateLoanSum(sum, period)) + ' ₽');
@@ -98,7 +99,8 @@ var LoanCalculatorView = Backbone.View.extend({
             $('.js-range_info-period span:nth-child(2)').html('30 дней');
             $('label[for=focusInpPeriod]').html('дней');
             $('label[for=focusInpPeriod2]').html('дней');
-            this.changeRangeSlider('period', 30, 8);
+            this.model.set('maxPeriod', 30);
+            this.model.set('minPeriod', 8);
         }
 
         $(this.sumRanges).val(sum);
@@ -118,6 +120,7 @@ var LoanCalculatorView = Backbone.View.extend({
                 });
 
             this.model.set(type, $(range[i]).val());
+
         }
     },
 
@@ -165,10 +168,10 @@ var LoanCalculatorView = Backbone.View.extend({
 
     // Выбор срока при помощи ползунка
     changePeriodRange: function () {
-        let min = $(this.periodRanges).attr('min'),
-            max = $(this.periodRanges).attr('max');
+        // let min = $(this.periodRanges).attr('min'),
+        //     max = $(this.periodRanges).attr('max');
 
-        this.changeRangeSlider('period', max, min);
+        this.changeRangeSlider('period', this.model.get('maxPeriod'), this.model.get('minPeriod'));
 
     },
 
