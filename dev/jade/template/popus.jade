@@ -4,13 +4,13 @@
         h2.ab_center Обратная связь
         i.ico-close.js-close_popup
         main
-            form(action='#')
+            form(action='#')#jsFeedback
                 select.js-feed-select_theme
                     option(value='Вопрос о работе системы') Вопрос о работе системы
                     option(value='Сообщение о ошибке') Сообщение о ошибке
                     option(value='Предложение о сотрудничестве') Предложение о сотрудничестве
-                input.js-feed-email(type='text' required placeholder='email')
-                textarea.js-feed-message(required placeholder='Текст сообщения')
+                input.js-feed-email(type='text' data-type='field' required placeholder='email')
+                textarea.js-feed-message(required placeholder='Текст сообщения' data-type='field')
                 .ab_center
                     a.ab_button.js-btn_feedback.is-disabled Отправить
 
@@ -32,21 +32,26 @@
     .content
         h2.ab_center Регистрация
         i.ico-close.js-close_popup
-        form.ab_center(action='#')
+        form.ab_center(action='#')#jsRegister
             label(for='userPhone') Моб. телефон
-            input#userPhone(type='tel' placeholder='Номер телефона' required)
-            br
-            label(for='userPass') Пароль
-            input#userPass(type='password' placeholder='Пароль')
-            br
-            label(for='userRepeatPass') Повторите пароль
-            input#userRepeatPass(type='password' placeholder='Повторите пароль')
-            br
+            input#userPhone(type='tel' data-type='field' placeholder='Номер телефона' required)
             .error.js-err-val-phone(style='display: none;')
                 span Неверный номер телефона
-            .error.js-err-repeat-pass(style='display: none;')
-                span Пароли не совпадают
+            br
+            label(for='userPass') Пароль
+            input#userPass(type='password' data-type='field' placeholder='Пароль')
             .error.js-err-val-pass(style='display: none;')
                 span Пароль не менее 6 символов
+            br
+            label(for='userRepeatPass') Повторите пароль
+            input#userRepeatPass(type='password' data-type='field' placeholder='Повторите пароль')
+            .error.js-err-repeat-pass(style='display: none;')
+                span Пароли не совпадают
+            .check-agreement
+                input#agreement(type='checkbox' checked='checked' data-type='field')
+                label(for='agreement')
+                    | Даю согласие на обработку персональных данных
+                //.error.js-err-agreement(style='display: none;')
+                //    span Дайте согласие на обработку
             .ab_center
                 a.ab_button.js-btn_register.is-disabled() Зарегистрироваться

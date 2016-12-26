@@ -371,7 +371,7 @@ section.is-working .ab_slider figure .rev-commnet span {
 }
 
 section.zaym {
-  background: #3bb38e url(../img/zaym-bg.png);
+  background: #3bb38e url(../img/zaym-bg.png) fixed;
   padding: 15px 5px 25px 5px;
   color: #fff;
   line-height: 50px;
@@ -397,38 +397,33 @@ footer {
 }
 
 footer h2 {
-  margin: 5px 0;
-}
-
-footer .info {
-  color: #43474a;
-}
-
-footer .info b {
-  white-space: nowrap;
-  font-size: .9em;
-  border-bottom: 2px dashed #43474a;
-}
-
-footer .info p {
-  margin-top: 20px;
-}
-
-footer .info ul {
-  margin: 20px 0;
-  list-style: none;
-}
-
-footer .info ul li {
   margin: 15px 0;
 }
 
-footer .info ul li .ab_link {
+footer ul {
+  margin: 5px 0;
+  list-style: none;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+footer ul li .ab_link {
   white-space: normal;
+}
+
+footer ul li .js_get-zaym-tab-content {
+  display: none;
+}
+
+footer ul li .js_get-zaym-tab-content--active {
+  display: block;
 }
 
 footer section.block-feedback {
   padding: 10px 5px;
+  margin-top: 40px;
   background-color: #f7fafc;
 }
 
@@ -549,6 +544,11 @@ footer section.main-footer .content h3 {
   white-space: nowrap;
 }
 
+.ab_link.js_tab-quest-get--active {
+  color: #43474a;
+  border-bottom: 2px dashed #43474a;
+}
+
 .ab_button {
   background: #3bb38e;
   border: 0;
@@ -579,6 +579,10 @@ footer section.main-footer .content h3 {
 
 .ab_indent {
   padding: 0px 20px;
+}
+
+.err-field {
+  border: 1px solid #bb0000 !important;
 }
 
 .separator {
@@ -728,7 +732,7 @@ footer section.main-footer .content h3 {
   margin: 10vh auto;
   min-height: 180px;
   position: fixed;
-  overflow-y: auto;
+  overflow: visible;
   text-align: center;
   top: 0;
   bottom: 0;
@@ -747,7 +751,7 @@ footer section.main-footer .content h3 {
 }
 
 .popup--register {
-  max-height: 460px;
+  height: 480px;
   padding: 15px 20px;
 }
 
@@ -757,6 +761,42 @@ footer section.main-footer .content h3 {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+}
+
+.popup--register form .check-agreement {
+  margin: 10px 0;
+}
+
+.popup--register form .check-agreement label {
+  cursor: pointer;
+}
+
+.popup--register form .check-agreement label:hover {
+  transition: .3s ease-out;
+}
+
+.popup--register form .check-agreement label:hover:before {
+  box-shadow: 0 0 2px 0px #18a4d2;
+}
+
+.popup--register form .check-agreement label:before {
+  content: '\2713';
+  color: #e3e6e8;
+  border-radius: 3px;
+  padding: 2px;
+  border: 1px solid #e3e6e8;
+  margin-right: 5px;
+}
+
+.popup--register form .check-agreement input[type='checkbox'] {
+  display: none;
+}
+
+.popup--register form .check-agreement input[type='checkbox']:checked + label:before {
+  content: "\2713";
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border-color: #18a4d2;
+  color: #18a4d2;
 }
 
 .popup--register form label {
@@ -882,6 +922,25 @@ footer section.main-footer .content h3 {
 
 .popup .error {
   text-align: left;
+  margin-top: 5px;
   color: #bb0000;
-  margin: 5px 0;
+  white-space: nowrap;
+  background: #fff;
+  width: 200px;
+}
+
+.popup .error.js-err-val-phone {
+  top: 95px;
+}
+
+.popup .error.js-err-val-pass {
+  top: 180px;
+}
+
+.popup .error.js-err-repeat-pass {
+  top: 275px;
+}
+
+.popup .error.js-err-agreement {
+  top: 310px;
 }

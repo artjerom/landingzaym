@@ -5,6 +5,10 @@
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
+  &.js_tab-quest-get--active {
+    color: $text-footer;
+    border-bottom: 2px dashed #43474a;
+  }
 }
 
 .ab_button {
@@ -37,6 +41,10 @@
 // Блок с отступами
 .ab_indent {
   padding: 0px 20px;
+}
+
+.err-field {
+  border: 1px solid $error-color !important;
 }
 
 // Разделитель
@@ -141,7 +149,7 @@
   margin: 10vh auto;
   min-height: 180px;
   position: fixed;
-  overflow-y: auto;
+  overflow: visible;
   text-align: center;
   top: 0;
   bottom: 0;
@@ -159,9 +167,38 @@
     }
   }
   &--register {
-    max-height: 460px;
+    height: 480px;
     padding: 15px 20px;
     form {
+      .check-agreement {
+        margin: 10px 0;
+        label {
+          cursor: pointer;
+          &:hover {
+            transition: .3s ease-out;
+            &:before {
+              box-shadow: 0 0 2px 0px $main-color;
+            }
+          }
+          &:before {
+            content: '\2713';
+            color: $gray;
+            border-radius: 3px;
+            padding: 2px;
+            border: 1px solid $gray;
+            margin-right: 5px;
+          }
+        }
+        input[type='checkbox'] {
+          display: none;
+          &:checked + label:before {
+            content: "\2713";
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+            border-color: $main-color;
+            color: $main-color;
+          }
+        }
+      }
       margin: 25px auto;
       display: flex;
       flex-direction: column;
@@ -276,7 +313,22 @@
   }
   .error {
     text-align: left;
+    margin-top: 5px;
     color: $error-color;
-    margin: 5px 0;
+    white-space: nowrap;
+    background: #fff;
+    width: 200px;
+    &.js-err-val-phone {
+      top: 95px;
+    }
+    &.js-err-val-pass {
+      top: 180px;
+    }
+    &.js-err-repeat-pass {
+      top: 275px;
+    }
+    &.js-err-agreement {
+      top: 310px;
+    }
   }
 }

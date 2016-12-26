@@ -5,7 +5,8 @@ body {
 header {
   padding: 45px 0;
   height: 700px;
-  background: url(../img/bg.png) 100% 100% no-repeat;
+  background: url(../img/bg.png) no-repeat;
+  background-position: 100% 100%;
   background-size: cover;
   @include clearfix();
   .logo {
@@ -31,7 +32,9 @@ header {
       .you-loan {
         margin: 15px 0;
         font-size: 1.3em;
-        color: $text-gray;
+        color: #fff;
+        padding-left: 15px;
+        background: url(../img/marker-text.png) no-repeat;
       }
       .ico-dropdown {
         display: inline-block;
@@ -59,7 +62,7 @@ header {
   }
   .calc {
     width: 460px;
-    height: 490px;
+    max-height: 490px;
     margin-top: 70px;
     background-color: #fff;
     border-radius: 10px;
@@ -204,6 +207,7 @@ header {
     }
     .js-change-content {
       display: none;
+      height: 360px;
       &--active {
         display: block;
       }
@@ -214,41 +218,53 @@ header {
         font-weight: 100;
       }
     }
-    #aboutTab-1 {
-      .main {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 80px;
-        span {
-          font-size: 1.05em;
-          line-height: 25px;
+    .main {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 80px;
+      span {
+        font-size: 1.05em;
+        line-height: 25px;
+      }
+      .ab_link {
+        line-height: 55px;
+      }
+      .content {
+        &::after {
+          position: relative;
+          display: block;
+          right: 35px;
+          font-size: 120px;
+          font-weight: bold;
+          color: rgba($text-gray, .08);
         }
-        .ab_link {
-          line-height: 55px;
+        &--1::after {
+          content: '1';
         }
-        .content {
-          &::after {
-            position: relative;
-            display: block;
-            right: 35px;
-            font-size: 120px;
-            font-weight: bold;
-            color: rgba($text-gray, .08);
-          }
-          &--1::after {
-            content: '1';
-            bottom: 210px;
-          }
-          &--2::after {
-            content: '2';
-            bottom: 155px;
-          }
-          &--3::after {
-            content: '3';
-            bottom: 155px;
-          }
+        &--2::after {
+          content: '2';
+        }
+        &--3::after {
+          content: '3';
         }
       }
+    }
+    #aboutTab-1 {
+      .content--1::after {bottom: 210px;}
+      .content--2::after {bottom: 155px;}
+      .content--3::after {bottom: 155px;}
+    }
+    #aboutTab-2, #aboutTab-3 {
+      .content {
+        &--1, &--2, &--3 {
+          &::after {bottom: 100px;}
+        }
+      }
+    }
+    #aboutTab-4 {
+      .content--1::after {bottom: 140px;}
+      .content--2::after {bottom: 115px;}
+      .content--3::after {bottom: 115px;}
     }
   }
 }
@@ -269,7 +285,7 @@ header {
     background-color: #fff;
     color: $accent-color;
     text-shadow: none;
-    border-bottom: 3px solid $gray;
+    border-bottom: 2px solid $gray;
     box-shadow: 0 5px 16px 0 darken($accent-color, 10%);
     &:hover {
       transition: .1s ease-out;
@@ -485,27 +501,38 @@ header {
     border-radius: 10px;
     border: $main-color dashed 6px;
     box-shadow: 0 0 4em 0 darken($gray, 8%);
-    padding: 50px 40px;
-    main {
-      @include clearfix();
-      label[for='sum2'] {
-        float: left;
-        width: 360px;
+    padding: 50px 40px 20px 40px;
+    @include clearfix();
+    .block-calc {
+      display: flex;
+      justify-content: space-between;
+      label[for='sum'] {
+        width: 100%;
       }
-      label[for='period2'] {
-        float: right;
-        width: 360px;
+      label[for='period'] {
+        margin-left: 50px;
+        width: 100%;
+      }
+      .info-zaym {
+        display: none;
       }
       .js-slider {
         width: 100%;
         margin-bottom: 15px;
       }
     }
+    .ab_center--text {
+      width: 100%;
+      margin: 25px 0;
+      float: left;
+    }
   }
 }
 
 #questions {
   margin-top: 80px;
+  max-height: 580px;
+  height: 580px;
   > h2.ab_center--text  {
     font-size: 2em;
     color: $main-text;
@@ -546,13 +573,19 @@ header {
       // Для 1-го таба
       &--1 {
         .content {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          //display: flex;
+          //justify-content: space-between;
+          //align-items: stretch;
+          @include clearfix();
           .info {
             color: $text-gray;
-            b {
-              line-height: 40px;
+            width: 48%;
+            float: left;
+            &:last-child {
+              float: right;
+            }
+            li {
+              margin: 15px 0;
             }
             span {
               line-height: 20px;
@@ -584,8 +617,16 @@ header {
   }
 }
 
+// Табы вопросы и ответы (получение займа)
+.js_get-zaym-tab-content {
+  display: none;
+  &--active {
+    display: block;
+  }
+}
+
 #feedback {
-  margin-top: 90px;
+  //margin-top: 90px;
   padding-bottom: 30px;
   background-color: $bg-gray;
   main {

@@ -321,7 +321,7 @@ section.is-working {
 
 // Дадим в долг
 section.zaym {
-  background: $accent-color url(../img/zaym-bg.png);
+  background: $accent-color url(../img/zaym-bg.png) fixed;
   padding: 15px 5px 25px 5px;
   color: #fff;
   line-height: 50px;
@@ -343,31 +343,27 @@ section.zaym {
 footer {
   margin-top: 25px;
   h2 {
-    margin: 5px 0;
+    margin: 15px 0;
   }
-  .info {
-    color: $text-footer;
-    b {
-      white-space: nowrap;
-      font-size: .9em;
-      border-bottom: 2px dashed #43474a;
-    }
-    p {
-      margin-top: 20px;
-    }
-    ul {
-      margin: 20px 0;
-      list-style: none;
-      li {
-        .ab_link {
-          white-space: normal;
+  ul {
+    margin: 5px 0;
+    list-style: none;
+    li {
+      .ab_link {
+        white-space: normal;
+      }
+      margin: 5px 0;
+      .js_get-zaym-tab-content {
+        display: none;
+        &--active {
+          display: block;
         }
-        margin: 15px 0;
       }
     }
   }
   section.block-feedback {
     padding: 10px 5px;
+    margin-top: 40px;
     background-color: $gray + 20%;
     h3 {
       white-space: nowrap;

@@ -32,6 +32,7 @@ $(function () {
             'click .btn-about': 'changeAboutTab',
             // Табы 'Вопросы и ответы'
             'click .btn-questions': 'changeQuestionTab',
+            'click .js_tab-quest-get': 'changeQuestionTabGetZaym',
 
             // Раскрыть коменты
             'click .update-comment': 'showComments',
@@ -97,9 +98,26 @@ $(function () {
 
             let tabId = $(e.target).attr('data-tab');
 
+            console.log(tabId);
+            console.log(e.target);
+
             $('.js-change-content-quest').removeClass('js-change-content-quest--active');
 
             $('#QuestTab-' + tabId).addClass('js-change-content-quest--active');
+        },
+
+        // ---- вопросы и ответы (Получение займа)
+        changeQuestionTabGetZaym: function (e) {
+            $('.js_tab-quest-get--active').add(e.target).toggleClass('js_tab-quest-get--active');
+
+            let tabId = $(e.target).attr('data-tab');
+
+            console.log(tabId);
+            console.log(e.target);
+
+            $('.js_get-zaym-tab-content').removeClass('js_get-zaym-tab-content--active');
+
+            $('#QuestGetZaymTab-' + tabId).addClass('js_get-zaym-tab-content--active');
         },
 
         showComments: function () {
@@ -107,7 +125,6 @@ $(function () {
             setTimeout(function () {
                 $('.js-row-comment').slideDown(500).css({
                     'display': 'flex'
-                    // 'justify-content': 'space-between'
                 });
                 $('.row-comment-hide').slideUp(650);
                 $('.update-comment').hide(100);
@@ -143,45 +160,60 @@ $(function () {
         handleRegister: function () {
             let phone = $('#userPhone').val(),
                 pass = $('#userPass').val(),
-                repPass = $('#userRepeatPass').val();
-
-            AppHelpers.formValidate('jsRegister');
+                rePass = $('#userRepeatPass').val(),
+                period = app.loanCalculator.get('period');
 
             // Если пароли не совпадают
-            if (pass !== repPass) {
+
+            if (pass !== rePass) {
                 $('.js-err-repeat-pass').show();
             } else {
                 $('.js-err-repeat-pass').hide();
             }
-
             // Если пароль короткий
+
             if (pass.length < 6) {
                 $('.js-err-val-pass').show();
+                $('#userPass').addClass('err-field');
+                $('.js-btn_register').addClass('is-disabled');
             } else if (pass.length >= 6) {
                 $('.js-err-val-pass').hide();
+                $('#userPass').removeClass('err-field');
+                $('.js-btn_register').removeClass('is-disabled');
             }
-
             // Проверка телефона
+
             if (phone.length != 17) {
                 $('.js-err-val-phone').show();
-                $(phone).addClass('err-filed');
             } else {
                 $('.js-err-val-phone').hide();
-                $(phone).removeClass('err-filed');
             }
 
-            if (phone.length === 17 && pass === repPass && pass.length >= 6) {
+            if (phone.length === 17 && pass === rePass && pass.length >= 6) {
                 $('.js-btn_register').removeClass('is-disabled');
             } else {
                 $('.js-btn_register').addClass('is-disabled');
             }
 
+            if ($('#agreement').is(':checked')) {
+                $('.js-btn_register').removeClass('is-disabled');
+                $('.js-err-agreement').hide();
+            } else {
+                $('.js-btn_register').addClass('is-disabled');
+                $('.js-err-agreement').show();
+            }
             var data = {
                 phone: phone,
-                pass: pass,
+                password: pass,
+                rePassword: rePass,
                 sum: app.loanCalculator.get('sum'),
-                period: app.loanCalculator.get('period')
+                agreement: $('#agreement').prop('checked'),
+                period: app.loanCalculator.get('sum') > AppConstants.sumBorder ? period * 7 : period
             };
+
+            $('#userRepeatPass').val() !== $('#userPass').val() ? $('#userRepeatPass').addClass('err-field') : $('#userRepeatPass').removeClass('err-field');
+            $('#userPass').val().length < 6 ? $('#userPass').addClass('err-field') : $('#userPass').removeClass('err-field');
+            AppHelpers.formValidate('jsRegister');
 
             // Запрос
             if (!$('.js-btn_register').hasClass('is-disabled')) {
@@ -190,7 +222,7 @@ $(function () {
                     'POST',
                     JSON.stringify(data),
                     function (data) {
-                        if (data.status === 'succes') {
+                        if (data.status === 'success') {
                             console.log('register');
                         } else {
                             console.log('err');
