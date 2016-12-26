@@ -112,9 +112,6 @@ $(function () {
 
             let tabId = $(e.target).attr('data-tab');
 
-            console.log(tabId);
-            console.log(e.target);
-
             $('.js_get-zaym-tab-content').removeClass('js_get-zaym-tab-content--active');
 
             $('#QuestGetZaymTab-' + tabId).addClass('js_get-zaym-tab-content--active');
