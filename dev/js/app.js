@@ -253,7 +253,6 @@ $(function () {
             AppHelpers.formValidate('jsFeedback');
 
             // Запрос
-
             if (!$('.js-btn_feedback').hasClass('is-disabled')) {
                 console.log(data);
                 AppHelpers.ajaxWrapper(
