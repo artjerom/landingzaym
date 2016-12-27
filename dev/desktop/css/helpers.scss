@@ -27,6 +27,18 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
   }
 }
 
+.ab_width {
+  width: 1000px;
+}
+
+.ab_center {
+  margin: 0 auto;
+  &--text {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
 // Проверка полей
 .block-err {
   display: none;

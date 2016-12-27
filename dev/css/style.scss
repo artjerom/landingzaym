@@ -161,6 +161,7 @@ header {
 
   .info {
     margin-top: 50px;
+    color: $info_text;
     ul {
       list-style: none;
       li {
@@ -196,6 +197,7 @@ header {
 section.how-to-money {
   .ab_slider {
     figure {
+      color: $info_text;
       .rev-img img {
         width: 160px;
       }
@@ -219,6 +221,7 @@ section.how-to-money {
 // Почему мы
 section.about {
   margin-bottom: 5vh;
+  main {color: #565658;}
   nav {
     max-width: 720px;
     display: flex;
@@ -281,6 +284,7 @@ section.about {
 section.is-working {
   background-color: $gray + 20%;
   padding: 20px 10px;
+  color: $info_text;
   .info {
     margin-bottom: 4vh;
     p {
@@ -345,25 +349,29 @@ footer {
   h2 {
     margin: 15px 0;
   }
-  ul {
-    margin: 5px 0;
-    list-style: none;
-    li {
-      .ab_link {
-        white-space: normal;
-      }
+  .questions {
+    min-height: 340px;
+    color: $info_text;
+    ul {
       margin: 5px 0;
-      .js_get-zaym-tab-content {
-        display: none;
-        &--active {
-          display: block;
+      list-style: none;
+      li {
+        .ab_link {
+          white-space: normal;
+        }
+        margin: 5px 0;
+        .js_get-zaym-tab-content {
+          display: none;
+          &--active {
+            display: block;
+          }
         }
       }
     }
   }
   section.block-feedback {
     padding: 10px 5px;
-    margin-top: 40px;
+    margin-top: 25px;
     background-color: $gray + 20%;
     h3 {
       white-space: nowrap;

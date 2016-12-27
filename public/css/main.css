@@ -193,6 +193,7 @@ header main .ab_button {
 
 header .info {
   margin-top: 50px;
+  color: #565658;
 }
 
 header .info ul {
@@ -231,6 +232,10 @@ header .info ul li i.sp_info-online {
   background-position: -5px -75px;
 }
 
+section.how-to-money .ab_slider figure {
+  color: #565658;
+}
+
 section.how-to-money .ab_slider figure .rev-img img {
   width: 160px;
 }
@@ -253,6 +258,10 @@ section.how-to-money .ab_slider figure .count-slide i.ico-slide--active {
 
 section.about {
   margin-bottom: 5vh;
+}
+
+section.about main {
+  color: #565658;
 }
 
 section.about nav {
@@ -327,6 +336,7 @@ section.about .js-change-content ul li::before {
 section.is-working {
   background-color: #f7fafc;
   padding: 20px 10px;
+  color: #565658;
 }
 
 section.is-working .info {
@@ -400,30 +410,35 @@ footer h2 {
   margin: 15px 0;
 }
 
-footer ul {
+footer .questions {
+  min-height: 340px;
+  color: #565658;
+}
+
+footer .questions ul {
   margin: 5px 0;
   list-style: none;
 }
 
-footer ul li {
+footer .questions ul li {
   margin: 5px 0;
 }
 
-footer ul li .ab_link {
+footer .questions ul li .ab_link {
   white-space: normal;
 }
 
-footer ul li .js_get-zaym-tab-content {
+footer .questions ul li .js_get-zaym-tab-content {
   display: none;
 }
 
-footer ul li .js_get-zaym-tab-content--active {
+footer .questions ul li .js_get-zaym-tab-content--active {
   display: block;
 }
 
 footer section.block-feedback {
   padding: 10px 5px;
-  margin-top: 40px;
+  margin-top: 25px;
   background-color: #f7fafc;
 }
 
