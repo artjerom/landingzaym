@@ -13,7 +13,7 @@ ul {
   list-style-type: none;
 }
 
-input[type='text'], input[type='tel'], input[type='password'], textarea {
+input[type='text'], input[type='tel'], input[type='password'], textarea, select {
   background: #fff;
   color: #18181a;
   border: solid 2px #b0bac5;
@@ -22,10 +22,19 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
   font-size: 1em;
 }
 
-input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus, textarea:focus {
+input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus, textarea:focus, select:focus {
   -webkit-appearance: none;
   outline: none;
   border: 2px solid #18a4d2;
+}
+
+select {
+  cursor: pointer;
+  font-size: .8em;
+}
+
+select option {
+  margin-top: 125px;
 }
 
 .ab_width {
@@ -520,6 +529,7 @@ header main {
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  max-width: 1000px;
 }
 
 header main .ico--calc {
@@ -624,7 +634,7 @@ header .calc .ab_button {
 }
 
 #about {
-  width: 1000px;
+  max-width: 1000px;
   color: #505356;
 }
 
@@ -866,7 +876,7 @@ header .calc .ab_button {
 
 #bonuses {
   color: #505356;
-  width: 1000px;
+  max-width: 1000px;
   padding-top: 80px;
   padding-bottom: 30px;
 }
@@ -947,7 +957,7 @@ header .calc .ab_button {
 
 #is-working {
   padding-top: 80px;
-  width: 1000px;
+  max-width: 1000px;
 }
 
 #is-working > .ab_center--text h2 {
@@ -1344,11 +1354,12 @@ header .calc .ab_button {
   width: 420px;
 }
 
-#feedback main .feedback input, #feedback main .feedback #message {
+#feedback main .feedback input, #feedback main .feedback #message, #feedback main .feedback select {
   background-color: #f9f9fa;
   padding: 15px 10px;
   color: #505356;
   z-index: 3;
+  outline: none;
 }
 
 #feedback main .feedback #message {
@@ -1365,7 +1376,7 @@ header .calc .ab_button {
       justify-content: space-between;
 }
 
-#feedback main .feedback .row input {
+#feedback main .feedback .row input, #feedback main .feedback .row select {
   width: 200px;
 }
 

@@ -16,6 +16,7 @@ header {
   main {
     display: flex;
     justify-content: space-between;
+    max-width: $max-width;
     .ico--calc {
       position: relative;
       left: 115px;
@@ -105,7 +106,7 @@ header {
 }
 
 #about {
-  width: $max-width;
+  max-width: $max-width;
   color: $text-gray;
   h2 {
     font-size: 2em;
@@ -297,7 +298,7 @@ header {
 
 #bonuses {
   color: $text-gray;
-  width: $max-width;
+  max-width: $max-width;
   padding-top: 80px;
   padding-bottom: 30px;
   h2 {
@@ -357,7 +358,7 @@ header {
 
 #is-working {
   padding-top: 80px;
-  width: $max-width;
+  max-width: $max-width;
   > .ab_center--text {
     h2 {
       font-size: 2em;
@@ -680,11 +681,12 @@ header {
     }
     .feedback {
       width: 420px;
-      input, #message {
+      input, #message, select {
         background-color: $bg-gray;
         padding: 15px 10px;
         color: $text-gray;
         z-index: 3;
+        outline: none;
       }
       #message {
         height: 75px;
@@ -694,12 +696,11 @@ header {
       }
       .row {
         margin-bottom: 20px;
-        input {
+        input, select {
           width: 200px;
         }
         display: flex;
         justify-content: space-between;
-
       }
       .ab_button {
         margin-top: 20px;

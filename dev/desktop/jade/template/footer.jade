@@ -17,9 +17,12 @@
                     img(src='img/arrow-feedback.png')
         form.feedback#jsFeedback(action='#')
             .row
-                input#name(type='text' data-type='field' name='name' placeholder='Ваше имя')
-                input#email(type='text' data-type='field' name='email' placeholder='Ваша почта')
-            textarea#message(name='message' data-type='field' placeholder='Сообщение')
+                select.js-feed-select_theme
+                    option(value='Вопрос о работе системы') Вопрос о работе системы
+                    option(value='Сообщение о ошибке') Сообщение о ошибке
+                    option(value='Предложение о сотрудничестве') Предложение о сотрудничестве
+                input#email.js-feed-email(type='text' data-type='field' name='email' placeholder='Ваша почта')
+            textarea#message.js-feed-message(name='message' data-type='field' placeholder='Сообщение')
             .block-err
                 span Заполните все поля
             .ab_center--text

@@ -1,4 +1,5 @@
 script#templateCalc(type='text/template')
+    | <% if (app.loanCalculator.get(config).show == true) {%>
     label(for='sum')
         .calc-title
             span Сумма займа
@@ -9,7 +10,7 @@ script#templateCalc(type='text/template')
         .ab_range-info
             span 1500 ₽
             span 50000 ₽
-    | <% if (app.loanCalculator.attributes.config.showPeriod == true) {%>
+    | <% if (app.loanCalculator.get(config).showPeriod == true) {%>
     label(for='period')
         .calc-title.calc-title--period
             span На срок до
@@ -32,3 +33,4 @@ script#templateCalc(type='text/template')
     | <% } %>
     .ab_center--text.ab_center
         a.ab_button.js-show_register Получить деньги
+    | <% } %>

@@ -13,7 +13,7 @@ ul {
   list-style-type: none;
 }
 
-input[type='text'], input[type='tel'], input[type='password'], textarea {
+input[type='text'], input[type='tel'], input[type='password'], textarea, select {
   background: #fff;
   color: $main-text;
   border: solid 2px $border-input;
@@ -24,6 +24,13 @@ input[type='text'], input[type='tel'], input[type='password'], textarea {
     -webkit-appearance: none;
     outline: none;
     border: 2px solid $main-color;
+  }
+}
+select {
+  cursor: pointer;
+  font-size: .8em;
+  option {
+    margin-top: 125px;
   }
 }
 
