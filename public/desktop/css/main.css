@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,7 +14,7 @@ ul {
   list-style-type: none;
 }
 
-input[type='text'], input[type='tel'], input[type='password'], textarea, select {
+input[type='text'], input[type='tel'], input[type='password'], textarea, select, #dropdown {
   background: #fff;
   color: #18181a;
   border: solid 2px #b0bac5;
@@ -22,7 +23,7 @@ input[type='text'], input[type='tel'], input[type='password'], textarea, select 
   font-size: 1em;
 }
 
-input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus, textarea:focus, select:focus {
+input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus, textarea:focus, select:focus, #dropdown:focus {
   -webkit-appearance: none;
   outline: none;
   border: 2px solid #18a4d2;
@@ -35,6 +36,118 @@ select {
 
 select option {
   margin-top: 125px;
+}
+
+#dropdown div {
+  position: absolute;
+}
+
+#dropdown input[type="checkbox"], #dropdown input[type="radio"] {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 2em;
+  opacity: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+
+#dropdown section {
+  margin-top: -2px;
+  height: 0;
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: 1s all;
+}
+
+#dropdown label:after {
+  content: '▾';
+  position: absolute;
+  right: .5em;
+  top: 0;
+}
+
+#dropdown input[type="checkbox"]:active + label,
+#dropdown input[type="radio"]:active + label {
+  background: #ccc;
+}
+
+#dropdown input[type="checkbox"]:checked ~ section {
+  height: auto;
+  max-height: 12em;
+}
+
+#dropdown input[type="checkbox"]:checked + label:after {
+  content: '×';
+}
+
+#dropdown .selection {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#dropdown input[type="radio"]:checked + label {
+  background: #333;
+  color: white;
+}
+
+#dropdown input[type="radio"]:checked + label:after {
+  position: absolute;
+  right: .5em;
+  top: .25em;
+  content: '✓';
+}
+
+#dropdown label {
+  display: block;
+  background: #eee;
+  color: #333;
+  text-align: left;
+  font-size: 1.25em;
+  line-height: 2em;
+  padding: 0 .5em;
+  border-radius: 5px;
+}
+
+#dropdown label:after {
+  font-size: 1.25em;
+}
+
+#dropdown section {
+  background: #eee;
+  color: #333;
+  border-radius: 0 0 5px 5px;
+}
+
+#dropdown section:after {
+  color: #666;
+  font-size: 1.75em;
+}
+
+#dropdown .selection label:after {
+  content: '';
+}
+
+#dropdown .selection label {
+  display: block;
+  font-size: .875em;
+  line-height: 2em;
+  padding: .25em .5em;
+  margin: 0;
+  text-align: left;
+  background: #eee;
+  border-radius: 0;
+}
+
+#dropdown .selection:last-child label {
+  border-radius: 0 0 5px 5px;
 }
 
 .ab_width {
@@ -1376,7 +1489,7 @@ header .calc .ab_button {
       justify-content: space-between;
 }
 
-#feedback main .feedback .row input, #feedback main .feedback .row select {
+#feedback main .feedback .row input, #feedback main .feedback .row #dropdown {
   width: 200px;
 }
 
