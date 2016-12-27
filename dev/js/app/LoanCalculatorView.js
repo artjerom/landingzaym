@@ -120,8 +120,6 @@ var LoanCalculatorView = Backbone.View.extend({
                     'backgroundSize': ($(range[i]).val() - $(range[i]).attr('min')) * 100 / ($(range[i]).attr('max') - $(range[i]).attr('min')) + '% 100%'
                 });
 
-            console.log($(range[i]).css('backgroundSize'));
-
             this.model.set(type, $(range[i]).val());
         }
     },
@@ -181,13 +179,11 @@ var LoanCalculatorView = Backbone.View.extend({
     },
 
     // Выбор срока при помощи ползунка
-    changePeriodRange: function (e) {
+    changePeriodRange: function () {
 
         this.changeRangeSlider('period', this.model.get('maxPeriod'), this.model.get('minPeriod'));
 
-        if ($(e.target).attr('id') === 'period2') {
-            console.log($(e.target));
-        }
+        $('input[type=range]#period').css('backgroundSize', $('input[type=range]#period2').css('backgroundSize'));
 
     },
 
