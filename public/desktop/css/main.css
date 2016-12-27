@@ -43,7 +43,7 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   background-color: #f9f9fa;
 }
 
-.ab_link, .js_tab-quest-get {
+.ab_link, .js_tab-quest-get, .js_tab-quest-repay {
   color: #18a4d2;
   text-decoration: none;
   border-bottom: 1px dashed #18a4d2;
@@ -52,12 +52,12 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   white-space: nowrap;
 }
 
-.ab_link:hover, .js_tab-quest-get:hover {
+.ab_link:hover, .js_tab-quest-get:hover, .js_tab-quest-repay:hover {
   transition: .3s ease-out;
   color: #35bce8;
 }
 
-.ab_link--active, .js_tab-quest-get--active {
+.ab_link--active, .js_tab-quest-get--active, .js_tab-quest-repay--active {
   color: #505356;
   border-bottom: none;
   pointer-events: none;
@@ -1502,36 +1502,44 @@ header .calc .ab_button {
   display: block;
 }
 
-#questions main .js-change-content-quest--1 .content:after {
+#questions main .js-change-content-quest .content:after {
   content: "";
   display: table;
   clear: both;
 }
 
-#questions main .js-change-content-quest--1 .content .info {
+#questions main .js-change-content-quest .content .info {
   color: #505356;
   width: 48%;
   float: left;
 }
 
-#questions main .js-change-content-quest--1 .content .info:last-child {
+#questions main .js-change-content-quest .content .info:last-child {
   float: right;
 }
 
-#questions main .js-change-content-quest--1 .content .info li {
+#questions main .js-change-content-quest .content .info li {
   margin: 15px 0;
 }
 
-#questions main .js-change-content-quest--1 .content .info span {
+#questions main .js-change-content-quest .content .info span {
   line-height: 20px;
 }
 
-#questions main .js-change-content-quest--1 .content .info .links {
+#questions main .js-change-content-quest .content .info .links {
   margin-top: 40px;
 }
 
-#questions main .js-change-content-quest--1 .content .info .links .ab_link {
+#questions main .js-change-content-quest .content .info .links .ab_link {
   margin: 5em 0;
+}
+
+#questions main .js-change-content-quest .content .info ul {
+  list-style-type: circle;
+}
+
+#questions main .js-change-content-quest .content .info ul li {
+  margin: 15px;
 }
 
 #questions main .js-change-content-quest--3 .content h2 {
@@ -1550,6 +1558,14 @@ header .calc .ab_button {
 }
 
 .js_get-zaym-tab-content--active {
+  display: block;
+}
+
+.js_repay-zaym-tab-content {
+  display: none;
+}
+
+.js_repay-zaym-tab-content--active {
   display: block;
 }
 

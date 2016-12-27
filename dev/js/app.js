@@ -33,6 +33,7 @@ $(function () {
             // Табы 'Вопросы и ответы'
             'click .btn-questions': 'changeQuestionTab',
             'click .js_tab-quest-get': 'changeQuestionTabGetZaym',
+            'click .js_tab-quest-repay': 'changeQuestionTabRepayZaym',
 
             // Раскрыть коменты
             'click .update-comment': 'showComments',
@@ -98,9 +99,6 @@ $(function () {
 
             let tabId = $(e.target).attr('data-tab');
 
-            console.log(tabId);
-            console.log(e.target);
-
             $('.js-change-content-quest').removeClass('js-change-content-quest--active');
 
             $('#QuestTab-' + tabId).addClass('js-change-content-quest--active');
@@ -115,6 +113,17 @@ $(function () {
             $('.js_get-zaym-tab-content').removeClass('js_get-zaym-tab-content--active');
 
             $('#QuestGetZaymTab-' + tabId).addClass('js_get-zaym-tab-content--active');
+        },
+
+        // ---- Вопросы и ответы (Погашение займа)
+        changeQuestionTabRepayZaym: function (e) {
+            $('.js_tab-quest-repay--active').add(e.target).toggleClass('js_tab-quest-repay--active');
+
+            let tabId = $(e.target).attr('data-tab');
+
+            $('.js_repay-zaym-tab-content').removeClass('js_repay-zaym-tab-content--active');
+
+            $('#QuestRepayZaymTab-' + tabId).addClass('js_repay-zaym-tab-content--active');
         },
 
         showComments: function () {
@@ -244,7 +253,6 @@ $(function () {
             AppHelpers.formValidate('jsFeedback');
 
             // Запрос
-
             if (!$('.js-btn_feedback').hasClass('is-disabled')) {
                 console.log(data);
                 AppHelpers.ajaxWrapper(
