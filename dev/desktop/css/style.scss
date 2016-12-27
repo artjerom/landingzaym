@@ -570,31 +570,31 @@ header {
       &--active {
         display: block;
       }
-      // Для 1-го таба
-      &--1 {
-        .content {
-          //display: flex;
-          //justify-content: space-between;
-          //align-items: stretch;
-          @include clearfix();
-          .info {
-            color: $text-gray;
-            width: 48%;
-            float: left;
-            &:last-child {
-              float: right;
+      .content {
+        @include clearfix();
+        .info {
+          color: $text-gray;
+          width: 48%;
+          float: left;
+          &:last-child {
+            float: right;
+          }
+          li {
+            margin: 15px 0;
+          }
+          span {
+            line-height: 20px;
+          }
+          .links {
+            margin-top: 40px;
+            .ab_link {
+              margin: 5em 0;
             }
+          }
+          ul {
+            list-style-type: circle;
             li {
-              margin: 15px 0;
-            }
-            span {
-              line-height: 20px;
-            }
-            .links {
-              margin-top: 40px;
-              .ab_link {
-                margin: 5em 0;
-              }
+              margin: 15px;
             }
           }
         }
@@ -619,6 +619,12 @@ header {
 
 // Табы вопросы и ответы (получение займа)
 .js_get-zaym-tab-content {
+  display: none;
+  &--active {
+    display: block;
+  }
+}
+.js_repay-zaym-tab-content {
   display: none;
   &--active {
     display: block;
