@@ -120,7 +120,6 @@ var AppHelpers = {
             $(btn).addClass('is-disabled');
             $(err).show();
         }
-
     },
 };
 
