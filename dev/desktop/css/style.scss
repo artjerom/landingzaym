@@ -702,6 +702,9 @@ header {
         a.dropdown {
           text-decoration: none;
           color: #b0bac5;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         display: flex;
         justify-content: space-between;

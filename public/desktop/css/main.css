@@ -1492,6 +1492,9 @@ header .calc .ab_button {
 #feedback main .feedback .row a.dropdown {
   text-decoration: none;
   color: #b0bac5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #feedback main .feedback .ab_button {

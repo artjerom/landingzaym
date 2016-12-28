@@ -42,6 +42,9 @@ $(function () {
             'click .arrow--right': 'nextSlide',
             'click .arrow--left': 'prevSlide',
 
+            // Выбрать тему
+            'click .js_quest-target': 'selectQuestTheme',
+
             // Регистрация
             'click .js-btn_register': 'handleRegister',
             // Обратная связь
@@ -163,6 +166,16 @@ $(function () {
             });
         },
 
+        // Выбор темы
+        selectQuestTheme: function (e) {
+            let theme = $(e.target).html(),
+                out = $('.feedback a.dropdown');
+
+            $(out)
+                .html(theme)
+                .addClass('js-check');
+        },
+
         // Регистрация
         handleRegister: function () {
             let phone = $('#userPhone').val(),
@@ -241,7 +254,7 @@ $(function () {
 
         // Обработка формы обратной связи
         handleFeedback: function () {
-            let theme = $('.js-feed-select_theme option:selected').val(),
+            let theme = $('.feedback a.dropdown').html(),
                 email = $('.js-feed-email').val(),
                 message = $('.js-feed-message').val();
 

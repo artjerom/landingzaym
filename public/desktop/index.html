@@ -282,19 +282,14 @@
             </div>
           </div>
           <form id="jsFeedback" action="#" class="feedback">
-            <div class="row"><a data-jq-dropdown="#jq-dropdown-1" class="dropdown">Выберите тему</a>
+            <div class="row"><a data-jq-dropdown="#jq-dropdown-1" data-type="field" class="dropdown">Выберите тему</a>
               <div id="jq-dropdown-1" class="jq-dropdown jq-dropdown-tip">
                 <ul class="jq-dropdown-menu">
-                  <li><a>Вопрос о работе системы</a></li>
-                  <li><a>Сообщение о ошибке</a></li>
-                  <li><a>Предложение о сотрудничестве</a></li>
+                  <li><a class="js_quest-target">Вопрос о работе системы</a></li>
+                  <li><a class="js_quest-target">Сообщение о ошибке</a></li>
+                  <li><a class="js_quest-target">Предложение о сотрудничестве</a></li>
                 </ul>
               </div>
-              <!--select.js-dropdown-desktop.js-feed-select_theme
-              option(value='Вопрос о работе системы') Вопрос о работе системы
-              option(value='Сообщение о ошибке') Сообщение о ошибке
-              option(value='Предложение о сотрудничестве')
-              -->
               <input id="email" type="text" data-type="field" name="email" placeholder="Ваша почта" class="js-feed-email">
             </div>
             <textarea id="message" name="message" data-type="field" placeholder="Сообщение" class="js-feed-message"></textarea>
