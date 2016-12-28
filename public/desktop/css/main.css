@@ -13,19 +13,51 @@ ul {
   list-style-type: none;
 }
 
-input[type='text'], input[type='tel'], input[type='password'], textarea {
+input[type='text'], input[type='tel'], input[type='password'], textarea, a.dropdown {
   background: #fff;
   color: #18181a;
   border: solid 2px #b0bac5;
   border-radius: 4px;
   padding: 5px 0;
   font-size: 1em;
+  -webkit-appearance: none;
 }
 
-input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus, textarea:focus {
-  -webkit-appearance: none;
+input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus, textarea:focus, a.dropdown:focus {
   outline: none;
   border: 2px solid #18a4d2;
+}
+
+select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-size: .8em;
+}
+
+select:hover {
+  transition: .3s ease-out;
+}
+
+select option {
+  -webkit-appearance: none;
+  position: absolute;
+}
+
+select option:focus {
+  background-color: red;
+}
+
+.ab_width {
+  width: 1000px;
+}
+
+.ab_center {
+  margin: 0 auto;
+}
+
+.ab_center--text {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .block-err {
@@ -43,7 +75,7 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   background-color: #f9f9fa;
 }
 
-.ab_link, .js_tab-quest-get {
+.ab_link, .js_tab-quest-get, .js_tab-quest-repay {
   color: #18a4d2;
   text-decoration: none;
   border-bottom: 1px dashed #18a4d2;
@@ -52,12 +84,12 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   white-space: nowrap;
 }
 
-.ab_link:hover, .js_tab-quest-get:hover {
+.ab_link:hover, .js_tab-quest-get:hover, .js_tab-quest-repay:hover {
   transition: .3s ease-out;
   color: #35bce8;
 }
 
-.ab_link--active, .js_tab-quest-get--active {
+.ab_link--active, .js_tab-quest-get--active, .js_tab-quest-repay--active {
   color: #505356;
   border-bottom: none;
   pointer-events: none;
@@ -479,303 +511,103 @@ input[type='text']:focus, input[type='tel']:focus, input[type='password']:focus,
   }
 }
 
-.ab_width {
-  width: 1000px;
-}
-
-.ab_center {
-  margin: 0 auto;
-}
-
-.ab_center--text {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.ab_grid-row {
-  margin-bottom: 20px;
-}
-
-.ab_grid-col {
-  float: left;
-  display: inline;
-  margin-right: 25px;
-}
-
-.ab_grid-col--1 {
-  width: 25px;
-}
-
-.ab_grid-col--2 {
-  width: 50px;
-}
-
-.ab_grid-col--3 {
-  width: 75px;
-}
-
-.ab_grid-col--4 {
-  width: 100px;
-}
-
-.ab_grid-col--5 {
-  width: 125px;
-}
-
-.ab_grid-col--6 {
-  width: 150px;
-}
-
-.ab_grid-col--7 {
-  width: 175px;
-}
-
-.ab_grid-col--9 {
-  width: 200px;
-}
-
-.ab_grid-col--10 {
-  width: 225px;
-}
-
-.ab_grid-col--11 {
-  width: 250px;
-}
-
-.ab_grid-col--12 {
-  width: 275px;
-}
-
-.ab_grid-col--13 {
-  width: 300px;
-}
-
-.ab_grid-col--14 {
-  width: 325px;
-}
-
-.ab_grid-col--15 {
-  width: 350px;
-}
-
-.ab_grid-col--16 {
-  width: 375px;
-}
-
-.ab_grid-col--17 {
-  width: 400px;
-}
-
-.ab_grid-col--18 {
-  width: 425px;
-}
-
-.ab_grid-col--19 {
-  width: 500px;
-}
-
-.ab_grid-col--20 {
-  width: 525px;
-}
-
-.ab_grid-col--21 {
-  width: 550px;
-}
-
-.ab_grid-col--22 {
-  width: 575px;
-}
-
-.ab_grid-col--23 {
-  width: 600px;
-}
-
-.ab_grid-col--24 {
-  width: 625px;
-}
-
-.ab_grid-col--25 {
-  width: 650px;
-}
-
-.ab_grid-col--26 {
-  width: 675px;
-}
-
-.ab_grid-col--27 {
-  width: 700px;
-}
-
-.ab_grid-col--28 {
-  width: 725px;
-}
-
-.ab_grid-col--29 {
-  width: 750px;
-}
-
-.ab_grid-col--30 {
-  width: 775px;
-}
-
-.ab_grid-col--31 {
-  width: 800px;
-}
-
-.ab_grid-col--32 {
-  width: 825px;
-}
-
-.ab_grid-col--33 {
-  width: 950px;
-}
-
-.ab_grid-col--34 {
-  width: 975px;
-}
-
-.ab_grid-col--35 {
-  width: 1000px;
-}
-
-.ab_grid-col:last-child {
-  margin-right: 0;
-}
-
-.ab_grid-offset--1 {
-  margin-left: 25px;
-}
-
-.ab_grid-offset--2 {
-  margin-left: 50px;
-}
-
-.ab_grid-offset--3 {
-  margin-left: 75px;
-}
-
-.ab_grid-offset--4 {
-  margin-left: 100px;
-}
-
-.ab_grid-offset--5 {
-  margin-left: 125px;
-}
-
-.ab_grid-offset--6 {
-  margin-left: 150px;
-}
-
-.ab_grid-offset--7 {
-  margin-left: 175px;
-}
-
-.ab_grid-offset--9 {
-  margin-left: 200px;
-}
-
-.ab_grid-offset--10 {
-  margin-left: 225px;
-}
-
-.ab_grid-offset--11 {
-  margin-left: 250px;
-}
-
-.ab_grid-offset--12 {
-  margin-left: 275px;
-}
-
-.ab_grid-offset--13 {
-  margin-left: 300px;
-}
-
-.ab_grid-offset--14 {
-  margin-left: 325px;
-}
-
-.ab_grid-offset--15 {
-  margin-left: 350px;
-}
-
-.ab_grid-offset--16 {
-  margin-left: 375px;
-}
-
-.ab_grid-offset--17 {
-  margin-left: 400px;
-}
-
-.ab_grid-offset--18 {
-  margin-left: 425px;
-}
-
-.ab_grid-offset--19 {
-  margin-left: 500px;
-}
-
-.ab_grid-offset--20 {
-  margin-left: 525px;
-}
-
-.ab_grid-offset--21 {
-  margin-left: 550px;
-}
-
-.ab_grid-offset--22 {
-  margin-left: 575px;
-}
-
-.ab_grid-offset--23 {
-  margin-left: 600px;
-}
-
-.ab_grid-offset--24 {
-  margin-left: 625px;
-}
-
-.ab_grid-offset--25 {
-  margin-left: 650px;
-}
-
-.ab_grid-offset--26 {
-  margin-left: 675px;
-}
-
-.ab_grid-offset--27 {
-  margin-left: 700px;
-}
-
-.ab_grid-offset--28 {
-  margin-left: 725px;
-}
-
-.ab_grid-offset--29 {
-  margin-left: 750px;
-}
-
-.ab_grid-offset--30 {
-  margin-left: 775px;
-}
-
-.ab_grid-offset--31 {
-  margin-left: 800px;
-}
-
-.ab_grid-offset--32 {
-  margin-left: 825px;
-}
-
-.ab_grid-offset--33 {
-  margin-left: 950px;
-}
-
-.ab_grid-offset--34 {
-  margin-left: 975px;
-}
-
-.ab_grid-offset--35 {
-  margin-left: 1000px;
+.jq-dropdown {
+  position: absolute;
+  z-index: 1039;
+  display: none;
+}
+
+.jq-dropdown .jq-dropdown-menu,
+.jq-dropdown .jq-dropdown-panel {
+  min-width: 160px;
+  max-width: 360px;
+  list-style: none;
+  background: white;
+  border: solid 1px #ddd;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  overflow: visible;
+  padding: 4px 0;
+  margin: 0;
+}
+
+.jq-dropdown .jq-dropdown-panel {
+  padding: 10px;
+}
+
+.jq-dropdown.jq-dropdown-tip {
+  margin-top: 8px;
+}
+
+.jq-dropdown.jq-dropdown-tip:before {
+  position: absolute;
+  top: -6px;
+  left: 9px;
+  content: "";
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ddd;
+  display: inline-block;
+}
+
+.jq-dropdown.jq-dropdown-tip:after {
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  content: "";
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+  display: inline-block;
+}
+
+.jq-dropdown.jq-dropdown-tip.jq-dropdown-anchor-right:before {
+  left: auto;
+  right: 9px;
+}
+
+.jq-dropdown.jq-dropdown-tip.jq-dropdown-anchor-right:after {
+  left: auto;
+  right: 10px;
+}
+
+.jq-dropdown.jq-dropdown-scroll .jq-dropdown-menu,
+.jq-dropdown.jq-dropdown-scroll .jq-dropdown-panel {
+  max-height: 180px;
+  overflow: auto;
+}
+
+.jq-dropdown .jq-dropdown-menu li {
+  list-style: none;
+  padding: 0 0;
+  text-indent: 0;
+  margin: 0;
+  line-height: 18px;
+}
+
+.jq-dropdown .jq-dropdown-menu li > a,
+.jq-dropdown .jq-dropdown-menu label {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  line-height: 18px;
+  padding: 3px 15px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.jq-dropdown .jq-dropdown-menu li > a:hover,
+.jq-dropdown .jq-dropdown-menu label:hover {
+  background-color: #f2f2f2;
+  color: inherit;
+  cursor: pointer;
+}
+
+.jq-dropdown .jq-dropdown-menu .jq-dropdown-divider {
+  font-size: 1px;
+  border-top: solid 1px #e5e5e5;
+  padding: 0;
+  margin: 5px 0;
 }
 
 body {
@@ -806,6 +638,7 @@ header main {
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  max-width: 1000px;
 }
 
 header main .ico--calc {
@@ -910,7 +743,7 @@ header .calc .ab_button {
 }
 
 #about {
-  width: 1000px;
+  max-width: 1000px;
   color: #505356;
 }
 
@@ -1152,7 +985,7 @@ header .calc .ab_button {
 
 #bonuses {
   color: #505356;
-  width: 1000px;
+  max-width: 1000px;
   padding-top: 80px;
   padding-bottom: 30px;
 }
@@ -1233,7 +1066,7 @@ header .calc .ab_button {
 
 #is-working {
   padding-top: 80px;
-  width: 1000px;
+  max-width: 1000px;
 }
 
 #is-working > .ab_center--text h2 {
@@ -1502,36 +1335,44 @@ header .calc .ab_button {
   display: block;
 }
 
-#questions main .js-change-content-quest--1 .content:after {
+#questions main .js-change-content-quest .content:after {
   content: "";
   display: table;
   clear: both;
 }
 
-#questions main .js-change-content-quest--1 .content .info {
+#questions main .js-change-content-quest .content .info {
   color: #505356;
   width: 48%;
   float: left;
 }
 
-#questions main .js-change-content-quest--1 .content .info:last-child {
+#questions main .js-change-content-quest .content .info:last-child {
   float: right;
 }
 
-#questions main .js-change-content-quest--1 .content .info li {
+#questions main .js-change-content-quest .content .info li {
   margin: 15px 0;
 }
 
-#questions main .js-change-content-quest--1 .content .info span {
+#questions main .js-change-content-quest .content .info span {
   line-height: 20px;
 }
 
-#questions main .js-change-content-quest--1 .content .info .links {
+#questions main .js-change-content-quest .content .info .links {
   margin-top: 40px;
 }
 
-#questions main .js-change-content-quest--1 .content .info .links .ab_link {
+#questions main .js-change-content-quest .content .info .links .ab_link {
   margin: 5em 0;
+}
+
+#questions main .js-change-content-quest .content .info ul {
+  list-style-type: circle;
+}
+
+#questions main .js-change-content-quest .content .info ul li {
+  margin: 15px;
 }
 
 #questions main .js-change-content-quest--3 .content h2 {
@@ -1550,6 +1391,14 @@ header .calc .ab_button {
 }
 
 .js_get-zaym-tab-content--active {
+  display: block;
+}
+
+.js_repay-zaym-tab-content {
+  display: none;
+}
+
+.js_repay-zaym-tab-content--active {
   display: block;
 }
 
@@ -1614,11 +1463,12 @@ header .calc .ab_button {
   width: 420px;
 }
 
-#feedback main .feedback input, #feedback main .feedback #message {
+#feedback main .feedback input, #feedback main .feedback #message, #feedback main .feedback a.dropdown {
   background-color: #f9f9fa;
   padding: 15px 10px;
   color: #505356;
   z-index: 3;
+  outline: none;
 }
 
 #feedback main .feedback #message {
@@ -1635,8 +1485,16 @@ header .calc .ab_button {
       justify-content: space-between;
 }
 
-#feedback main .feedback .row input {
+#feedback main .feedback .row input, #feedback main .feedback .row a.dropdown {
   width: 200px;
+}
+
+#feedback main .feedback .row a.dropdown {
+  text-decoration: none;
+  color: #b0bac5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #feedback main .feedback .ab_button {

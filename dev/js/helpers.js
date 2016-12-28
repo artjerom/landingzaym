@@ -100,14 +100,18 @@ var AppHelpers = {
         let field = $(form + ' [data-type=field]');
         let err = $(form + ' .block-err');
         let btn = $(form + ' a.ab_button');
+        let themeFeed = $('a.dropdown');
 
         for (let i = 0; i < field.length; i++) {
-            if ($(field[i]).val() == 0) {
+            if ($(field[i]).val() == 0 && $(field[i]).html() == 0) {
                 $(field[i]).addClass('err-field');
             } else {
                 $(field[i]).removeClass('err-field');
             }
         }
+
+        $(themeFeed).html() == 'Выберите тему' ? $(themeFeed).addClass('err-field')
+            : $(themeFeed).removeClass('err-field');
 
         if ($(form + ' .err-field').length == 0) {
             $(btn).removeClass('is-disabled');

@@ -16,6 +16,7 @@ header {
   main {
     display: flex;
     justify-content: space-between;
+    max-width: $max-width;
     .ico--calc {
       position: relative;
       left: 115px;
@@ -105,7 +106,7 @@ header {
 }
 
 #about {
-  width: $max-width;
+  max-width: $max-width;
   color: $text-gray;
   h2 {
     font-size: 2em;
@@ -297,7 +298,7 @@ header {
 
 #bonuses {
   color: $text-gray;
-  width: $max-width;
+  max-width: $max-width;
   padding-top: 80px;
   padding-bottom: 30px;
   h2 {
@@ -357,7 +358,7 @@ header {
 
 #is-working {
   padding-top: 80px;
-  width: $max-width;
+  max-width: $max-width;
   > .ab_center--text {
     h2 {
       font-size: 2em;
@@ -570,31 +571,31 @@ header {
       &--active {
         display: block;
       }
-      // Для 1-го таба
-      &--1 {
-        .content {
-          //display: flex;
-          //justify-content: space-between;
-          //align-items: stretch;
-          @include clearfix();
-          .info {
-            color: $text-gray;
-            width: 48%;
-            float: left;
-            &:last-child {
-              float: right;
+      .content {
+        @include clearfix();
+        .info {
+          color: $text-gray;
+          width: 48%;
+          float: left;
+          &:last-child {
+            float: right;
+          }
+          li {
+            margin: 15px 0;
+          }
+          span {
+            line-height: 20px;
+          }
+          .links {
+            margin-top: 40px;
+            .ab_link {
+              margin: 5em 0;
             }
+          }
+          ul {
+            list-style-type: circle;
             li {
-              margin: 15px 0;
-            }
-            span {
-              line-height: 20px;
-            }
-            .links {
-              margin-top: 40px;
-              .ab_link {
-                margin: 5em 0;
-              }
+              margin: 15px;
             }
           }
         }
@@ -619,6 +620,12 @@ header {
 
 // Табы вопросы и ответы (получение займа)
 .js_get-zaym-tab-content {
+  display: none;
+  &--active {
+    display: block;
+  }
+}
+.js_repay-zaym-tab-content {
   display: none;
   &--active {
     display: block;
@@ -674,11 +681,12 @@ header {
     }
     .feedback {
       width: 420px;
-      input, #message {
+      input, #message, a.dropdown {
         background-color: $bg-gray;
         padding: 15px 10px;
         color: $text-gray;
         z-index: 3;
+        outline: none;
       }
       #message {
         height: 75px;
@@ -688,12 +696,18 @@ header {
       }
       .row {
         margin-bottom: 20px;
-        input {
+        input, a.dropdown {
           width: 200px;
+        }
+        a.dropdown {
+          text-decoration: none;
+          color: #b0bac5;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         display: flex;
         justify-content: space-between;
-
       }
       .ab_button {
         margin-top: 20px;

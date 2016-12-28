@@ -10,6 +10,7 @@ var LoanCalculatorModel = Backbone.Model.extend({
         period: 12,
         type: 'once', // "once" or "two_weeks"
         config: {
+            show: true,
             showPeriod: true
         },
         maxPeriod: 30,
