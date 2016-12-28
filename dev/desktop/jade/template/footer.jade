@@ -17,21 +17,19 @@
                     img(src='img/arrow-feedback.png')
         form.feedback#jsFeedback(action='#')
             .row
-                #dropdown
-                    div
-                        input(type='checkbox')
-                        label Выберите тему
-                        section
-                            .selection
-                                input(type='radio', name='Вопрос о работе системы')
-                                label Вопрос о работе системы
-                            .selection
-                                input(type='radio', name='Сообщение о ошибке')
-                                label Сообщение о ошибке
-                            .selection
-                                input(type='radio', name='Предложение о сотрудничестве')
-                                label Предложение о сотрудничестве
-
+                a.dropdown(data-jq-dropdown="#jq-dropdown-1") Выберите тему
+                #jq-dropdown-1.jq-dropdown.jq-dropdown-tip
+                    ul.jq-dropdown-menu
+                        li
+                            a() Вопрос о работе системы
+                        li
+                            a() Сообщение о ошибке
+                        li
+                            a() Предложение о сотрудничестве
+                //select.js-dropdown-desktop.js-feed-select_theme
+                    option(value='Вопрос о работе системы') Вопрос о работе системы
+                    option(value='Сообщение о ошибке') Сообщение о ошибке
+                    option(value='Предложение о сотрудничестве')
                 input#email.js-feed-email(type='text' data-type='field' name='email' placeholder='Ваша почта')
             textarea#message.js-feed-message(name='message' data-type='field' placeholder='Сообщение')
             .block-err

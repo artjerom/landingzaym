@@ -282,27 +282,19 @@
             </div>
           </div>
           <form id="jsFeedback" action="#" class="feedback">
-            <div class="row">
-              <div id="dropdown">
-                <div>
-                  <input type="checkbox">
-                  <label>Выберите тему</label>
-                  <section>
-                    <div class="selection">
-                      <input type="radio" name="Вопрос о работе системы">
-                      <label>Вопрос о работе системы</label>
-                    </div>
-                    <div class="selection">
-                      <input type="radio" name="Сообщение о ошибке">
-                      <label>Сообщение о ошибке</label>
-                    </div>
-                    <div class="selection">
-                      <input type="radio" name="Предложение о сотрудничестве">
-                      <label>Предложение о сотрудничестве</label>
-                    </div>
-                  </section>
-                </div>
+            <div class="row"><a data-jq-dropdown="#jq-dropdown-1" class="dropdown">Выберите тему</a>
+              <div id="jq-dropdown-1" class="jq-dropdown jq-dropdown-tip">
+                <ul class="jq-dropdown-menu">
+                  <li><a>Вопрос о работе системы</a></li>
+                  <li><a>Сообщение о ошибке</a></li>
+                  <li><a>Предложение о сотрудничестве</a></li>
+                </ul>
               </div>
+              <!--select.js-dropdown-desktop.js-feed-select_theme
+              option(value='Вопрос о работе системы') Вопрос о работе системы
+              option(value='Сообщение о ошибке') Сообщение о ошибке
+              option(value='Предложение о сотрудничестве')
+              -->
               <input id="email" type="text" data-type="field" name="email" placeholder="Ваша почта" class="js-feed-email">
             </div>
             <textarea id="message" name="message" data-type="field" placeholder="Сообщение" class="js-feed-message"></textarea>
@@ -386,6 +378,7 @@
       <div class="ab_center--text"><a class="ab_button js-show_register">Получить деньги</a></div><% } %>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dropdown/2.0.3/jquery.dropdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.3/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>

@@ -681,7 +681,7 @@ header {
     }
     .feedback {
       width: 420px;
-      input, #message, select {
+      input, #message, a.dropdown {
         background-color: $bg-gray;
         padding: 15px 10px;
         color: $text-gray;
@@ -696,8 +696,12 @@ header {
       }
       .row {
         margin-bottom: 20px;
-        input, #dropdown {
+        input, a.dropdown {
           width: 200px;
+        }
+        a.dropdown {
+          text-decoration: none;
+          color: #b0bac5;
         }
         display: flex;
         justify-content: space-between;

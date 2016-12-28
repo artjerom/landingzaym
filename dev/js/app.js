@@ -72,6 +72,7 @@ $(function () {
             let res = resHour + ':' + resMin;
 
             $('.you-loan .js-loan').html(' ' + res);
+
         },
 
         // Выбор способа получения
